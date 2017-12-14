@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EventsUnlimited
+namespace EventsUnlimited.Forms
 {
-    public partial class Form1 : Form
+    public partial class StockOrder : Form
     {
-        public Form1()
+        public StockOrder()
         {
             InitializeComponent();
         }
