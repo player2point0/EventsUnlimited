@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace EventsUnlimited.Forms
 {
-    public partial class Card : Form
+    public partial class FrmCard : Form
     {
-        public Card()
+        public FrmCard()
         {
             InitializeComponent();
+        }
+
+        private void FrmCard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

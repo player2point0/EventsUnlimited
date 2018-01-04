@@ -90,6 +90,7 @@
             this.btnCustomerOrder.TabIndex = 1;
             this.btnCustomerOrder.Text = "CustomerOrder";
             this.btnCustomerOrder.UseVisualStyleBackColor = true;
+            this.btnCustomerOrder.Click += new System.EventHandler(this.btnCustomerOrder_Click);
             // 
             // btnCustomer
             // 
@@ -99,6 +100,7 @@
             this.btnCustomer.TabIndex = 0;
             this.btnCustomer.Text = "Customer";
             this.btnCustomer.UseVisualStyleBackColor = true;
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
             // pictureBox1
             // 
@@ -129,6 +131,7 @@
             this.btnStockOrder.TabIndex = 0;
             this.btnStockOrder.Text = "StockOrder";
             this.btnStockOrder.UseVisualStyleBackColor = true;
+            this.btnStockOrder.Click += new System.EventHandler(this.btnStockOrder_Click);
             // 
             // PnlSharedActions
             // 
@@ -150,6 +153,7 @@
             this.btnStock.TabIndex = 2;
             this.btnStock.Text = "Stock";
             this.btnStock.UseVisualStyleBackColor = true;
+            this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
             // 
             // btnSupplier
             // 
@@ -159,6 +163,7 @@
             this.btnSupplier.TabIndex = 1;
             this.btnSupplier.Text = "Supplier";
             this.btnSupplier.UseVisualStyleBackColor = true;
+            this.btnSupplier.Click += new System.EventHandler(this.btnSupplier_Click);
             // 
             // btnStaff
             // 
@@ -168,6 +173,7 @@
             this.btnStaff.TabIndex = 0;
             this.btnStaff.Text = "Staff";
             this.btnStaff.UseVisualStyleBackColor = true;
+            this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
             // 
             // label1
             // 
@@ -200,7 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1178, 744);
+            this.ClientSize = new System.Drawing.Size(1178, 778);
             this.ControlBox = false;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -216,7 +222,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Events Unlimited";
-            this.Load += new System.EventHandler(this.Menu_Load);
             this.PnlCustomerOrderActions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PnlStockOrderActions.ResumeLayout(false);

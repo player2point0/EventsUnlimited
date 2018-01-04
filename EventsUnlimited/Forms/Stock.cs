@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EventsUnlimited.Forms
 {
-    public partial class Stock : Form
+    public partial class FrmStock : Form
     {
-        public Stock()
+        public FrmStock()
         {
             InitializeComponent();
         }

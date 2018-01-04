@@ -1,6 +1,6 @@
 ﻿namespace EventsUnlimited.Forms
 {
-    partial class Card
+    partial class FrmCard
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FrmCard
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(278, 244);
+            this.Name = "FrmCard";
             this.Text = "Card";
+            this.Load += new System.EventHandler(this.FrmCard_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -1,6 +1,6 @@
 ﻿namespace EventsUnlimited.Forms
 {
-    partial class StockOrder
+    partial class FrmStockOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FrmStockOrder
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(278, 244);
+            this.Name = "FrmStockOrder";
             this.Text = "StockOrder";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

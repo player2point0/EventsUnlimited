@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EventsUnlimited.Forms
 {
-    public partial class Staff : Form
+    public partial class FrmStaff : Form
     {
-        public Staff()
+        public FrmStaff()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace EventsUnlimited.Forms
 {
-    partial class Customer
+    partial class FrmCustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FrmCustomer
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(278, 244);
+            this.Name = "FrmCustomer";
             this.Text = "Customer";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
