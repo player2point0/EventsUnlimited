@@ -10,11 +10,56 @@ using System.Windows.Forms;
 
 namespace EventsUnlimited.Forms
 {
-    public partial class Template : Form
+    public partial class FrmTemplate : Form
     {
-        public Template()
+        public FrmTemplate()
         {
             InitializeComponent();
+        }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnNew_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnHome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnNext_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnPrevious_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnHelp_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
