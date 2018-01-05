@@ -34,9 +34,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(278, 244);
+            this.ClientSize = new System.Drawing.Size(1178, 744);
             this.Name = "FrmCard";
             this.Text = "Card";
+            this.Load += new System.EventHandler(this.FrmCard_Load);
             this.ResumeLayout(false);
 
         }

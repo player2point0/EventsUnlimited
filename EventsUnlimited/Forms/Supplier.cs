@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace EventsUnlimited
 {
-    public partial class FrmSupplier : Form
+    public partial class FrmSupplier : FrmTemplate
     {
         public FrmSupplier()
         {

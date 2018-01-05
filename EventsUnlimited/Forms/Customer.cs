@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace EventsUnlimited
 {
-    public partial class FrmCustomer : Form
+    public partial class FrmCustomer : FrmTemplate
     {
         public FrmCustomer()
         {
             InitializeComponent();
+        }
+
+        private void FrmCustomer_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

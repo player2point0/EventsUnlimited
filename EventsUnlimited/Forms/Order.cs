@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace EventsUnlimited
 {
-    public partial class FrmOrder : Form
+    public partial class FrmOrder : FrmTemplate
     {
         public FrmOrder()
         {
             InitializeComponent();
+        }
+
+        private void FrmOrder_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

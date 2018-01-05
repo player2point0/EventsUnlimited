@@ -16,5 +16,10 @@ namespace EventsUnlimited
         {
             InitializeComponent();
         }
+
+        private void FrmCard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
