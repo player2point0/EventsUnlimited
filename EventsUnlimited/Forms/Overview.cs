@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EventsUnlimited.Forms
+namespace EventsUnlimited
 {
-    public partial class Overview : Form
+    public partial class FrmOverview : Form
     {
-        public Overview()
+        public FrmOverview()
         {
             InitializeComponent();
         }

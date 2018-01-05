@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EventsUnlimited.Forms
+namespace EventsUnlimited
 {
-    public partial class FrmCard : Form
+    public partial class FrmCard : FrmTemplate
     {
         public FrmCard()
         {
             InitializeComponent();
-        }
-
-        private void FrmCard_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

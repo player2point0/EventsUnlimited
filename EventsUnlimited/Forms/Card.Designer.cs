@@ -1,4 +1,4 @@
-﻿namespace EventsUnlimited.Forms
+﻿namespace EventsUnlimited
 {
     partial class FrmCard
     {
@@ -37,7 +37,6 @@
             this.ClientSize = new System.Drawing.Size(278, 244);
             this.Name = "FrmCard";
             this.Text = "Card";
-            this.Load += new System.EventHandler(this.FrmCard_Load);
             this.ResumeLayout(false);
 
         }

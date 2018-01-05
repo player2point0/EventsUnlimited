@@ -1,4 +1,4 @@
-﻿namespace EventsUnlimited.Forms
+﻿namespace EventsUnlimited
 {
     partial class FrmStockOrder
     {
