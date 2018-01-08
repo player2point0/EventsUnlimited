@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace EventsUnlimited
 {
-    public partial class FrmOverview : Form
+    public partial class LsvDisplay : Form
     {
-        public FrmOverview()
+        public LsvDisplay()
         {
             InitializeComponent();
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
