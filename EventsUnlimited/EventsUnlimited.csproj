@@ -114,6 +114,7 @@
       <DependentUpon>Template.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\SQLManager.cs" />
+    <Compile Include="Table.cs" />
     <EmbeddedResource Include="Forms\Template\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>

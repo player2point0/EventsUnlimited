@@ -11,6 +11,7 @@ namespace EventsUnlimited
 {
     class SQLManager
     {
+        //REPPLACE WITH TABLE CLASS
         private string table;
         private string connection;
         private string[] fields;
@@ -24,8 +25,8 @@ namespace EventsUnlimited
 
         public SQLManager(string _table, string[] _fields, string[] _primaryKeys)
         {
+            connection = Program.GetConnectionString();
             table = _table;
-            connection = Program.GetConnectionString(); ;
             fields = _fields;
             primaryKeys = _primaryKeys;
         }
@@ -157,6 +158,7 @@ namespace EventsUnlimited
             return num + " rows deleted";
         }
 
+        //TWO ADD ROW METHODS
         public string AddRow(string[] data)
         {
             dataRow = null;
@@ -172,7 +174,6 @@ namespace EventsUnlimited
 
             return "Record added";
         }
-
         public string AddRow(ref Control[] controls)
         {
             dataRow = null;
@@ -225,6 +226,5 @@ namespace EventsUnlimited
                 return false;
             }
         }
-
     }
 }
