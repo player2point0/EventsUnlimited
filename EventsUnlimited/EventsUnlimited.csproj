@@ -45,90 +45,91 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Customer.cs">
+    <Compile Include="Forms\Template\Customer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Customer.Designer.cs">
+    <Compile Include="Forms\Template\Customer.Designer.cs">
       <DependentUpon>Customer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Card.cs">
+    <Compile Include="Forms\Template\Card.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Card.Designer.cs">
+    <Compile Include="Forms\Template\Card.Designer.cs">
       <DependentUpon>Card.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Menu.cs">
+    <Compile Include="Forms\Custom\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Menu.Designer.cs">
+    <Compile Include="Forms\Custom\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Order.cs">
+    <Compile Include="Forms\Template\Order.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Order.Designer.cs">
+    <Compile Include="Forms\Template\Order.Designer.cs">
       <DependentUpon>Order.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Overview.cs">
+    <Compile Include="Forms\Custom\Overview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Overview.Designer.cs">
+    <Compile Include="Forms\Custom\Overview.Designer.cs">
       <DependentUpon>Overview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Help.cs">
+    <Compile Include="Forms\Custom\Help.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Help.Designer.cs">
+    <Compile Include="Forms\Custom\Help.Designer.cs">
       <DependentUpon>Help.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\Staff.cs">
+    <Compile Include="Forms\Template\Staff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Staff.Designer.cs">
+    <Compile Include="Forms\Template\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Stock.cs">
+    <Compile Include="Forms\Template\Stock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Stock.Designer.cs">
+    <Compile Include="Forms\Template\Stock.Designer.cs">
       <DependentUpon>Stock.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StockOrder.cs">
+    <Compile Include="Forms\Template\StockOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StockOrder.Designer.cs">
+    <Compile Include="Forms\Template\StockOrder.Designer.cs">
       <DependentUpon>StockOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Supplier.cs">
+    <Compile Include="Forms\Template\Supplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Supplier.Designer.cs">
+    <Compile Include="Forms\Template\Supplier.Designer.cs">
       <DependentUpon>Supplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Template.cs">
+    <Compile Include="Forms\Template\Template.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Template.Designer.cs">
+    <Compile Include="Forms\Template\Template.Designer.cs">
       <DependentUpon>Template.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\Customer.resx">
+    <Compile Include="Classes\SQLManager.cs" />
+    <EmbeddedResource Include="Forms\Template\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Card.resx">
+    <EmbeddedResource Include="Forms\Template\Card.resx">
       <DependentUpon>Card.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Menu.resx">
+    <EmbeddedResource Include="Forms\Custom\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Order.resx">
+    <EmbeddedResource Include="Forms\Template\Order.resx">
       <DependentUpon>Order.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Overview.resx">
+    <EmbeddedResource Include="Forms\Custom\Overview.resx">
       <DependentUpon>Overview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Help.resx">
+    <EmbeddedResource Include="Forms\Custom\Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -141,19 +142,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Forms\Staff.resx">
+    <EmbeddedResource Include="Forms\Template\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Stock.resx">
+    <EmbeddedResource Include="Forms\Template\Stock.resx">
       <DependentUpon>Stock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StockOrder.resx">
+    <EmbeddedResource Include="Forms\Template\StockOrder.resx">
       <DependentUpon>StockOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Supplier.resx">
+    <EmbeddedResource Include="Forms\Template\Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Template.resx">
+    <EmbeddedResource Include="Forms\Template\Template.resx">
       <DependentUpon>Template.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -169,9 +170,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Events Unlimited Logo.PNG" />
   </ItemGroup>

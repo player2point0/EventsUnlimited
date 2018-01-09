@@ -64,6 +64,7 @@
             this.BtnClear.TabIndex = 4;
             this.BtnClear.Text = "Clear";
             this.BtnClear.UseVisualStyleBackColor = true;
+            this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // BtnDelete
             // 
@@ -73,6 +74,7 @@
             this.BtnDelete.TabIndex = 3;
             this.BtnDelete.Text = "Delete";
             this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // BtnSave
             // 
@@ -82,6 +84,7 @@
             this.BtnSave.TabIndex = 2;
             this.BtnSave.Text = "Save";
             this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // BtnNew
             // 
@@ -91,6 +94,7 @@
             this.BtnNew.TabIndex = 1;
             this.BtnNew.Text = "New";
             this.BtnNew.UseVisualStyleBackColor = true;
+            this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // BtnEdit
             // 
@@ -100,6 +104,7 @@
             this.BtnEdit.TabIndex = 0;
             this.BtnEdit.Text = "Edit";
             this.BtnEdit.UseVisualStyleBackColor = true;
+            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // PnlNavigation
             // 
@@ -120,6 +125,7 @@
             this.BtnHelp.TabIndex = 4;
             this.BtnHelp.Text = "Help";
             this.BtnHelp.UseVisualStyleBackColor = true;
+            this.BtnHelp.Click += new System.EventHandler(this.BtnHelp_Click);
             // 
             // BtnPrevious
             // 
@@ -129,6 +135,7 @@
             this.BtnPrevious.TabIndex = 3;
             this.BtnPrevious.Text = "Previous";
             this.BtnPrevious.UseVisualStyleBackColor = true;
+            this.BtnPrevious.Click += new System.EventHandler(this.BtnPrevious_Click);
             // 
             // BtnNext
             // 
@@ -138,6 +145,7 @@
             this.BtnNext.TabIndex = 2;
             this.BtnNext.Text = "Next";
             this.BtnNext.UseVisualStyleBackColor = true;
+            this.BtnNext.Click += new System.EventHandler(this.BtnNext_Click);
             // 
             // BtnHome
             // 
@@ -147,6 +155,7 @@
             this.BtnHome.TabIndex = 1;
             this.BtnHome.Text = "Home";
             this.BtnHome.UseVisualStyleBackColor = true;
+            this.BtnHome.Click += new System.EventHandler(this.BtnHome_Click);
             // 
             // LsvMessageBox
             // 

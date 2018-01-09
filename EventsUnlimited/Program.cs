@@ -16,7 +16,12 @@ namespace EventsUnlimited
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu());
+            Application.Run(new FrmMenu());
+        }
+
+        public static string GetConnectionString()
+        {
+            return Properties.Settings.Default.ClientDatabaseConnection;
         }
     }
 }
