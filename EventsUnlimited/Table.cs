@@ -21,8 +21,26 @@ namespace EventsUnlimited
             fields = _fields;
         }
 
-
-
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public string[] PrimaryKeys
+        {
+            get { return primaryKeys; }
+            set { primaryKeys = value; }
+        }
+        public bool CompositeKey
+        {
+            get { return compositeKey; }
+            set { compositeKey = value; }
+        }
+        public string[] Fields
+        {
+            get { return fields; }
+            set { fields = value; }
+        }
 
     }
 }

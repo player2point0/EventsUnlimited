@@ -58,6 +58,7 @@
             this.Controls.Add(this.TbxHelpText);
             this.Controls.Add(this.BtnClose);
             this.Name = "FrmHelp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Help";
             this.ResumeLayout(false);
             this.PerformLayout();

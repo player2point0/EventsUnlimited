@@ -174,6 +174,7 @@
             this.Controls.Add(this.PnlNavigation);
             this.Controls.Add(this.LsvMessageBox);
             this.Name = "FrmTemplate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Template";
             this.Load += new System.EventHandler(this.Template_Load);
             this.PnlEdit.ResumeLayout(false);

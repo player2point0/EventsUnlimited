@@ -11,11 +11,8 @@ namespace EventsUnlimited
 {
     class SQLManager
     {
-        //REPPLACE WITH TABLE CLASS
-        private string table;
+        private Table table;
         private string connection;
-        private string[] fields;
-        private string[] primaryKeys;
 
         private SqlDataAdapter sqlAdapter;
         private SqlCommandBuilder sqlBuilder;
@@ -23,17 +20,15 @@ namespace EventsUnlimited
         private DataTable dataTable;
         private DataRow dataRow;
 
-        public SQLManager(string _table, string[] _fields, string[] _primaryKeys)
+        public SQLManager(string _name, string[] _primaryKeys, string[] _fields)
         {
             connection = Program.GetConnectionString();
-            table = _table;
-            fields = _fields;
-            primaryKeys = _primaryKeys;
+            table = new Table(_name, _primaryKeys, (_primaryKeys.Length > 1), _fields);
         }
 
         public void ReadTable()
         {
-            string sql = @"select * from " + table;
+            string sql = @"select * from " + table.Name;
             sqlAdapter = new SqlDataAdapter(sql, connection);
             sqlBuilder = new SqlCommandBuilder(sqlAdapter);
             dataTable = new DataTable();
@@ -59,70 +54,17 @@ namespace EventsUnlimited
 
             for (int i = 0; i < controls.Length; i++)
             {
-                controls[i].Text = dataRow[fields[i]].ToString();
+                controls[i].Text = dataRow[table.Fields[i]].ToString();
             }
 
             return "";
         }
-
-        public string[] GetData(string[] keys, string[] fields)
-        {
-            string[] output = new string[fields.Length];
-
-            try
-            {
-                dataRow = dataTable.Rows.Find(keys);
-
-                if (dataRow == null) throw new Exception();
-
-                for (int i = 0; i < fields.Length; i++)
-                {
-                    output[i] = dataRow[fields[i]].ToString();
-                }
-
-                return output;
-            }
-
-            catch (Exception)
-            {
-                return output;
-            }
-        }
-
-        public List<string> GetAllData(string field, string condition, string data)
-        {
-            List<string> output = new List<string>();
-
-            for (int i = 0; i < dataTable.Rows.Count; i++)
-            {
-                dataRow = dataTable.Rows[i];
-
-                if (dataRow[field].ToString() == condition)
-                {
-                    output.Add(dataRow[data].ToString());
-                }
-            }
-
-            return output;
-        }
-
-        public void PopulateComboBox(string idField, string dataField, ref ComboBox display)
-        {
-            /*
-            foreach (DataRow dr in dataTable.Rows)
-            {
-                var item = new Container(dr[idField].ToString(), dr[dataField].ToString());
-
-                display.Items.Add(item);
-            }
-            */
-        }
-
-        public string DeleteRow(string[] keys)
+          
+        public string DeleteRow(string[] rowKey)
         {
             try
             {
-                dataRow = dataTable.Rows.Find(keys);
+                dataRow = dataTable.Rows.Find(rowKey);
 
                 if (dataRow == null) throw new Exception("Record not found");
 
@@ -137,43 +79,6 @@ namespace EventsUnlimited
             }
         }
 
-        public string DeleteAllWith(string field, string condition)
-        {
-            //delete any row which has the conditions
-            int num = 0;
-
-            for (int i = 0; i < dataTable.Rows.Count; i++)
-            {
-                dataRow = dataTable.Rows[i];
-
-                if (dataRow[field].ToString() == condition)
-                {
-                    dataRow.Delete();
-                    sqlAdapter.Update(dataTable);
-
-                    num++;
-                }
-            }
-
-            return num + " rows deleted";
-        }
-
-        //TWO ADD ROW METHODS
-        public string AddRow(string[] data)
-        {
-            dataRow = null;
-            dataRow = dataTable.NewRow();
-
-            for (int i = 0; i < data.Length; i++)
-            {
-                dataRow[fields[i]] = data[i];
-            }
-
-            dataTable.Rows.Add(dataRow);
-            sqlAdapter.Update(dataTable);
-
-            return "Record added";
-        }
         public string AddRow(ref Control[] controls)
         {
             dataRow = null;
@@ -185,13 +90,13 @@ namespace EventsUnlimited
             return "Record added";
         }
 
-        public string EditRow(string[] keys, ref Control[] controls)
+        public string EditRow(string[] rowKeys, ref Control[] controls)
         {
             DialogResult edit = MessageBox.Show("Do you want to update the record?", "Edit record", MessageBoxButtons.YesNo);
 
             if (edit == DialogResult.Yes)
             {
-                DeleteRow(keys);
+                DeleteRow(rowKeys);
                 AddRow(ref controls);
                 return "Record Updated";
             }
@@ -202,29 +107,12 @@ namespace EventsUnlimited
         {
             DataRow outputRow = dataTable.NewRow();
 
-            for (int i = 0; i < fields.Length; i++)
+            for (int i = 0; i < table.Fields.Length; i++)
             {
-                outputRow[fields[i]] = controls[i].Text.ToString();
+                outputRow[table.Fields[i]] = controls[i].Text.ToString();
             }
 
             return outputRow;
-        }
-
-        public bool KeyInUse(string[] keys)
-        {
-            try
-            {
-                var temp = dataTable.Rows.Find(keys);
-
-                if (temp == null) throw new Exception();
-
-                return true;
-            }
-
-            catch (Exception)
-            {
-                return false;
-            }
         }
     }
 }

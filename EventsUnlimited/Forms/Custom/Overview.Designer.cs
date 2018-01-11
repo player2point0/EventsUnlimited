@@ -58,6 +58,7 @@
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.listView1);
             this.Name = "LsvDisplay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Overview";
             this.ResumeLayout(false);
 
