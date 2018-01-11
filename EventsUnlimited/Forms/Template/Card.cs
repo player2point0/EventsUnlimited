@@ -12,8 +12,10 @@ namespace EventsUnlimited
 {
     public partial class FrmCard : FrmTemplate
     {
+        private SQLManager sqlManager;
         private int index;
         private Control[] controls;
+
 
         public FrmCard()
         {
@@ -26,7 +28,7 @@ namespace EventsUnlimited
             string[] primaryKeys = new string[] { "CardId" };
             string[] fields = new string[] { "CardId", "CardNumber", "cardExpiryDate", "CardHolderName", "CardSecurityCode" }; 
 
-            SQLManager sqlManager = new SQLManager(name,primaryKeys, fields);
+            sqlManager = new SQLManager(name,primaryKeys, fields);
 
             sqlManager.ReadTable();
 
@@ -58,10 +60,16 @@ namespace EventsUnlimited
 
         protected override void BtnNext_Click(object sender, EventArgs e)
         {
+            index++;
+            string message = sqlManager.ShowTable(ref index, ref controls);
+            Print(message);
         }
 
         protected override void BtnPrevious_Click(object sender, EventArgs e)
         {
+            index--;
+            string message = sqlManager.ShowTable(ref index, ref controls);
+            Print(message);
         }
     }
 }
