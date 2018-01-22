@@ -19,21 +19,20 @@ namespace EventsUnlimited
         public FrmSupplier()
         {
             InitializeComponent();
-        }
 
-        private void FrmSupplier_Load(object sender, EventArgs e)
-        {
             string name = "Supplier";
-            string[] primaryKeys = new string[] { "SupplierId"};
+            string[] primaryKeys = new string[] { "SupplierId" };
             string[] fields = new string[] { "SupplierId", "SupplierName", "SupplierAddress", "SupplierPhoneNumber" };
 
             sqlManager = new SQLManager(name, primaryKeys, fields);
 
-            sqlManager.ReadTable();
-
             index = 0;
-            controls = new Control[] {LblSupplierID, TbxSupplierName, TbxSupplierAddress, TbxSupplierPhoneNumber };
+            controls = new Control[] { LblSupplierID, TbxSupplierName, TbxSupplierAddress, TbxSupplierPhoneNumber };
+        }
 
+        private void FrmSupplier_Load(object sender, EventArgs e)
+        {
+            sqlManager.ReadTable();
             sqlManager.ShowTable(ref index, ref controls);
         }
 

@@ -19,21 +19,20 @@ namespace EventsUnlimited
         public FrmCustomer()
         {
             InitializeComponent();
-        }
 
-        private void FrmCustomer_Load(object sender, EventArgs e)
-        {
             string name = "Customer";
             string[] primaryKeys = new string[] { "CustomerId" };
             string[] fields = new string[] { "CustomerId", "CustomerName", "CustomerAddress", "CustomerPhoneNumber" };
 
             sqlManager = new SQLManager(name, primaryKeys, fields);
 
-            sqlManager.ReadTable();
-
             index = 0;
             controls = new Control[] { LblCustomerID, TbxCustomerName, TbxCustomerAddress, TbxCustomerPhoneNumber };
+        }
 
+        private void FrmCustomer_Load(object sender, EventArgs e)
+        {
+            sqlManager.ReadTable();
             sqlManager.ShowTable(ref index, ref controls);
         }
 

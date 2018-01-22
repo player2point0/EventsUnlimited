@@ -19,21 +19,20 @@ namespace EventsUnlimited
         public FrmStaff()
         {
             InitializeComponent();
+
+            string name = "Staff";
+            string[] primaryKeys = new string[] { "StaffId" };
+            string[] fields = new string[] { "StaffId", "StaffName", "StaffAddress", "StaffPhoneNumber" };
+
+            sqlManager = new SQLManager(name, primaryKeys, fields);
+
+            index = 0;
+            controls = new Control[] { LblStaffID, TbxStaffName, TbxStaffAddress, TbxStaffPhoneNumber };
         }
 
         private void FrmStaff_Load(object sender, EventArgs e)
         {
-            string name = "Staff";
-            string[] primaryKeys = new string[] { "StaffId"};
-            string[] fields = new string[] { "StaffId", "StaffName", "StaffAddress", "StaffPhoneNumber"};
-
-            sqlManager = new SQLManager(name, primaryKeys, fields);
-
             sqlManager.ReadTable();
-
-            index = 0;
-            controls = new Control[] {LblStaffID, TbxStaffName, TbxStaffAddress, TbxStaffPhoneNumber };
-
             sqlManager.ShowTable(ref index, ref controls);
         }
 

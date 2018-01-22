@@ -19,21 +19,20 @@ namespace EventsUnlimited
         public FrmCard()
         {
             InitializeComponent();
-        }
 
-        private void FrmCard_Load(object sender, EventArgs e)
-        {
             string name = "CustomerCard";
             string[] primaryKeys = new string[] { "CardId" };
-            string[] fields = new string[] { "CardId", "CardNumber", "cardExpiryDate", "CardHolderName", "CardSecurityCode" }; 
+            string[] fields = new string[] { "CardId", "CardNumber", "cardExpiryDate", "CardHolderName", "CardSecurityCode" };
 
-            sqlManager = new SQLManager(name,primaryKeys, fields);
-
-            sqlManager.ReadTable();
+            sqlManager = new SQLManager(name, primaryKeys, fields);
 
             index = 0;
             controls = new Control[] { LblCardID, TbxCardNumber, DtpCardExpiryDate, TbxCardHolderName, TbxCardSecurityCode };
+        }
 
+        private void FrmCard_Load(object sender, EventArgs e)
+        {            
+            sqlManager.ReadTable();            
             sqlManager.ShowTable(ref index, ref controls);
         }
 
@@ -41,6 +40,17 @@ namespace EventsUnlimited
         {
             base.BtnEdit_Click(sender, e);
             PnlCardInput.Enabled = !PnlCardInput.Enabled;
+        }
+
+        protected override void BtnSave_Click(object sender, EventArgs e)
+        {
+            //if a new record then use the new primary key
+            //else edit the record
+        }
+
+        protected override void BtnDelete_Click(object sender, EventArgs e)
+        {
+
         }
 
         public void ClearControls()
@@ -54,28 +64,18 @@ namespace EventsUnlimited
         protected override void BtnNew_Click(object sender, EventArgs e)
         {
             ClearControls();
+            //generate a new unique primary key
         }
-
-        protected override void BtnSave_Click(object sender, EventArgs e)
-        {
-        }
-
-        protected override void BtnDelete_Click(object sender, EventArgs e)
-        {
-        }
-
         protected override void BtnClear_Click(object sender, EventArgs e)
         {
             ClearControls();
         }
-
         protected override void BtnNext_Click(object sender, EventArgs e)
         {
             index++;
             string message = sqlManager.ShowTable(ref index, ref controls);
             Print(message);
         }
-
         protected override void BtnPrevious_Click(object sender, EventArgs e)
         {
             index--;
