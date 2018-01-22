@@ -42,8 +42,17 @@ namespace EventsUnlimited
             base.BtnEdit_Click(sender, e);
         }
 
+        public void ClearControls()
+        {
+            foreach (var c in controls)
+            {
+                c.Text = "";
+            }
+        }
+
         protected override void BtnNew_Click(object sender, EventArgs e)
         {
+            ClearControls();
         }
 
         protected override void BtnSave_Click(object sender, EventArgs e)
@@ -56,6 +65,7 @@ namespace EventsUnlimited
 
         protected override void BtnClear_Click(object sender, EventArgs e)
         {
+            ClearControls();
         }
 
         protected override void BtnNext_Click(object sender, EventArgs e)
