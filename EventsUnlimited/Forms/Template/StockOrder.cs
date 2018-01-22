@@ -22,9 +22,9 @@ namespace EventsUnlimited
 
         }
 
-
         protected override void BtnEdit_Click(object sender, EventArgs e)
         {
+            base.BtnEdit_Click(sender, e);
         }
 
         protected override void BtnNew_Click(object sender, EventArgs e)

@@ -46,6 +46,10 @@ namespace EventsUnlimited
 
         protected virtual void BtnEdit_Click(object sender, EventArgs e)
         {
+            BtnNew.Enabled = !BtnNew.Enabled;
+            BtnSave.Enabled = !BtnSave.Enabled;
+            BtnDelete.Enabled = !BtnDelete.Enabled;
+            BtnClear.Enabled = !BtnClear.Enabled;
         }
 
         protected virtual void BtnNew_Click(object sender, EventArgs e)

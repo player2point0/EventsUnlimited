@@ -58,6 +58,7 @@
             // 
             // BtnClear
             // 
+            this.BtnClear.Enabled = false;
             this.BtnClear.Location = new System.Drawing.Point(932, 0);
             this.BtnClear.Name = "BtnClear";
             this.BtnClear.Size = new System.Drawing.Size(233, 145);
@@ -68,6 +69,7 @@
             // 
             // BtnDelete
             // 
+            this.BtnDelete.Enabled = false;
             this.BtnDelete.Location = new System.Drawing.Point(699, 0);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(233, 145);
@@ -78,6 +80,7 @@
             // 
             // BtnSave
             // 
+            this.BtnSave.Enabled = false;
             this.BtnSave.Location = new System.Drawing.Point(466, 0);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(233, 145);
@@ -88,6 +91,7 @@
             // 
             // BtnNew
             // 
+            this.BtnNew.Enabled = false;
             this.BtnNew.Location = new System.Drawing.Point(233, 0);
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(233, 145);
