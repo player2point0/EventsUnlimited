@@ -29,6 +29,7 @@ namespace EventsUnlimited
         protected override void BtnEdit_Click(object sender, EventArgs e)
         {
             base.BtnEdit_Click(sender, e);
+            PnlOrderInput.Enabled = !PnlOrderInput.Enabled;
         }
 
         public void ClearControls()

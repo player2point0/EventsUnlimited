@@ -40,6 +40,7 @@ namespace EventsUnlimited
         protected override void BtnEdit_Click(object sender, EventArgs e)
         {
             base.BtnEdit_Click(sender, e);
+            PnlSupplierInput.Enabled = !PnlSupplierInput.Enabled;
         }
 
         public void ClearControls()
