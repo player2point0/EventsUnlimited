@@ -164,6 +164,7 @@
             this.LsvMessageBox.Size = new System.Drawing.Size(350, 582);
             this.LsvMessageBox.TabIndex = 5;
             this.LsvMessageBox.UseCompatibleStateImageBehavior = false;
+            this.LsvMessageBox.View = System.Windows.Forms.View.Tile;
             // 
             // FrmTemplate
             // 
