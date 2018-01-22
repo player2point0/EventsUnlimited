@@ -114,5 +114,27 @@ namespace EventsUnlimited
 
             return outputRow;
         }
+        //
+        //TEST
+        //
+        public int GenerateNewPrimaryKey()
+        {
+            //generate a random integer
+            int key = GenerateNewPrimaryKey();
+            //check if not in use 
+            while(dataTable.Rows.Find(key) != null)
+            {
+                key = GenerateNewPrimaryKey();
+            }
+            //return
+            return key;
+        }
+        private int GenerateRandomNumber()
+        {
+            //BROKEN
+            Random rdn = new Random();
+            return rdn.Next();
+        }
+
     }
 }

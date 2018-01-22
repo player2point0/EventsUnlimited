@@ -15,6 +15,7 @@ namespace EventsUnlimited
         private SQLManager sqlManager;
         private int index;
         private Control[] controls;
+        private int newPrimaryKey;
 
         public FrmCard()
         {
@@ -27,6 +28,7 @@ namespace EventsUnlimited
             sqlManager = new SQLManager(name, primaryKeys, fields);
 
             index = 0;
+            newPrimaryKey = -1;
             controls = new Control[] { LblCardID, TbxCardNumber, DtpCardExpiryDate, TbxCardHolderName, TbxCardSecurityCode };
         }
 
@@ -45,7 +47,15 @@ namespace EventsUnlimited
         protected override void BtnSave_Click(object sender, EventArgs e)
         {
             //if a new record then use the new primary key
+            if(newPrimaryKey > -1)
+            {
+
+            }
             //else edit the record
+            else
+            {
+
+            }
         }
 
         protected override void BtnDelete_Click(object sender, EventArgs e)
@@ -65,10 +75,13 @@ namespace EventsUnlimited
         {
             ClearControls();
             //generate a new unique primary key
+            newPrimaryKey = sqlManager.GenerateNewPrimaryKey();
+            LblCardID.Text = newPrimaryKey.ToString();
         }
         protected override void BtnClear_Click(object sender, EventArgs e)
         {
             ClearControls();
+            newPrimaryKey = -1;
         }
         protected override void BtnNext_Click(object sender, EventArgs e)
         {
