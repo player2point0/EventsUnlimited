@@ -16,7 +16,6 @@ namespace EventsUnlimited
         private int index;
         private Control[] controls;
 
-
         public FrmCard()
         {
             InitializeComponent();
