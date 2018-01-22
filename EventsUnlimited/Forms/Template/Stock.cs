@@ -12,6 +12,10 @@ namespace EventsUnlimited
 {
     public partial class FrmStock : FrmTemplate
     {
+        private SQLManager sqlManager;
+        private int index;
+        private Control[] controls;
+
         public FrmStock()
         {
             InitializeComponent();
@@ -19,9 +23,19 @@ namespace EventsUnlimited
 
         private void FrmStock_Load(object sender, EventArgs e)
         {
+            string name = "Stock";
+            string[] primaryKeys = new string[] { "StockId" };
+            string[] fields = new string[] { "StockId", "StockName", "StockAmount", "StockCost", "StockShelfLife", "StockDeliveryTime", "SupplierId"};
 
+            sqlManager = new SQLManager(name, primaryKeys, fields);
+
+            sqlManager.ReadTable();
+
+            index = 0;
+            controls = new Control[] { LblStockID, TbxStockName, TbxStockAmount, TbxStockCost, TbxStockShelfLife, TbxStockDeliveryTime, CbxSupplierID};
+
+            sqlManager.ShowTable(ref index, ref controls);
         }
-
 
         protected override void BtnEdit_Click(object sender, EventArgs e)
         {
@@ -45,11 +59,16 @@ namespace EventsUnlimited
 
         protected override void BtnNext_Click(object sender, EventArgs e)
         {
+            index++;
+            string message = sqlManager.ShowTable(ref index, ref controls);
+            Print(message);
         }
 
         protected override void BtnPrevious_Click(object sender, EventArgs e)
         {
+            index--;
+            string message = sqlManager.ShowTable(ref index, ref controls);
+            Print(message);
         }
-
     }
 }
