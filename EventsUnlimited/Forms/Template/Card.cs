@@ -46,21 +46,34 @@ namespace EventsUnlimited
 
         protected override void BtnSave_Click(object sender, EventArgs e)
         {
+            string message;
+
             //if a new record then use the new primary key
             if(newPrimaryKey > -1)
             {
-
+                message = sqlManager.AddRow(ref controls);
+                newPrimaryKey = -1;
             }
             //else edit the record
             else
             {
+                string[] key = new string[] { LblCardID.Text };
 
+                message = sqlManager.EditRow(key, ref controls);
             }
+
+            Print(message);
+
+            sqlManager.ShowLast(ref index, ref controls);
         }
 
         protected override void BtnDelete_Click(object sender, EventArgs e)
         {
+            string currentId = LblCardID.Text;
+            string deleteMessage = sqlManager.DeleteRow(new string[] { currentId });
+            Print(deleteMessage);
 
+            sqlManager.ShowLast(ref index, ref controls);
         }
 
         public void ClearControls()
@@ -69,19 +82,16 @@ namespace EventsUnlimited
             {
                 c.Text = "";
             }
+            newPrimaryKey = sqlManager.GenerateNewPrimaryKey();
+            LblCardID.Text = newPrimaryKey.ToString();
         }
-
         protected override void BtnNew_Click(object sender, EventArgs e)
         {
             ClearControls();
-            //generate a new unique primary key
-            newPrimaryKey = sqlManager.GenerateNewPrimaryKey();
-            LblCardID.Text = newPrimaryKey.ToString();
         }
         protected override void BtnClear_Click(object sender, EventArgs e)
         {
             ClearControls();
-            newPrimaryKey = -1;
         }
         protected override void BtnNext_Click(object sender, EventArgs e)
         {

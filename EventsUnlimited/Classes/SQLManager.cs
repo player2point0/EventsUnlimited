@@ -59,7 +59,13 @@ namespace EventsUnlimited
 
             return "";
         }
-          
+        
+        public void ShowLast(ref int index, ref Control[] controls)
+        {
+            index = dataTable.Rows.Count - 1;
+            ShowTable(ref index, ref controls);
+        }
+
         public string DeleteRow(string[] rowKey)
         {
             try
@@ -114,27 +120,22 @@ namespace EventsUnlimited
 
             return outputRow;
         }
-        //
-        //TEST
-        //
+        
         public int GenerateNewPrimaryKey()
         {
-            //generate a random integer
-            int key = GenerateNewPrimaryKey();
-            //check if not in use 
-            while(dataTable.Rows.Find(key) != null)
-            {
-                key = GenerateNewPrimaryKey();
-            }
-            //return
-            return key;
-        }
-        private int GenerateRandomNumber()
-        {
-            //BROKEN
-            Random rdn = new Random();
-            return rdn.Next();
-        }
+            //NEED A SOLUTION FOR COMPOSITE KEYS
+            
+            List<int> primaryKeys = new List<int>();
 
+            //GENERATE A LIST OF ALL PRIMARY KEYS IN USE
+            foreach(DataRow dr in dataTable.Rows)
+            {
+                primaryKeys.Add((int)dr[table.PrimaryKeys[0]]);
+            }
+            //SORT KEYS 
+            primaryKeys.Sort();
+            //GENERATE NEW KEY BY ADDING ONE TO THE LARGEST KEY
+            return (primaryKeys[primaryKeys.Count - 1] + 1); ;
+        }
     }
 }
