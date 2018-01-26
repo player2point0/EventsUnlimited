@@ -114,7 +114,14 @@
       <DependentUpon>Template.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\SQLManager.cs" />
-    <Compile Include="Table.cs" />
+    <Compile Include="Classes\Table.cs" />
+    <Compile Include="Controls\ValidationTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ValidationTextBox.Designer.cs">
+      <DependentUpon>ValidationTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValidationException.cs" />
     <EmbeddedResource Include="Forms\Template\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +165,9 @@
     <EmbeddedResource Include="Forms\Template\Template.resx">
       <DependentUpon>Template.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ValidationTextBox.resx">
+      <DependentUpon>ValidationTextBox.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -171,7 +181,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Events Unlimited Logo.PNG" />
   </ItemGroup>

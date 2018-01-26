@@ -113,9 +113,17 @@ namespace EventsUnlimited
         {
             DataRow outputRow = dataTable.NewRow();
 
-            for (int i = 0; i < table.Fields.Length; i++)
+            try
             {
-                outputRow[table.Fields[i]] = controls[i].Text.ToString();
+                for (int i = 0; i < table.Fields.Length; i++)
+                {
+                    outputRow[table.Fields[i]] = controls[i].Text.ToString();
+                }
+            }
+
+            catch
+            {
+
             }
 
             return outputRow;

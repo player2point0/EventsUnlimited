@@ -35,11 +35,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.PnlCardLabels = new System.Windows.Forms.Panel();
             this.PnlCardInput = new System.Windows.Forms.Panel();
-            this.TbxCardSecurityCode = new System.Windows.Forms.TextBox();
-            this.TbxCardHolderName = new System.Windows.Forms.TextBox();
+            this.TbxCardNumber = new EventsUnlimited.ValidationTextBox();
             this.DtpCardExpiryDate = new System.Windows.Forms.DateTimePicker();
-            this.TbxCardNumber = new System.Windows.Forms.TextBox();
             this.LblCardID = new System.Windows.Forms.Label();
+            this.TbxCardHolderName = new EventsUnlimited.ValidationTextBox();
+            this.TbxCardSecurityCode = new EventsUnlimited.ValidationTextBox();
             this.PnlCardLabels.SuspendLayout();
             this.PnlCardInput.SuspendLayout();
             this.SuspendLayout();
@@ -105,8 +105,8 @@
             // 
             this.PnlCardInput.Controls.Add(this.TbxCardSecurityCode);
             this.PnlCardInput.Controls.Add(this.TbxCardHolderName);
-            this.PnlCardInput.Controls.Add(this.DtpCardExpiryDate);
             this.PnlCardInput.Controls.Add(this.TbxCardNumber);
+            this.PnlCardInput.Controls.Add(this.DtpCardExpiryDate);
             this.PnlCardInput.Controls.Add(this.LblCardID);
             this.PnlCardInput.Enabled = false;
             this.PnlCardInput.Location = new System.Drawing.Point(517, 176);
@@ -114,42 +114,58 @@
             this.PnlCardInput.Size = new System.Drawing.Size(224, 338);
             this.PnlCardInput.TabIndex = 12;
             // 
-            // TbxCardSecurityCode
+            // TbxCardNumber
             // 
-            this.TbxCardSecurityCode.Location = new System.Drawing.Point(20, 179);
-            this.TbxCardSecurityCode.Name = "TbxCardSecurityCode";
-            this.TbxCardSecurityCode.Size = new System.Drawing.Size(174, 26);
-            this.TbxCardSecurityCode.TabIndex = 4;
-            // 
-            // TbxCardHolderName
-            // 
-            this.TbxCardHolderName.Location = new System.Drawing.Point(20, 137);
-            this.TbxCardHolderName.Name = "TbxCardHolderName";
-            this.TbxCardHolderName.Size = new System.Drawing.Size(174, 26);
-            this.TbxCardHolderName.TabIndex = 3;
+            this.TbxCardNumber.LettersOnly = false;
+            this.TbxCardNumber.Location = new System.Drawing.Point(20, 59);
+            this.TbxCardNumber.MaxSize = 19;
+            this.TbxCardNumber.MinSize = 16;
+            this.TbxCardNumber.Name = "TbxCardNumber";
+            this.TbxCardNumber.NumbersOnly = true;
+            this.TbxCardNumber.Required = true;
+            this.TbxCardNumber.Size = new System.Drawing.Size(174, 26);
+            this.TbxCardNumber.TabIndex = 5;
             // 
             // DtpCardExpiryDate
             // 
             this.DtpCardExpiryDate.Location = new System.Drawing.Point(20, 94);
+            this.DtpCardExpiryDate.MinDate = new System.DateTime(2017, 5, 2, 0, 0, 0, 0);
             this.DtpCardExpiryDate.Name = "DtpCardExpiryDate";
             this.DtpCardExpiryDate.Size = new System.Drawing.Size(174, 26);
             this.DtpCardExpiryDate.TabIndex = 2;
             // 
-            // TbxCardNumber
-            // 
-            this.TbxCardNumber.Location = new System.Drawing.Point(20, 52);
-            this.TbxCardNumber.Name = "TbxCardNumber";
-            this.TbxCardNumber.Size = new System.Drawing.Size(100, 26);
-            this.TbxCardNumber.TabIndex = 1;
-            // 
             // LblCardID
             // 
             this.LblCardID.AutoSize = true;
-            this.LblCardID.Location = new System.Drawing.Point(16, 21);
+            this.LblCardID.Location = new System.Drawing.Point(16, 22);
             this.LblCardID.Name = "LblCardID";
             this.LblCardID.Size = new System.Drawing.Size(60, 20);
             this.LblCardID.TabIndex = 0;
             this.LblCardID.Text = "CardID";
+            // 
+            // TbxCardHolderName
+            // 
+            this.TbxCardHolderName.LettersOnly = true;
+            this.TbxCardHolderName.Location = new System.Drawing.Point(20, 137);
+            this.TbxCardHolderName.MaxSize = 1;
+            this.TbxCardHolderName.MinSize = 100;
+            this.TbxCardHolderName.Name = "TbxCardHolderName";
+            this.TbxCardHolderName.NumbersOnly = false;
+            this.TbxCardHolderName.Required = true;
+            this.TbxCardHolderName.Size = new System.Drawing.Size(174, 26);
+            this.TbxCardHolderName.TabIndex = 6;
+            // 
+            // TbxCardSecurityCode
+            // 
+            this.TbxCardSecurityCode.LettersOnly = false;
+            this.TbxCardSecurityCode.Location = new System.Drawing.Point(20, 179);
+            this.TbxCardSecurityCode.MaxSize = 3;
+            this.TbxCardSecurityCode.MinSize = 3;
+            this.TbxCardSecurityCode.Name = "TbxCardSecurityCode";
+            this.TbxCardSecurityCode.NumbersOnly = true;
+            this.TbxCardSecurityCode.Required = true;
+            this.TbxCardSecurityCode.Size = new System.Drawing.Size(174, 26);
+            this.TbxCardSecurityCode.TabIndex = 7;
             // 
             // FrmCard
             // 
@@ -159,7 +175,7 @@
             this.Controls.Add(this.PnlCardInput);
             this.Controls.Add(this.PnlCardLabels);
             this.Name = "FrmCard";
-            this.Text = "Card";
+            this.Text = "";
             this.Load += new System.EventHandler(this.FrmCard_Load);
             this.Controls.SetChildIndex(this.PnlCardLabels, 0);
             this.Controls.SetChildIndex(this.PnlCardInput, 0);
@@ -180,10 +196,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel PnlCardLabels;
         private System.Windows.Forms.Panel PnlCardInput;
-        private System.Windows.Forms.TextBox TbxCardSecurityCode;
-        private System.Windows.Forms.TextBox TbxCardHolderName;
         private System.Windows.Forms.DateTimePicker DtpCardExpiryDate;
-        private System.Windows.Forms.TextBox TbxCardNumber;
         private System.Windows.Forms.Label LblCardID;
+        private ValidationTextBox TbxCardNumber;
+        private ValidationTextBox TbxCardHolderName;
+        private ValidationTextBox TbxCardSecurityCode;
     }
 }
