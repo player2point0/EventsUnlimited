@@ -34,10 +34,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PnlCustomerInput = new System.Windows.Forms.Panel();
-            this.TbxCustomerPhoneNumber = new System.Windows.Forms.TextBox();
-            this.TbxCustomerAddress = new System.Windows.Forms.TextBox();
-            this.TbxCustomerName = new System.Windows.Forms.TextBox();
             this.LblCustomerID = new System.Windows.Forms.Label();
+            this.TbxCustomerName = new EventsUnlimited.ValidationTextBox();
+            this.TbxCustomerAddress = new EventsUnlimited.ValidationTextBox();
+            this.TbxCustomerPhoneNumber = new EventsUnlimited.ValidationTextBox();
             this.PnlCustomerLabels.SuspendLayout();
             this.PnlCustomerInput.SuspendLayout();
             this.SuspendLayout();
@@ -100,27 +100,6 @@
             this.PnlCustomerInput.Size = new System.Drawing.Size(220, 375);
             this.PnlCustomerInput.TabIndex = 7;
             // 
-            // TbxCustomerPhoneNumber
-            // 
-            this.TbxCustomerPhoneNumber.Location = new System.Drawing.Point(26, 174);
-            this.TbxCustomerPhoneNumber.Name = "TbxCustomerPhoneNumber";
-            this.TbxCustomerPhoneNumber.Size = new System.Drawing.Size(168, 26);
-            this.TbxCustomerPhoneNumber.TabIndex = 4;
-            // 
-            // TbxCustomerAddress
-            // 
-            this.TbxCustomerAddress.Location = new System.Drawing.Point(21, 126);
-            this.TbxCustomerAddress.Name = "TbxCustomerAddress";
-            this.TbxCustomerAddress.Size = new System.Drawing.Size(168, 26);
-            this.TbxCustomerAddress.TabIndex = 3;
-            // 
-            // TbxCustomerName
-            // 
-            this.TbxCustomerName.Location = new System.Drawing.Point(21, 63);
-            this.TbxCustomerName.Name = "TbxCustomerName";
-            this.TbxCustomerName.Size = new System.Drawing.Size(168, 26);
-            this.TbxCustomerName.TabIndex = 2;
-            // 
             // LblCustomerID
             // 
             this.LblCustomerID.AutoSize = true;
@@ -129,6 +108,42 @@
             this.LblCustomerID.Size = new System.Drawing.Size(99, 20);
             this.LblCustomerID.TabIndex = 1;
             this.LblCustomerID.Text = "Customer ID";
+            // 
+            // TbxCustomerName
+            // 
+            this.TbxCustomerName.LettersOnly = true;
+            this.TbxCustomerName.Location = new System.Drawing.Point(21, 70);
+            this.TbxCustomerName.MaxSize = 100;
+            this.TbxCustomerName.MinSize = 1;
+            this.TbxCustomerName.Name = "TbxCustomerName";
+            this.TbxCustomerName.NumbersOnly = false;
+            this.TbxCustomerName.Required = true;
+            this.TbxCustomerName.Size = new System.Drawing.Size(173, 26);
+            this.TbxCustomerName.TabIndex = 5;
+            // 
+            // TbxCustomerAddress
+            // 
+            this.TbxCustomerAddress.LettersOnly = false;
+            this.TbxCustomerAddress.Location = new System.Drawing.Point(21, 122);
+            this.TbxCustomerAddress.MaxSize = 100;
+            this.TbxCustomerAddress.MinSize = 1;
+            this.TbxCustomerAddress.Name = "TbxCustomerAddress";
+            this.TbxCustomerAddress.NumbersOnly = false;
+            this.TbxCustomerAddress.Required = true;
+            this.TbxCustomerAddress.Size = new System.Drawing.Size(173, 26);
+            this.TbxCustomerAddress.TabIndex = 6;
+            // 
+            // TbxCustomerPhoneNumber
+            // 
+            this.TbxCustomerPhoneNumber.LettersOnly = false;
+            this.TbxCustomerPhoneNumber.Location = new System.Drawing.Point(21, 170);
+            this.TbxCustomerPhoneNumber.MaxSize = 15;
+            this.TbxCustomerPhoneNumber.MinSize = 9;
+            this.TbxCustomerPhoneNumber.Name = "TbxCustomerPhoneNumber";
+            this.TbxCustomerPhoneNumber.NumbersOnly = true;
+            this.TbxCustomerPhoneNumber.Required = true;
+            this.TbxCustomerPhoneNumber.Size = new System.Drawing.Size(173, 26);
+            this.TbxCustomerPhoneNumber.TabIndex = 7;
             // 
             // FrmCustomer
             // 
@@ -158,9 +173,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel PnlCustomerInput;
-        private System.Windows.Forms.TextBox TbxCustomerPhoneNumber;
-        private System.Windows.Forms.TextBox TbxCustomerAddress;
-        private System.Windows.Forms.TextBox TbxCustomerName;
         private System.Windows.Forms.Label LblCustomerID;
+        private ValidationTextBox TbxCustomerName;
+        private ValidationTextBox TbxCustomerAddress;
+        private ValidationTextBox TbxCustomerPhoneNumber;
     }
 }

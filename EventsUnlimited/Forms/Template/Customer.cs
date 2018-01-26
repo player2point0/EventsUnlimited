@@ -27,7 +27,7 @@ namespace EventsUnlimited
             sqlManager = new SQLManager(name, primaryKeys, fields);
 
             index = 0;
-            controls = new Control[] { LblCustomerID, TbxCustomerName, TbxCustomerAddress, TbxCustomerPhoneNumber };
+            controls = new Control[] { LblCustomerID, TbxCustomerName, a, TbxCustomerPhoneNumber };
         }
 
         private void FrmCustomer_Load(object sender, EventArgs e)

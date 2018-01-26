@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.PnlOrderLabels = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -39,20 +40,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PnlOrderInput = new System.Windows.Forms.Panel();
+            this.NudStockQuantity = new System.Windows.Forms.NumericUpDown();
             this.BtnOverview = new System.Windows.Forms.Button();
             this.TbxOrderNotes = new System.Windows.Forms.TextBox();
             this.BtnRemoveStock = new System.Windows.Forms.Button();
             this.BtnAddStock = new System.Windows.Forms.Button();
             this.CbxStock = new System.Windows.Forms.ComboBox();
             this.DtpOrderDate = new System.Windows.Forms.DateTimePicker();
-            this.TbxOrderAddress = new System.Windows.Forms.TextBox();
             this.CbxOrderPaid = new System.Windows.Forms.CheckBox();
             this.CbxCardID = new System.Windows.Forms.ComboBox();
             this.CbxCustomerID = new System.Windows.Forms.ComboBox();
             this.CbxStaffID = new System.Windows.Forms.ComboBox();
             this.LblOrderID = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.NudStockQuantity = new System.Windows.Forms.NumericUpDown();
+            this.TbxOrderAddress = new EventsUnlimited.ValidationTextBox();
             this.PnlOrderLabels.SuspendLayout();
             this.PnlOrderInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudStockQuantity)).BeginInit();
@@ -74,6 +74,15 @@
             this.PnlOrderLabels.Name = "PnlOrderLabels";
             this.PnlOrderLabels.Size = new System.Drawing.Size(245, 498);
             this.PnlOrderLabels.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(22, 313);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(113, 20);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Stock Quantity";
             // 
             // label9
             // 
@@ -158,6 +167,7 @@
             // 
             // PnlOrderInput
             // 
+            this.PnlOrderInput.Controls.Add(this.TbxOrderAddress);
             this.PnlOrderInput.Controls.Add(this.NudStockQuantity);
             this.PnlOrderInput.Controls.Add(this.BtnOverview);
             this.PnlOrderInput.Controls.Add(this.TbxOrderNotes);
@@ -165,7 +175,6 @@
             this.PnlOrderInput.Controls.Add(this.BtnAddStock);
             this.PnlOrderInput.Controls.Add(this.CbxStock);
             this.PnlOrderInput.Controls.Add(this.DtpOrderDate);
-            this.PnlOrderInput.Controls.Add(this.TbxOrderAddress);
             this.PnlOrderInput.Controls.Add(this.CbxOrderPaid);
             this.PnlOrderInput.Controls.Add(this.CbxCardID);
             this.PnlOrderInput.Controls.Add(this.CbxCustomerID);
@@ -175,6 +184,13 @@
             this.PnlOrderInput.Name = "PnlOrderInput";
             this.PnlOrderInput.Size = new System.Drawing.Size(264, 557);
             this.PnlOrderInput.TabIndex = 7;
+            // 
+            // NudStockQuantity
+            // 
+            this.NudStockQuantity.Location = new System.Drawing.Point(31, 307);
+            this.NudStockQuantity.Name = "NudStockQuantity";
+            this.NudStockQuantity.Size = new System.Drawing.Size(120, 26);
+            this.NudStockQuantity.TabIndex = 12;
             // 
             // BtnOverview
             // 
@@ -226,21 +242,13 @@
             this.DtpOrderDate.Size = new System.Drawing.Size(200, 26);
             this.DtpOrderDate.TabIndex = 6;
             // 
-            // TbxOrderAddress
-            // 
-            this.TbxOrderAddress.Location = new System.Drawing.Point(30, 186);
-            this.TbxOrderAddress.Name = "TbxOrderAddress";
-            this.TbxOrderAddress.Size = new System.Drawing.Size(161, 26);
-            this.TbxOrderAddress.TabIndex = 5;
-            // 
             // CbxOrderPaid
             // 
             this.CbxOrderPaid.AutoSize = true;
-            this.CbxOrderPaid.Location = new System.Drawing.Point(30, 145);
+            this.CbxOrderPaid.Location = new System.Drawing.Point(31, 149);
             this.CbxOrderPaid.Name = "CbxOrderPaid";
-            this.CbxOrderPaid.Size = new System.Drawing.Size(113, 24);
+            this.CbxOrderPaid.Size = new System.Drawing.Size(22, 21);
             this.CbxOrderPaid.TabIndex = 4;
-            this.CbxOrderPaid.Text = "checkBox1";
             this.CbxOrderPaid.UseVisualStyleBackColor = true;
             // 
             // CbxCardID
@@ -276,21 +284,17 @@
             this.LblOrderID.TabIndex = 0;
             this.LblOrderID.Text = "Order ID";
             // 
-            // label10
+            // TbxOrderAddress
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(22, 313);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(113, 20);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Stock Quantity";
-            // 
-            // NudStockQuantity
-            // 
-            this.NudStockQuantity.Location = new System.Drawing.Point(31, 307);
-            this.NudStockQuantity.Name = "NudStockQuantity";
-            this.NudStockQuantity.Size = new System.Drawing.Size(120, 26);
-            this.NudStockQuantity.TabIndex = 12;
+            this.TbxOrderAddress.LettersOnly = false;
+            this.TbxOrderAddress.Location = new System.Drawing.Point(30, 186);
+            this.TbxOrderAddress.MaxSize = 100;
+            this.TbxOrderAddress.MinSize = 1;
+            this.TbxOrderAddress.Name = "TbxOrderAddress";
+            this.TbxOrderAddress.NumbersOnly = false;
+            this.TbxOrderAddress.Required = true;
+            this.TbxOrderAddress.Size = new System.Drawing.Size(121, 26);
+            this.TbxOrderAddress.TabIndex = 13;
             // 
             // FrmOrder
             // 
@@ -332,7 +336,6 @@
         private System.Windows.Forms.Button BtnAddStock;
         private System.Windows.Forms.ComboBox CbxStock;
         private System.Windows.Forms.DateTimePicker DtpOrderDate;
-        private System.Windows.Forms.TextBox TbxOrderAddress;
         private System.Windows.Forms.CheckBox CbxOrderPaid;
         private System.Windows.Forms.ComboBox CbxCardID;
         private System.Windows.Forms.ComboBox CbxCustomerID;
@@ -340,5 +343,6 @@
         private System.Windows.Forms.Label LblOrderID;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown NudStockQuantity;
+        private ValidationTextBox TbxOrderAddress;
     }
 }

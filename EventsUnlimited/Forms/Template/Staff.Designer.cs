@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.PnlStaffLabels = new System.Windows.Forms.Panel();
-            this.PnlStaffInput = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.PnlStaffInput = new System.Windows.Forms.Panel();
             this.LblStaffID = new System.Windows.Forms.Label();
-            this.TbxStaffName = new System.Windows.Forms.TextBox();
-            this.TbxStaffAddress = new System.Windows.Forms.TextBox();
-            this.TbxStaffPhoneNumber = new System.Windows.Forms.TextBox();
+            this.TbxStaffName = new EventsUnlimited.ValidationTextBox();
+            this.TbxStaffAddress = new EventsUnlimited.ValidationTextBox();
+            this.TbxStaffPhoneNumber = new EventsUnlimited.ValidationTextBox();
             this.PnlStaffLabels.SuspendLayout();
             this.PnlStaffInput.SuspendLayout();
             this.SuspendLayout();
@@ -53,34 +53,14 @@
             this.PnlStaffLabels.Size = new System.Drawing.Size(240, 368);
             this.PnlStaffLabels.TabIndex = 6;
             // 
-            // PnlStaffInput
+            // label4
             // 
-            this.PnlStaffInput.Controls.Add(this.TbxStaffPhoneNumber);
-            this.PnlStaffInput.Controls.Add(this.TbxStaffAddress);
-            this.PnlStaffInput.Controls.Add(this.TbxStaffName);
-            this.PnlStaffInput.Controls.Add(this.LblStaffID);
-            this.PnlStaffInput.Location = new System.Drawing.Point(526, 169);
-            this.PnlStaffInput.Name = "PnlStaffInput";
-            this.PnlStaffInput.Size = new System.Drawing.Size(264, 374);
-            this.PnlStaffInput.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Staff ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Staff Name";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 159);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(154, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Staff Phone Number";
             // 
             // label3
             // 
@@ -91,14 +71,34 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Staff Address";
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 159);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Staff Phone Number";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Staff Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Staff ID";
+            // 
+            // PnlStaffInput
+            // 
+            this.PnlStaffInput.Controls.Add(this.TbxStaffPhoneNumber);
+            this.PnlStaffInput.Controls.Add(this.TbxStaffAddress);
+            this.PnlStaffInput.Controls.Add(this.TbxStaffName);
+            this.PnlStaffInput.Controls.Add(this.LblStaffID);
+            this.PnlStaffInput.Location = new System.Drawing.Point(526, 169);
+            this.PnlStaffInput.Name = "PnlStaffInput";
+            this.PnlStaffInput.Size = new System.Drawing.Size(264, 374);
+            this.PnlStaffInput.TabIndex = 7;
             // 
             // LblStaffID
             // 
@@ -111,24 +111,39 @@
             // 
             // TbxStaffName
             // 
+            this.TbxStaffName.LettersOnly = true;
             this.TbxStaffName.Location = new System.Drawing.Point(30, 61);
+            this.TbxStaffName.MaxSize = 100;
+            this.TbxStaffName.MinSize = 1;
             this.TbxStaffName.Name = "TbxStaffName";
+            this.TbxStaffName.NumbersOnly = false;
+            this.TbxStaffName.Required = true;
             this.TbxStaffName.Size = new System.Drawing.Size(100, 26);
-            this.TbxStaffName.TabIndex = 1;
+            this.TbxStaffName.TabIndex = 4;
             // 
             // TbxStaffAddress
             // 
+            this.TbxStaffAddress.LettersOnly = false;
             this.TbxStaffAddress.Location = new System.Drawing.Point(30, 104);
+            this.TbxStaffAddress.MaxSize = 100;
+            this.TbxStaffAddress.MinSize = 1;
             this.TbxStaffAddress.Name = "TbxStaffAddress";
+            this.TbxStaffAddress.NumbersOnly = false;
+            this.TbxStaffAddress.Required = true;
             this.TbxStaffAddress.Size = new System.Drawing.Size(100, 26);
-            this.TbxStaffAddress.TabIndex = 2;
+            this.TbxStaffAddress.TabIndex = 5;
             // 
             // TbxStaffPhoneNumber
             // 
+            this.TbxStaffPhoneNumber.LettersOnly = false;
             this.TbxStaffPhoneNumber.Location = new System.Drawing.Point(30, 159);
+            this.TbxStaffPhoneNumber.MaxSize = 15;
+            this.TbxStaffPhoneNumber.MinSize = 9;
             this.TbxStaffPhoneNumber.Name = "TbxStaffPhoneNumber";
+            this.TbxStaffPhoneNumber.NumbersOnly = true;
+            this.TbxStaffPhoneNumber.Required = true;
             this.TbxStaffPhoneNumber.Size = new System.Drawing.Size(100, 26);
-            this.TbxStaffPhoneNumber.TabIndex = 3;
+            this.TbxStaffPhoneNumber.TabIndex = 6;
             // 
             // FrmStaff
             // 
@@ -158,9 +173,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel PnlStaffInput;
-        private System.Windows.Forms.TextBox TbxStaffPhoneNumber;
-        private System.Windows.Forms.TextBox TbxStaffAddress;
-        private System.Windows.Forms.TextBox TbxStaffName;
         private System.Windows.Forms.Label LblStaffID;
+        private ValidationTextBox TbxStaffName;
+        private ValidationTextBox TbxStaffAddress;
+        private ValidationTextBox TbxStaffPhoneNumber;
     }
 }

@@ -121,7 +121,7 @@
     <Compile Include="Controls\ValidationTextBox.Designer.cs">
       <DependentUpon>ValidationTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="ValidationException.cs" />
+    <Compile Include="Exceptions\ValidationException.cs" />
     <EmbeddedResource Include="Forms\Template\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,9 +181,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Exceptions\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Events Unlimited Logo.PNG" />
   </ItemGroup>

@@ -34,10 +34,10 @@
             this.Label3 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
             this.PnlSupplierInput = new System.Windows.Forms.Panel();
-            this.TbxSupplierPhoneNumber = new System.Windows.Forms.TextBox();
-            this.TbxSupplierAddress = new System.Windows.Forms.TextBox();
-            this.TbxSupplierName = new System.Windows.Forms.TextBox();
             this.LblSupplierID = new System.Windows.Forms.Label();
+            this.TbxSupplierName = new EventsUnlimited.ValidationTextBox();
+            this.TbxSupplierAddress = new EventsUnlimited.ValidationTextBox();
+            this.TbxSupplierPhoneNumber = new EventsUnlimited.ValidationTextBox();
             this.PnlSupplierLabels.SuspendLayout();
             this.PnlSupplierInput.SuspendLayout();
             this.SuspendLayout();
@@ -100,27 +100,6 @@
             this.PnlSupplierInput.Size = new System.Drawing.Size(261, 439);
             this.PnlSupplierInput.TabIndex = 7;
             // 
-            // TbxSupplierPhoneNumber
-            // 
-            this.TbxSupplierPhoneNumber.Location = new System.Drawing.Point(36, 157);
-            this.TbxSupplierPhoneNumber.Name = "TbxSupplierPhoneNumber";
-            this.TbxSupplierPhoneNumber.Size = new System.Drawing.Size(100, 26);
-            this.TbxSupplierPhoneNumber.TabIndex = 4;
-            // 
-            // TbxSupplierAddress
-            // 
-            this.TbxSupplierAddress.Location = new System.Drawing.Point(36, 112);
-            this.TbxSupplierAddress.Name = "TbxSupplierAddress";
-            this.TbxSupplierAddress.Size = new System.Drawing.Size(100, 26);
-            this.TbxSupplierAddress.TabIndex = 3;
-            // 
-            // TbxSupplierName
-            // 
-            this.TbxSupplierName.Location = new System.Drawing.Point(36, 56);
-            this.TbxSupplierName.Name = "TbxSupplierName";
-            this.TbxSupplierName.Size = new System.Drawing.Size(100, 26);
-            this.TbxSupplierName.TabIndex = 2;
-            // 
             // LblSupplierID
             // 
             this.LblSupplierID.AutoSize = true;
@@ -129,6 +108,42 @@
             this.LblSupplierID.Size = new System.Drawing.Size(88, 20);
             this.LblSupplierID.TabIndex = 1;
             this.LblSupplierID.Text = "Supplier ID";
+            // 
+            // TbxSupplierName
+            // 
+            this.TbxSupplierName.LettersOnly = true;
+            this.TbxSupplierName.Location = new System.Drawing.Point(36, 56);
+            this.TbxSupplierName.MaxSize = 100;
+            this.TbxSupplierName.MinSize = 1;
+            this.TbxSupplierName.Name = "TbxSupplierName";
+            this.TbxSupplierName.NumbersOnly = false;
+            this.TbxSupplierName.Required = true;
+            this.TbxSupplierName.Size = new System.Drawing.Size(100, 26);
+            this.TbxSupplierName.TabIndex = 5;
+            // 
+            // TbxSupplierAddress
+            // 
+            this.TbxSupplierAddress.LettersOnly = false;
+            this.TbxSupplierAddress.Location = new System.Drawing.Point(36, 112);
+            this.TbxSupplierAddress.MaxSize = 100;
+            this.TbxSupplierAddress.MinSize = 1;
+            this.TbxSupplierAddress.Name = "TbxSupplierAddress";
+            this.TbxSupplierAddress.NumbersOnly = false;
+            this.TbxSupplierAddress.Required = true;
+            this.TbxSupplierAddress.Size = new System.Drawing.Size(100, 26);
+            this.TbxSupplierAddress.TabIndex = 6;
+            // 
+            // TbxSupplierPhoneNumber
+            // 
+            this.TbxSupplierPhoneNumber.LettersOnly = false;
+            this.TbxSupplierPhoneNumber.Location = new System.Drawing.Point(36, 157);
+            this.TbxSupplierPhoneNumber.MaxSize = 15;
+            this.TbxSupplierPhoneNumber.MinSize = 9;
+            this.TbxSupplierPhoneNumber.Name = "TbxSupplierPhoneNumber";
+            this.TbxSupplierPhoneNumber.NumbersOnly = true;
+            this.TbxSupplierPhoneNumber.Required = true;
+            this.TbxSupplierPhoneNumber.Size = new System.Drawing.Size(100, 26);
+            this.TbxSupplierPhoneNumber.TabIndex = 7;
             // 
             // FrmSupplier
             // 
@@ -158,9 +173,9 @@
         private System.Windows.Forms.Label Label3;
         private System.Windows.Forms.Label Label2;
         private System.Windows.Forms.Panel PnlSupplierInput;
-        private System.Windows.Forms.TextBox TbxSupplierPhoneNumber;
-        private System.Windows.Forms.TextBox TbxSupplierAddress;
-        private System.Windows.Forms.TextBox TbxSupplierName;
         private System.Windows.Forms.Label LblSupplierID;
+        private ValidationTextBox TbxSupplierName;
+        private ValidationTextBox TbxSupplierPhoneNumber;
+        private ValidationTextBox TbxSupplierAddress;
     }
 }
