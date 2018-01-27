@@ -60,10 +60,9 @@ namespace EventsUnlimited
             return "";
         }
         
-        public void ShowLast(ref int index, ref Control[] controls)
+        public void SetLastIndex(ref int index)
         {
             index = dataTable.Rows.Count - 1;
-            ShowTable(ref index, ref controls);
         }
 
         public string DeleteRow(string[] rowKey)
@@ -87,8 +86,28 @@ namespace EventsUnlimited
 
         public string AddRow(ref Control[] controls)
         {
-            dataRow = null;
-            dataRow = GetRow(ref controls);
+            dataRow = dataTable.NewRow();
+
+            try
+            {
+                for (int i = 0; i < table.Fields.Length; i++)
+                {
+                    if(controls[i] is ValidationTextBox)
+                    {
+                        dataRow[table.Fields[i]] = controls[i].ToString();
+                    }
+
+                    else
+                    {
+                        dataRow[table.Fields[i]] = controls[i].Text.ToString();
+                    }
+                }
+            }
+                
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
 
             dataTable.Rows.Add(dataRow);
             sqlAdapter.Update(dataTable);
@@ -107,26 +126,6 @@ namespace EventsUnlimited
                 return "Record Updated";
             }
             return "";
-        }
-
-        private DataRow GetRow(ref Control[] controls)
-        {
-            DataRow outputRow = dataTable.NewRow();
-
-            try
-            {
-                for (int i = 0; i < table.Fields.Length; i++)
-                {
-                    outputRow[table.Fields[i]] = controls[i].Text.ToString();
-                }
-            }
-
-            catch
-            {
-
-            }
-
-            return outputRow;
         }
         
         public int GenerateNewPrimaryKey()

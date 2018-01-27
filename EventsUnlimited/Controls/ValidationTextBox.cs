@@ -17,6 +17,7 @@ namespace EventsUnlimited
         private bool required;
         private bool lettersOnly;
         private bool numbersOnly;
+        private string field;
         //private string regEx;
 
         public ValidationTextBox()
@@ -54,25 +55,31 @@ namespace EventsUnlimited
             get { return numbersOnly; }
             set { numbersOnly = value; }
         }
+        [Category("Validation")]
+        public string Field
+        {
+            get { return field; }
+            set { field = value; }
+        }
 
         public override string ToString()
         {
-            string text = base.ToString();
+            string text = base.Text;
 
-            //size check
-            if(text.Length > maxSize)
+            //required check
+            if (required && text == "")
             {
-                throw new ValidationException();
+                throw new ValidationException("Required field", field);
+            }
+            //size check
+            if (text.Length > maxSize)
+            {
+                throw new ValidationException("Must be less than " + maxSize + " characters", text);
             }
             if(text.Length < minSize)
             {
-                throw new ValidationException();
-            }
-            //required check
-            if(required && text == "")
-            {
-                throw new ValidationException();
-            }
+                throw new ValidationException("Must be more than "+minSize+ " characters", text);
+            }    
             //letters check
             if(lettersOnly)
             {    

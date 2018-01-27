@@ -23,5 +23,10 @@ namespace EventsUnlimited
         {
             return Properties.Settings.Default.ClientDatabaseConnection;
         }
+
+        public static void Log(string message)
+        {
+            System.Diagnostics.Debug.WriteLine(message);
+        }
     }
 }

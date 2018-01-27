@@ -116,6 +116,7 @@
             // 
             // TbxCardSecurityCode
             // 
+            this.TbxCardSecurityCode.Field = "Card Security Code";
             this.TbxCardSecurityCode.LettersOnly = false;
             this.TbxCardSecurityCode.Location = new System.Drawing.Point(20, 179);
             this.TbxCardSecurityCode.MaxSize = 3;
@@ -128,6 +129,7 @@
             // 
             // TbxCardHolderName
             // 
+            this.TbxCardHolderName.Field = "Card Holder\'s Name";
             this.TbxCardHolderName.LettersOnly = true;
             this.TbxCardHolderName.Location = new System.Drawing.Point(20, 137);
             this.TbxCardHolderName.MaxSize = 100;
@@ -140,6 +142,7 @@
             // 
             // TbxCardNumber
             // 
+            this.TbxCardNumber.Field = "Card Number";
             this.TbxCardNumber.LettersOnly = false;
             this.TbxCardNumber.Location = new System.Drawing.Point(20, 59);
             this.TbxCardNumber.MaxSize = 19;

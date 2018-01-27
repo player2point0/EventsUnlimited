@@ -52,7 +52,6 @@ namespace EventsUnlimited
             if(newPrimaryKey > -1)
             {
                 message = sqlManager.AddRow(ref controls);
-                newPrimaryKey = -1;
             }
             //else edit the record
             else
@@ -63,8 +62,6 @@ namespace EventsUnlimited
             }
 
             Print(message);
-
-            sqlManager.ShowLast(ref index, ref controls);
         }
 
         protected override void BtnDelete_Click(object sender, EventArgs e)
@@ -73,7 +70,8 @@ namespace EventsUnlimited
             string deleteMessage = sqlManager.DeleteRow(new string[] { currentId });
             Print(deleteMessage);
 
-            sqlManager.ShowLast(ref index, ref controls);
+            sqlManager.SetLastIndex(ref index);
+            sqlManager.ShowTable(ref index, ref controls);
         }
 
         public void ClearControls()
@@ -84,6 +82,7 @@ namespace EventsUnlimited
             }
             newPrimaryKey = sqlManager.GenerateNewPrimaryKey();
             LblCardID.Text = newPrimaryKey.ToString();
+            sqlManager.SetLastIndex(ref index);
         }
         protected override void BtnNew_Click(object sender, EventArgs e)
         {

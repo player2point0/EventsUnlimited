@@ -77,7 +77,6 @@ namespace EventsUnlimited
 
             Print(message);
 
-            sqlManager.ShowLast(ref index, ref controls);
         }
 
         protected override void BtnDelete_Click(object sender, EventArgs e)
@@ -86,7 +85,6 @@ namespace EventsUnlimited
             string deleteMessage = sqlManager.DeleteRow(new string[] { currentId });
             Print(deleteMessage);
 
-            sqlManager.ShowLast(ref index, ref controls);
         }
 
         protected override void BtnClear_Click(object sender, EventArgs e)
