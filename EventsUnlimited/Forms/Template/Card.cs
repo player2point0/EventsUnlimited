@@ -31,7 +31,6 @@ namespace EventsUnlimited
             newPrimaryKey = -1;
             controls = new Control[] { LblCardID, TbxCardNumber, DtpCardExpiryDate, TbxCardHolderName, TbxCardSecurityCode };
         }
-
         private void FrmCard_Load(object sender, EventArgs e)
         {            
             sqlManager.ReadTable();            
@@ -43,7 +42,6 @@ namespace EventsUnlimited
             base.BtnEdit_Click(sender, e);
             PnlCardInput.Enabled = !PnlCardInput.Enabled;
         }
-
         protected override void BtnSave_Click(object sender, EventArgs e)
         {
             string message;
@@ -63,7 +61,6 @@ namespace EventsUnlimited
 
             Print(message);
         }
-
         protected override void BtnDelete_Click(object sender, EventArgs e)
         {
             string currentId = LblCardID.Text;

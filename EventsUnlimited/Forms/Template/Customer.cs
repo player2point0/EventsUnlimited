@@ -31,31 +31,16 @@ namespace EventsUnlimited
             newPrimaryKey = -1;
             controls = new Control[] { LblCustomerID, TbxCustomerName, TbxCustomerAddress, TbxCustomerPhoneNumber };
         }
-
         private void FrmCustomer_Load(object sender, EventArgs e)
         {
             sqlManager.ReadTable();
             sqlManager.ShowTable(ref index, ref controls);
         }
 
-        public void ClearControls()
-        {
-            foreach (var c in controls)
-            {
-                c.Text = "";
-            }
-
-            newPrimaryKey = sqlManager.GenerateNewPrimaryKey();
-            LblCustomerID.Text = newPrimaryKey.ToString();
-        }
         protected override void BtnEdit_Click(object sender, EventArgs e)
         {
             base.BtnEdit_Click(sender, e);
             PnlCustomerInput.Enabled = !PnlCustomerInput.Enabled;
-        }
-        protected override void BtnNew_Click(object sender, EventArgs e)
-        {
-            ClearControls();
         }
         protected override void BtnSave_Click(object sender, EventArgs e)
         {
@@ -78,7 +63,6 @@ namespace EventsUnlimited
             Print(message);
 
         }
-
         protected override void BtnDelete_Click(object sender, EventArgs e)
         {
             string currentId = LblCustomerID.Text;
@@ -87,6 +71,21 @@ namespace EventsUnlimited
 
         }
 
+        public void ClearControls()
+        {
+            foreach (var c in controls)
+            {
+                c.Text = "";
+            }
+
+            newPrimaryKey = sqlManager.GenerateNewPrimaryKey();
+            LblCustomerID.Text = newPrimaryKey.ToString();
+            sqlManager.SetLastIndex(ref index);
+        }
+        protected override void BtnNew_Click(object sender, EventArgs e)
+        {
+            ClearControls();
+        }
         protected override void BtnClear_Click(object sender, EventArgs e)
         {
             ClearControls();
