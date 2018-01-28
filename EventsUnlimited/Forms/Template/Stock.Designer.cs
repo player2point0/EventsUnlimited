@@ -230,7 +230,6 @@
             this.Controls.Add(this.PnlStockLabels);
             this.Name = "FrmStock";
             this.Text = "Stock";
-            this.Load += new System.EventHandler(this.FrmStock_Load);
             this.Controls.SetChildIndex(this.PnlStockLabels, 0);
             this.Controls.SetChildIndex(this.PnlStockInput, 0);
             this.PnlStockLabels.ResumeLayout(false);

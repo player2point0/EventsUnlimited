@@ -157,7 +157,6 @@
             this.Controls.Add(this.PnlSupplierLabels);
             this.Name = "FrmSupplier";
             this.Text = "Supplier";
-            this.Load += new System.EventHandler(this.FrmSupplier_Load);
             this.Controls.SetChildIndex(this.PnlSupplierLabels, 0);
             this.Controls.SetChildIndex(this.PnlSupplierInput, 0);
             this.PnlSupplierLabels.ResumeLayout(false);

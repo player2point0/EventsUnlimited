@@ -12,10 +12,6 @@ namespace EventsUnlimited
 {
     public partial class FrmSupplier : FrmTemplate
     {
-        private SQLManager sqlManager;
-        private int index;
-        private Control[] controls;
-
         public FrmSupplier()
         {
             InitializeComponent();
@@ -23,63 +19,15 @@ namespace EventsUnlimited
             string name = "Supplier";
             string[] primaryKeys = new string[] { "SupplierId" };
             string[] fields = new string[] { "SupplierId", "SupplierName", "SupplierAddress", "SupplierPhoneNumber" };
+            Control[] controls = new Control[] { LblSupplierID, TbxSupplierName, TbxSupplierAddress, TbxSupplierPhoneNumber };
 
-            sqlManager = new SQLManager(name, primaryKeys, fields);
-
-            index = 0;
-            controls = new Control[] { LblSupplierID, TbxSupplierName, TbxSupplierAddress, TbxSupplierPhoneNumber };
-        }
-
-        private void FrmSupplier_Load(object sender, EventArgs e)
-        {
-            sqlManager.ReadTable();
-            sqlManager.ShowTable(ref index, ref controls);
+            base.Initialise(name, primaryKeys, fields, controls);
         }
 
         protected override void BtnEdit_Click(object sender, EventArgs e)
         {
             base.BtnEdit_Click(sender, e);
             PnlSupplierInput.Enabled = !PnlSupplierInput.Enabled;
-        }
-
-        public void ClearControls()
-        {
-            foreach (var c in controls)
-            {
-                c.Text = "";
-            }
-        }
-
-        protected override void BtnNew_Click(object sender, EventArgs e)
-        {
-            ClearControls();
-        }
-
-        protected override void BtnSave_Click(object sender, EventArgs e)
-        {
-        }
-
-        protected override void BtnDelete_Click(object sender, EventArgs e)
-        {
-        }
-
-        protected override void BtnClear_Click(object sender, EventArgs e)
-        {
-            ClearControls();
-        }
-
-        protected override void BtnNext_Click(object sender, EventArgs e)
-        {
-            index++;
-            string message = sqlManager.ShowTable(ref index, ref controls);
-            Print(message);
-        }
-
-        protected override void BtnPrevious_Click(object sender, EventArgs e)
-        {
-            index--;
-            string message = sqlManager.ShowTable(ref index, ref controls);
-            Print(message);
         }
     }
 }

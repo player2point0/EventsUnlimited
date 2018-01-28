@@ -14,15 +14,14 @@ namespace EventsUnlimited
     {
         public FrmCard()
         {
-            //NOT THE MOST READABLE WAY
             InitializeComponent();
 
             string name = "CustomerCard";
-            string[] primaryKey = new string[] { "CardId" };
+            string[] primaryKeys = new string[] { "CardId" };
             string[] fields = new string[] { "CardId", "CardNumber", "cardExpiryDate", "CardHolderName", "CardSecurityCode" };
             Control[] controls = new Control[] { LblCardID, TbxCardNumber, DtpCardExpiryDate, TbxCardHolderName, TbxCardSecurityCode };
 
-            base.Initialise(name, primaryKey, fields, controls);
+            base.Initialise(name, primaryKeys, fields, controls);
         }
 
         protected override void BtnEdit_Click(object sender, EventArgs e)

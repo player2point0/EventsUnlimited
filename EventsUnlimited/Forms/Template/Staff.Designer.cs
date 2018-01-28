@@ -157,7 +157,6 @@
             this.Controls.Add(this.PnlStaffLabels);
             this.Name = "FrmStaff";
             this.Text = "Staff";
-            this.Load += new System.EventHandler(this.FrmStaff_Load);
             this.Controls.SetChildIndex(this.PnlStaffLabels, 0);
             this.Controls.SetChildIndex(this.PnlStaffInput, 0);
             this.PnlStaffLabels.ResumeLayout(false);

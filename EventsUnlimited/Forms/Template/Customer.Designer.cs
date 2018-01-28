@@ -157,7 +157,6 @@
             this.Controls.Add(this.PnlCustomerLabels);
             this.Name = "FrmCustomer";
             this.Text = "Customer";
-            this.Load += new System.EventHandler(this.FrmCustomer_Load);
             this.Controls.SetChildIndex(this.PnlCustomerLabels, 0);
             this.Controls.SetChildIndex(this.PnlCustomerInput, 0);
             this.PnlCustomerLabels.ResumeLayout(false);

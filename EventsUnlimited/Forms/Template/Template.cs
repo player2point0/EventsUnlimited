@@ -22,17 +22,19 @@ namespace EventsUnlimited
             InitializeComponent();
         }
 
+        private void Template_Load(object sender, EventArgs e)
+        {
+            //CAUSED THE object reference not set to an instance of an object PROBLEM
+            this.Height = 550;//NEED TO FIX SCALE PROBLEM
+        }
+
         public void Initialise(string _name, string[] _primaryKeys, string[] _fields, Control[] _controls)
         {
             sqlManager = new SQLManager(_name, _primaryKeys, _fields);
             controls = _controls;
             index = 0;
             newPrimaryKey = -1;
-        }
 
-        private void Template_Load(object sender, EventArgs e)
-        {
-            this.Height = 550;//NEED TO FIX SCALE PROBLEM
             sqlManager.ReadTable();
             sqlManager.ShowTable(ref index, ref controls);
         }
