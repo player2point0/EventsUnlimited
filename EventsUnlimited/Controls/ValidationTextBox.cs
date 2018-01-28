@@ -72,23 +72,35 @@ namespace EventsUnlimited
                 throw new ValidationException("Required field", field);
             }
             //size check
-            if (text.Length > maxSize)
+            if (text.Length > maxSize || text.Length < minSize)
             {
-                throw new ValidationException("Must be less than " + maxSize + " characters", text);
-            }
-            if(text.Length < minSize)
-            {
-                throw new ValidationException("Must be more than "+minSize+ " characters", text);
-            }    
+                throw new ValidationException("Must be between " + minSize + " and "+ maxSize + " characters" , text);
+            }  
             //letters check
             if(lettersOnly)
-            {    
+            {
+                foreach (char c in text)
+                {
+                    if (c == ' ') continue;
 
+                    if (!char.IsLetter(c))
+                    {
+                        throw new ValidationException("Letters only", text);
+                    }
+                }
             }
             //number check
             if(numbersOnly)
             {
+                foreach(char c in text)
+                {
+                    if (c == ' ') continue;
 
+                    if(!char.IsNumber(c))
+                    {
+                        throw new ValidationException("Numbers only", text);
+                    }
+                }
             }
 
             return text; 
