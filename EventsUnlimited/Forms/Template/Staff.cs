@@ -21,7 +21,7 @@ namespace EventsUnlimited
             string[] fields = new string[] { "StaffId", "StaffName", "StaffAddress", "StaffPhoneNumber" };
             Control[] controls = new Control[] { LblStaffID, TbxStaffName, TbxStaffAddress, TbxStaffPhoneNumber };
 
-            base.Initialise(name, primaryKeys, fields, controls);
+            base.Initialise(name, primaryKeys, fields, controls, "StaffHelp.txt");
         }
 
         protected override void BtnEdit_Click(object sender, EventArgs e)

@@ -16,6 +16,7 @@ namespace EventsUnlimited
         private int index;
         private Control[] controls;
         public int newPrimaryKey;
+        private string helpFileName;
 
         public FrmTemplate()
         {
@@ -28,7 +29,7 @@ namespace EventsUnlimited
             this.Height = 550;//NEED TO FIX SCALE PROBLEM
         }
 
-        public void Initialise(string _name, string[] _primaryKeys, string[] _fields, Control[] _controls)
+        public void Initialise(string _name, string[] _primaryKeys, string[] _fields, Control[] _controls, string _helpFileName)
         {
             sqlManager = new SQLManager(_name, _primaryKeys, _fields);
             controls = _controls;
@@ -37,6 +38,8 @@ namespace EventsUnlimited
 
             sqlManager.ReadTable();
             sqlManager.ShowTable(ref index, ref controls);
+
+            helpFileName = _helpFileName;
         }
 
         public void Print(string message)
@@ -56,7 +59,7 @@ namespace EventsUnlimited
         }
         private void BtnHelp_Click(object sender, EventArgs e)
         {
-            FrmHelp Help = new FrmHelp();
+            FrmHelp Help = new FrmHelp(helpFileName);
             Help.Show();
         }
         protected virtual void BtnEdit_Click(object sender, EventArgs e)

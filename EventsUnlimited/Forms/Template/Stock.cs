@@ -21,7 +21,7 @@ namespace EventsUnlimited
             string[] fields = new string[] { "StockId", "StockName", "StockAmount", "StockCost", "StockShelfLife", "StockDeliveryTime", "SupplierId" };
             Control[] controls = new Control[] { LblStockID, TbxStockName, TbxStockAmount, TbxStockCost, TbxStockShelfLife, TbxStockDeliveryTime, CbxSupplierID };
 
-            base.Initialise(name, primaryKeys, fields, controls);
+            base.Initialise(name, primaryKeys, fields, controls, "StockHelp.txt");
         }
 
         protected override void BtnEdit_Click(object sender, EventArgs e)

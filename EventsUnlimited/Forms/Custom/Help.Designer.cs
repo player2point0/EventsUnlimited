@@ -60,6 +60,7 @@
             this.Name = "FrmHelp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Help";
+            this.Load += new System.EventHandler(this.FrmHelp_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

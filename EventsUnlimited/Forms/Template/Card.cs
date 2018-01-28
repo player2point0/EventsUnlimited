@@ -21,7 +21,7 @@ namespace EventsUnlimited
             string[] fields = new string[] { "CardId", "CardNumber", "cardExpiryDate", "CardHolderName", "CardSecurityCode" };
             Control[] controls = new Control[] { LblCardID, TbxCardNumber, DtpCardExpiryDate, TbxCardHolderName, TbxCardSecurityCode };
 
-            base.Initialise(name, primaryKeys, fields, controls);
+            base.Initialise(name, primaryKeys, fields, controls, "CardHelp.txt");
         }
 
         protected override void BtnEdit_Click(object sender, EventArgs e)
