@@ -69,8 +69,7 @@ namespace EventsUnlimited
             string currentId = LblCardID.Text;
             string deleteMessage = sqlManager.DeleteRow(new string[] { currentId });
             Print(deleteMessage);
-
-            sqlManager.SetLastIndex(ref index);
+            index--;
             sqlManager.ShowTable(ref index, ref controls);
         }
 

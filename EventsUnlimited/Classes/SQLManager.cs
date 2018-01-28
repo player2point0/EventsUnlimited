@@ -52,6 +52,8 @@ namespace EventsUnlimited
 
             dataRow = dataTable.Rows[index];
 
+            Program.Log(dataRow.ToString());
+
             for (int i = 0; i < controls.Length; i++)
             {
                 controls[i].Text = dataRow[table.Fields[i]].ToString();
@@ -67,12 +69,11 @@ namespace EventsUnlimited
 
         public string DeleteRow(string[] rowKey)
         {
+            dataRow = dataTable.Rows.Find(rowKey);
+            DataRow copy = dataRow;
+
             try
             {
-                dataRow = dataTable.Rows.Find(rowKey);
-
-                if (dataRow == null) throw new Exception("Record not found");
-
                 dataRow.Delete();
                 sqlAdapter.Update(dataTable);
                 return "Record deleted";
@@ -80,7 +81,10 @@ namespace EventsUnlimited
 
             catch (Exception e)
             {
-                return e.ToString();
+                MessageBox.Show("Can't delete record as it is used in another table");
+                dataRow = copy;
+                ReadTable();
+                return "Not deleted";
             }
         }
 
