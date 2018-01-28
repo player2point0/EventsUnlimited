@@ -179,7 +179,6 @@
             this.Controls.Add(this.PnlCardLabels);
             this.Name = "FrmCard";
             this.Text = "";
-            this.Load += new System.EventHandler(this.FrmCard_Load);
             this.Controls.SetChildIndex(this.PnlCardLabels, 0);
             this.Controls.SetChildIndex(this.PnlCardInput, 0);
             this.PnlCardLabels.ResumeLayout(false);
