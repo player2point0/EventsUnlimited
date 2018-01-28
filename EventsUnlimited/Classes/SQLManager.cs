@@ -79,7 +79,7 @@ namespace EventsUnlimited
                 return "Record deleted";
             }
 
-            catch (Exception e)
+            catch
             {
                 MessageBox.Show("Can't delete record as it is used in another table");
                 dataRow = copy;

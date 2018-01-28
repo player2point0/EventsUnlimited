@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PnlOrderInput = new System.Windows.Forms.Panel();
+            this.TbxOrderAddress = new EventsUnlimited.ValidationTextBox();
             this.NudStockQuantity = new System.Windows.Forms.NumericUpDown();
             this.BtnOverview = new System.Windows.Forms.Button();
             this.TbxOrderNotes = new System.Windows.Forms.TextBox();
@@ -52,7 +53,6 @@
             this.CbxCustomerID = new System.Windows.Forms.ComboBox();
             this.CbxStaffID = new System.Windows.Forms.ComboBox();
             this.LblOrderID = new System.Windows.Forms.Label();
-            this.TbxOrderAddress = new EventsUnlimited.ValidationTextBox();
             this.PnlOrderLabels.SuspendLayout();
             this.PnlOrderInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudStockQuantity)).BeginInit();
@@ -185,6 +185,19 @@
             this.PnlOrderInput.Size = new System.Drawing.Size(264, 557);
             this.PnlOrderInput.TabIndex = 7;
             // 
+            // TbxOrderAddress
+            // 
+            this.TbxOrderAddress.Field = "Order Address";
+            this.TbxOrderAddress.LettersOnly = false;
+            this.TbxOrderAddress.Location = new System.Drawing.Point(30, 186);
+            this.TbxOrderAddress.MaxSize = 100;
+            this.TbxOrderAddress.MinSize = 1;
+            this.TbxOrderAddress.Name = "TbxOrderAddress";
+            this.TbxOrderAddress.NumbersOnly = false;
+            this.TbxOrderAddress.Required = true;
+            this.TbxOrderAddress.Size = new System.Drawing.Size(121, 26);
+            this.TbxOrderAddress.TabIndex = 13;
+            // 
             // NudStockQuantity
             // 
             this.NudStockQuantity.Location = new System.Drawing.Point(31, 307);
@@ -283,18 +296,6 @@
             this.LblOrderID.Size = new System.Drawing.Size(70, 20);
             this.LblOrderID.TabIndex = 0;
             this.LblOrderID.Text = "Order ID";
-            // 
-            // TbxOrderAddress
-            // 
-            this.TbxOrderAddress.LettersOnly = false;
-            this.TbxOrderAddress.Location = new System.Drawing.Point(30, 186);
-            this.TbxOrderAddress.MaxSize = 100;
-            this.TbxOrderAddress.MinSize = 1;
-            this.TbxOrderAddress.Name = "TbxOrderAddress";
-            this.TbxOrderAddress.NumbersOnly = false;
-            this.TbxOrderAddress.Required = true;
-            this.TbxOrderAddress.Size = new System.Drawing.Size(121, 26);
-            this.TbxOrderAddress.TabIndex = 13;
             // 
             // FrmOrder
             // 

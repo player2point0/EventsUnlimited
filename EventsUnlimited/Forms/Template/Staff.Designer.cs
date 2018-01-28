@@ -34,10 +34,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PnlStaffInput = new System.Windows.Forms.Panel();
-            this.LblStaffID = new System.Windows.Forms.Label();
-            this.TbxStaffName = new EventsUnlimited.ValidationTextBox();
-            this.TbxStaffAddress = new EventsUnlimited.ValidationTextBox();
             this.TbxStaffPhoneNumber = new EventsUnlimited.ValidationTextBox();
+            this.TbxStaffAddress = new EventsUnlimited.ValidationTextBox();
+            this.TbxStaffName = new EventsUnlimited.ValidationTextBox();
+            this.LblStaffID = new System.Windows.Forms.Label();
             this.PnlStaffLabels.SuspendLayout();
             this.PnlStaffInput.SuspendLayout();
             this.SuspendLayout();
@@ -100,29 +100,22 @@
             this.PnlStaffInput.Size = new System.Drawing.Size(264, 374);
             this.PnlStaffInput.TabIndex = 7;
             // 
-            // LblStaffID
+            // TbxStaffPhoneNumber
             // 
-            this.LblStaffID.AutoSize = true;
-            this.LblStaffID.Location = new System.Drawing.Point(26, 20);
-            this.LblStaffID.Name = "LblStaffID";
-            this.LblStaffID.Size = new System.Drawing.Size(65, 20);
-            this.LblStaffID.TabIndex = 0;
-            this.LblStaffID.Text = "Staff ID";
-            // 
-            // TbxStaffName
-            // 
-            this.TbxStaffName.LettersOnly = true;
-            this.TbxStaffName.Location = new System.Drawing.Point(30, 61);
-            this.TbxStaffName.MaxSize = 100;
-            this.TbxStaffName.MinSize = 1;
-            this.TbxStaffName.Name = "TbxStaffName";
-            this.TbxStaffName.NumbersOnly = false;
-            this.TbxStaffName.Required = true;
-            this.TbxStaffName.Size = new System.Drawing.Size(100, 26);
-            this.TbxStaffName.TabIndex = 4;
+            this.TbxStaffPhoneNumber.Field = "Staff Phone Number";
+            this.TbxStaffPhoneNumber.LettersOnly = false;
+            this.TbxStaffPhoneNumber.Location = new System.Drawing.Point(30, 159);
+            this.TbxStaffPhoneNumber.MaxSize = 15;
+            this.TbxStaffPhoneNumber.MinSize = 9;
+            this.TbxStaffPhoneNumber.Name = "TbxStaffPhoneNumber";
+            this.TbxStaffPhoneNumber.NumbersOnly = true;
+            this.TbxStaffPhoneNumber.Required = true;
+            this.TbxStaffPhoneNumber.Size = new System.Drawing.Size(100, 26);
+            this.TbxStaffPhoneNumber.TabIndex = 6;
             // 
             // TbxStaffAddress
             // 
+            this.TbxStaffAddress.Field = "Staff Address";
             this.TbxStaffAddress.LettersOnly = false;
             this.TbxStaffAddress.Location = new System.Drawing.Point(30, 104);
             this.TbxStaffAddress.MaxSize = 100;
@@ -133,17 +126,27 @@
             this.TbxStaffAddress.Size = new System.Drawing.Size(100, 26);
             this.TbxStaffAddress.TabIndex = 5;
             // 
-            // TbxStaffPhoneNumber
+            // TbxStaffName
             // 
-            this.TbxStaffPhoneNumber.LettersOnly = false;
-            this.TbxStaffPhoneNumber.Location = new System.Drawing.Point(30, 159);
-            this.TbxStaffPhoneNumber.MaxSize = 15;
-            this.TbxStaffPhoneNumber.MinSize = 9;
-            this.TbxStaffPhoneNumber.Name = "TbxStaffPhoneNumber";
-            this.TbxStaffPhoneNumber.NumbersOnly = true;
-            this.TbxStaffPhoneNumber.Required = true;
-            this.TbxStaffPhoneNumber.Size = new System.Drawing.Size(100, 26);
-            this.TbxStaffPhoneNumber.TabIndex = 6;
+            this.TbxStaffName.Field = "Staff Name";
+            this.TbxStaffName.LettersOnly = true;
+            this.TbxStaffName.Location = new System.Drawing.Point(30, 61);
+            this.TbxStaffName.MaxSize = 100;
+            this.TbxStaffName.MinSize = 1;
+            this.TbxStaffName.Name = "TbxStaffName";
+            this.TbxStaffName.NumbersOnly = false;
+            this.TbxStaffName.Required = true;
+            this.TbxStaffName.Size = new System.Drawing.Size(100, 26);
+            this.TbxStaffName.TabIndex = 4;
+            // 
+            // LblStaffID
+            // 
+            this.LblStaffID.AutoSize = true;
+            this.LblStaffID.Location = new System.Drawing.Point(26, 20);
+            this.LblStaffID.Name = "LblStaffID";
+            this.LblStaffID.Size = new System.Drawing.Size(65, 20);
+            this.LblStaffID.TabIndex = 0;
+            this.LblStaffID.Text = "Staff ID";
             // 
             // FrmStaff
             // 

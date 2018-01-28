@@ -37,13 +37,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PnlStockInput = new System.Windows.Forms.Panel();
+            this.TbxStockDeliveryTime = new EventsUnlimited.ValidationTextBox();
+            this.TbxStockShelfLife = new EventsUnlimited.ValidationTextBox();
+            this.TbxStockCost = new EventsUnlimited.ValidationTextBox();
+            this.TbxStockAmount = new EventsUnlimited.ValidationTextBox();
+            this.TbxStockName = new EventsUnlimited.ValidationTextBox();
             this.CbxSupplierID = new System.Windows.Forms.ComboBox();
             this.LblStockID = new System.Windows.Forms.Label();
-            this.TbxStockName = new EventsUnlimited.ValidationTextBox();
-            this.TbxStockAmount = new EventsUnlimited.ValidationTextBox();
-            this.TbxStockCost = new EventsUnlimited.ValidationTextBox();
-            this.TbxStockShelfLife = new EventsUnlimited.ValidationTextBox();
-            this.TbxStockDeliveryTime = new EventsUnlimited.ValidationTextBox();
             this.PnlStockLabels.SuspendLayout();
             this.PnlStockInput.SuspendLayout();
             this.SuspendLayout();
@@ -139,6 +139,71 @@
             this.PnlStockInput.Size = new System.Drawing.Size(254, 409);
             this.PnlStockInput.TabIndex = 7;
             // 
+            // TbxStockDeliveryTime
+            // 
+            this.TbxStockDeliveryTime.Field = "Stock Delivery Time";
+            this.TbxStockDeliveryTime.LettersOnly = false;
+            this.TbxStockDeliveryTime.Location = new System.Drawing.Point(23, 244);
+            this.TbxStockDeliveryTime.MaxSize = 100;
+            this.TbxStockDeliveryTime.MinSize = 1;
+            this.TbxStockDeliveryTime.Name = "TbxStockDeliveryTime";
+            this.TbxStockDeliveryTime.NumbersOnly = false;
+            this.TbxStockDeliveryTime.Required = true;
+            this.TbxStockDeliveryTime.Size = new System.Drawing.Size(100, 26);
+            this.TbxStockDeliveryTime.TabIndex = 11;
+            // 
+            // TbxStockShelfLife
+            // 
+            this.TbxStockShelfLife.Field = "Stock Shelf Life";
+            this.TbxStockShelfLife.LettersOnly = false;
+            this.TbxStockShelfLife.Location = new System.Drawing.Point(23, 203);
+            this.TbxStockShelfLife.MaxSize = 100;
+            this.TbxStockShelfLife.MinSize = 1;
+            this.TbxStockShelfLife.Name = "TbxStockShelfLife";
+            this.TbxStockShelfLife.NumbersOnly = false;
+            this.TbxStockShelfLife.Required = true;
+            this.TbxStockShelfLife.Size = new System.Drawing.Size(100, 26);
+            this.TbxStockShelfLife.TabIndex = 10;
+            // 
+            // TbxStockCost
+            // 
+            this.TbxStockCost.Field = "Stock Cost";
+            this.TbxStockCost.LettersOnly = false;
+            this.TbxStockCost.Location = new System.Drawing.Point(23, 155);
+            this.TbxStockCost.MaxSize = 100;
+            this.TbxStockCost.MinSize = 1;
+            this.TbxStockCost.Name = "TbxStockCost";
+            this.TbxStockCost.NumbersOnly = true;
+            this.TbxStockCost.Required = true;
+            this.TbxStockCost.Size = new System.Drawing.Size(100, 26);
+            this.TbxStockCost.TabIndex = 9;
+            // 
+            // TbxStockAmount
+            // 
+            this.TbxStockAmount.Field = "Stock Amount";
+            this.TbxStockAmount.LettersOnly = false;
+            this.TbxStockAmount.Location = new System.Drawing.Point(23, 103);
+            this.TbxStockAmount.MaxSize = 100;
+            this.TbxStockAmount.MinSize = 1;
+            this.TbxStockAmount.Name = "TbxStockAmount";
+            this.TbxStockAmount.NumbersOnly = false;
+            this.TbxStockAmount.Required = true;
+            this.TbxStockAmount.Size = new System.Drawing.Size(100, 26);
+            this.TbxStockAmount.TabIndex = 8;
+            // 
+            // TbxStockName
+            // 
+            this.TbxStockName.Field = "Stock Name";
+            this.TbxStockName.LettersOnly = true;
+            this.TbxStockName.Location = new System.Drawing.Point(23, 68);
+            this.TbxStockName.MaxSize = 100;
+            this.TbxStockName.MinSize = 1;
+            this.TbxStockName.Name = "TbxStockName";
+            this.TbxStockName.NumbersOnly = false;
+            this.TbxStockName.Required = true;
+            this.TbxStockName.Size = new System.Drawing.Size(100, 26);
+            this.TbxStockName.TabIndex = 7;
+            // 
             // CbxSupplierID
             // 
             this.CbxSupplierID.FormattingEnabled = true;
@@ -155,66 +220,6 @@
             this.LblStockID.Size = new System.Drawing.Size(71, 20);
             this.LblStockID.TabIndex = 0;
             this.LblStockID.Text = "Stock ID";
-            // 
-            // TbxStockName
-            // 
-            this.TbxStockName.LettersOnly = true;
-            this.TbxStockName.Location = new System.Drawing.Point(23, 68);
-            this.TbxStockName.MaxSize = 100;
-            this.TbxStockName.MinSize = 1;
-            this.TbxStockName.Name = "TbxStockName";
-            this.TbxStockName.NumbersOnly = false;
-            this.TbxStockName.Required = true;
-            this.TbxStockName.Size = new System.Drawing.Size(100, 26);
-            this.TbxStockName.TabIndex = 7;
-            // 
-            // TbxStockAmount
-            // 
-            this.TbxStockAmount.LettersOnly = false;
-            this.TbxStockAmount.Location = new System.Drawing.Point(23, 103);
-            this.TbxStockAmount.MaxSize = 100;
-            this.TbxStockAmount.MinSize = 1;
-            this.TbxStockAmount.Name = "TbxStockAmount";
-            this.TbxStockAmount.NumbersOnly = false;
-            this.TbxStockAmount.Required = true;
-            this.TbxStockAmount.Size = new System.Drawing.Size(100, 26);
-            this.TbxStockAmount.TabIndex = 8;
-            // 
-            // TbxStockCost
-            // 
-            this.TbxStockCost.LettersOnly = false;
-            this.TbxStockCost.Location = new System.Drawing.Point(23, 155);
-            this.TbxStockCost.MaxSize = 100;
-            this.TbxStockCost.MinSize = 1;
-            this.TbxStockCost.Name = "TbxStockCost";
-            this.TbxStockCost.NumbersOnly = true;
-            this.TbxStockCost.Required = true;
-            this.TbxStockCost.Size = new System.Drawing.Size(100, 26);
-            this.TbxStockCost.TabIndex = 9;
-            // 
-            // TbxStockShelfLife
-            // 
-            this.TbxStockShelfLife.LettersOnly = false;
-            this.TbxStockShelfLife.Location = new System.Drawing.Point(23, 203);
-            this.TbxStockShelfLife.MaxSize = 100;
-            this.TbxStockShelfLife.MinSize = 1;
-            this.TbxStockShelfLife.Name = "TbxStockShelfLife";
-            this.TbxStockShelfLife.NumbersOnly = false;
-            this.TbxStockShelfLife.Required = true;
-            this.TbxStockShelfLife.Size = new System.Drawing.Size(100, 26);
-            this.TbxStockShelfLife.TabIndex = 10;
-            // 
-            // TbxStockDeliveryTime
-            // 
-            this.TbxStockDeliveryTime.LettersOnly = false;
-            this.TbxStockDeliveryTime.Location = new System.Drawing.Point(23, 244);
-            this.TbxStockDeliveryTime.MaxSize = 100;
-            this.TbxStockDeliveryTime.MinSize = 1;
-            this.TbxStockDeliveryTime.Name = "TbxStockDeliveryTime";
-            this.TbxStockDeliveryTime.NumbersOnly = false;
-            this.TbxStockDeliveryTime.Required = true;
-            this.TbxStockDeliveryTime.Size = new System.Drawing.Size(100, 26);
-            this.TbxStockDeliveryTime.TabIndex = 11;
             // 
             // FrmStock
             // 

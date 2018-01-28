@@ -34,10 +34,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PnlCustomerInput = new System.Windows.Forms.Panel();
-            this.LblCustomerID = new System.Windows.Forms.Label();
-            this.TbxCustomerName = new EventsUnlimited.ValidationTextBox();
-            this.TbxCustomerAddress = new EventsUnlimited.ValidationTextBox();
             this.TbxCustomerPhoneNumber = new EventsUnlimited.ValidationTextBox();
+            this.TbxCustomerAddress = new EventsUnlimited.ValidationTextBox();
+            this.TbxCustomerName = new EventsUnlimited.ValidationTextBox();
+            this.LblCustomerID = new System.Windows.Forms.Label();
             this.PnlCustomerLabels.SuspendLayout();
             this.PnlCustomerInput.SuspendLayout();
             this.SuspendLayout();
@@ -100,29 +100,22 @@
             this.PnlCustomerInput.Size = new System.Drawing.Size(220, 375);
             this.PnlCustomerInput.TabIndex = 7;
             // 
-            // LblCustomerID
+            // TbxCustomerPhoneNumber
             // 
-            this.LblCustomerID.AutoSize = true;
-            this.LblCustomerID.Location = new System.Drawing.Point(31, 14);
-            this.LblCustomerID.Name = "LblCustomerID";
-            this.LblCustomerID.Size = new System.Drawing.Size(99, 20);
-            this.LblCustomerID.TabIndex = 1;
-            this.LblCustomerID.Text = "Customer ID";
-            // 
-            // TbxCustomerName
-            // 
-            this.TbxCustomerName.LettersOnly = true;
-            this.TbxCustomerName.Location = new System.Drawing.Point(21, 70);
-            this.TbxCustomerName.MaxSize = 100;
-            this.TbxCustomerName.MinSize = 1;
-            this.TbxCustomerName.Name = "TbxCustomerName";
-            this.TbxCustomerName.NumbersOnly = false;
-            this.TbxCustomerName.Required = true;
-            this.TbxCustomerName.Size = new System.Drawing.Size(173, 26);
-            this.TbxCustomerName.TabIndex = 5;
+            this.TbxCustomerPhoneNumber.Field = "Customer Phone Number";
+            this.TbxCustomerPhoneNumber.LettersOnly = false;
+            this.TbxCustomerPhoneNumber.Location = new System.Drawing.Point(21, 170);
+            this.TbxCustomerPhoneNumber.MaxSize = 15;
+            this.TbxCustomerPhoneNumber.MinSize = 9;
+            this.TbxCustomerPhoneNumber.Name = "TbxCustomerPhoneNumber";
+            this.TbxCustomerPhoneNumber.NumbersOnly = true;
+            this.TbxCustomerPhoneNumber.Required = true;
+            this.TbxCustomerPhoneNumber.Size = new System.Drawing.Size(173, 26);
+            this.TbxCustomerPhoneNumber.TabIndex = 7;
             // 
             // TbxCustomerAddress
             // 
+            this.TbxCustomerAddress.Field = "Customer Address";
             this.TbxCustomerAddress.LettersOnly = false;
             this.TbxCustomerAddress.Location = new System.Drawing.Point(21, 122);
             this.TbxCustomerAddress.MaxSize = 100;
@@ -133,17 +126,27 @@
             this.TbxCustomerAddress.Size = new System.Drawing.Size(173, 26);
             this.TbxCustomerAddress.TabIndex = 6;
             // 
-            // TbxCustomerPhoneNumber
+            // TbxCustomerName
             // 
-            this.TbxCustomerPhoneNumber.LettersOnly = false;
-            this.TbxCustomerPhoneNumber.Location = new System.Drawing.Point(21, 170);
-            this.TbxCustomerPhoneNumber.MaxSize = 15;
-            this.TbxCustomerPhoneNumber.MinSize = 9;
-            this.TbxCustomerPhoneNumber.Name = "TbxCustomerPhoneNumber";
-            this.TbxCustomerPhoneNumber.NumbersOnly = true;
-            this.TbxCustomerPhoneNumber.Required = true;
-            this.TbxCustomerPhoneNumber.Size = new System.Drawing.Size(173, 26);
-            this.TbxCustomerPhoneNumber.TabIndex = 7;
+            this.TbxCustomerName.Field = "Customer Name";
+            this.TbxCustomerName.LettersOnly = true;
+            this.TbxCustomerName.Location = new System.Drawing.Point(21, 70);
+            this.TbxCustomerName.MaxSize = 100;
+            this.TbxCustomerName.MinSize = 1;
+            this.TbxCustomerName.Name = "TbxCustomerName";
+            this.TbxCustomerName.NumbersOnly = false;
+            this.TbxCustomerName.Required = true;
+            this.TbxCustomerName.Size = new System.Drawing.Size(173, 26);
+            this.TbxCustomerName.TabIndex = 5;
+            // 
+            // LblCustomerID
+            // 
+            this.LblCustomerID.AutoSize = true;
+            this.LblCustomerID.Location = new System.Drawing.Point(31, 14);
+            this.LblCustomerID.Name = "LblCustomerID";
+            this.LblCustomerID.Size = new System.Drawing.Size(99, 20);
+            this.LblCustomerID.TabIndex = 1;
+            this.LblCustomerID.Text = "Customer ID";
             // 
             // FrmCustomer
             // 
