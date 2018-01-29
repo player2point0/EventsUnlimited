@@ -19,7 +19,7 @@ namespace EventsUnlimited
             string name = "Stock";
             string[] primaryKeys = new string[] { "StockId" };
             string[] fields = new string[] { "StockId", "StockName", "StockAmount", "StockCost", "StockShelfLife", "StockDeliveryTime", "SupplierId" };
-            Control[] controls = new Control[] { LblStockID, TbxStockName, TbxStockAmount, TbxStockCost, TbxStockShelfLife, TbxStockDeliveryTime, CbxSupplierID };
+            Control[] controls = new Control[] { LblStockID, TbxStockName, TbxStockAmount, TbxStockCost, TbxStockShelfLife, TbxStockDeliveryTime, TbxSupplierID };
 
             base.Initialise(name, primaryKeys, fields, controls, "StockHelp.txt");
         }

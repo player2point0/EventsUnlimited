@@ -42,8 +42,8 @@
             this.TbxStockCost = new EventsUnlimited.ValidationTextBox();
             this.TbxStockAmount = new EventsUnlimited.ValidationTextBox();
             this.TbxStockName = new EventsUnlimited.ValidationTextBox();
-            this.CbxSupplierID = new System.Windows.Forms.ComboBox();
             this.LblStockID = new System.Windows.Forms.Label();
+            this.TbxSupplierID = new EventsUnlimited.ValidationTextBox();
             this.PnlStockLabels.SuspendLayout();
             this.PnlStockInput.SuspendLayout();
             this.SuspendLayout();
@@ -127,12 +127,12 @@
             // 
             // PnlStockInput
             // 
+            this.PnlStockInput.Controls.Add(this.TbxSupplierID);
             this.PnlStockInput.Controls.Add(this.TbxStockDeliveryTime);
             this.PnlStockInput.Controls.Add(this.TbxStockShelfLife);
             this.PnlStockInput.Controls.Add(this.TbxStockCost);
             this.PnlStockInput.Controls.Add(this.TbxStockAmount);
             this.PnlStockInput.Controls.Add(this.TbxStockName);
-            this.PnlStockInput.Controls.Add(this.CbxSupplierID);
             this.PnlStockInput.Controls.Add(this.LblStockID);
             this.PnlStockInput.Location = new System.Drawing.Point(528, 174);
             this.PnlStockInput.Name = "PnlStockInput";
@@ -204,14 +204,6 @@
             this.TbxStockName.Size = new System.Drawing.Size(100, 26);
             this.TbxStockName.TabIndex = 7;
             // 
-            // CbxSupplierID
-            // 
-            this.CbxSupplierID.FormattingEnabled = true;
-            this.CbxSupplierID.Location = new System.Drawing.Point(23, 283);
-            this.CbxSupplierID.Name = "CbxSupplierID";
-            this.CbxSupplierID.Size = new System.Drawing.Size(121, 28);
-            this.CbxSupplierID.TabIndex = 6;
-            // 
             // LblStockID
             // 
             this.LblStockID.AutoSize = true;
@@ -220,6 +212,19 @@
             this.LblStockID.Size = new System.Drawing.Size(71, 20);
             this.LblStockID.TabIndex = 0;
             this.LblStockID.Text = "Stock ID";
+            // 
+            // TbxSupplierID
+            // 
+            this.TbxSupplierID.Field = "Supplier ID";
+            this.TbxSupplierID.LettersOnly = false;
+            this.TbxSupplierID.Location = new System.Drawing.Point(23, 283);
+            this.TbxSupplierID.MaxSize = 100;
+            this.TbxSupplierID.MinSize = 1;
+            this.TbxSupplierID.Name = "TbxSupplierID";
+            this.TbxSupplierID.NumbersOnly = true;
+            this.TbxSupplierID.Required = true;
+            this.TbxSupplierID.Size = new System.Drawing.Size(100, 26);
+            this.TbxSupplierID.TabIndex = 12;
             // 
             // FrmStock
             // 
@@ -251,12 +256,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel PnlStockInput;
-        private System.Windows.Forms.ComboBox CbxSupplierID;
         private System.Windows.Forms.Label LblStockID;
         private ValidationTextBox TbxStockName;
         private ValidationTextBox TbxStockAmount;
         private ValidationTextBox TbxStockCost;
         private ValidationTextBox TbxStockShelfLife;
         private ValidationTextBox TbxStockDeliveryTime;
+        private ValidationTextBox TbxSupplierID;
     }
 }

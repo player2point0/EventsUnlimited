@@ -33,5 +33,16 @@ namespace EventsUnlimited.Properties {
                 return ((string)(this["ClientDatabaseConnection"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-EHEG2FH\\SQLEXPRESS;Initial Catalog=EventsUnlimited;Integrated" +
+            " Security=True")]
+        public string EventsUnlimitedConnectionString {
+            get {
+                return ((string)(this["EventsUnlimitedConnectionString"]));
+            }
+        }
     }
 }

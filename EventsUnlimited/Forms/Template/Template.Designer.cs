@@ -40,6 +40,7 @@
             this.BtnNext = new System.Windows.Forms.Button();
             this.BtnHome = new System.Windows.Forms.Button();
             this.LsvMessageBox = new System.Windows.Forms.ListView();
+            this.btnReport = new System.Windows.Forms.Button();
             this.PnlEdit.SuspendLayout();
             this.PnlNavigation.SuspendLayout();
             this.SuspendLayout();
@@ -170,11 +171,22 @@
             this.LsvMessageBox.UseCompatibleStateImageBehavior = false;
             this.LsvMessageBox.View = System.Windows.Forms.View.Tile;
             // 
+            // btnReport
+            // 
+            this.btnReport.Location = new System.Drawing.Point(1, 731);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(233, 145);
+            this.btnReport.TabIndex = 5;
+            this.btnReport.Text = "Report";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
             // FrmTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1178, 744);
+            this.ClientSize = new System.Drawing.Size(1178, 879);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.PnlEdit);
             this.Controls.Add(this.PnlNavigation);
             this.Controls.Add(this.LsvMessageBox);
@@ -202,5 +214,6 @@
         private System.Windows.Forms.Button BtnNext;
         private System.Windows.Forms.Button BtnHome;
         private System.Windows.Forms.ListView LsvMessageBox;
+        private System.Windows.Forms.Button btnReport;
     }
 }
