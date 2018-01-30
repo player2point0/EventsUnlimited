@@ -38,7 +38,7 @@ namespace EventsUnlimited
 
         private void btnCustomerOrder_Click(object sender, EventArgs e)
         {
-            FrmOrder Order = new FrmOrder();
+            FrmCustomerOrder Order = new FrmCustomerOrder();
             Order.Show();
             this.Hide();
         }

@@ -115,7 +115,7 @@
             // 
             // TbxSupplierAddress
             // 
-            this.TbxSupplierAddress.Field = "Supplier Adress";
+            this.TbxSupplierAddress.Field = "Supplier Address";
             this.TbxSupplierAddress.LettersOnly = false;
             this.TbxSupplierAddress.Location = new System.Drawing.Point(36, 112);
             this.TbxSupplierAddress.MaxSize = 100;

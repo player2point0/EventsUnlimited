@@ -1,6 +1,6 @@
 ﻿namespace EventsUnlimited
 {
-    partial class FrmOrder
+    partial class FrmCustomerOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -297,15 +297,15 @@
             this.LblOrderID.TabIndex = 0;
             this.LblOrderID.Text = "Order ID";
             // 
-            // FrmOrder
+            // FrmCustomerOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 744);
             this.Controls.Add(this.PnlOrderInput);
             this.Controls.Add(this.PnlOrderLabels);
-            this.Name = "FrmOrder";
-            this.Text = "Order";
+            this.Name = "FrmCustomerOrder";
+            this.Text = "CustomerOrder";
             this.Load += new System.EventHandler(this.FrmOrder_Load);
             this.Controls.SetChildIndex(this.PnlOrderLabels, 0);
             this.Controls.SetChildIndex(this.PnlOrderInput, 0);

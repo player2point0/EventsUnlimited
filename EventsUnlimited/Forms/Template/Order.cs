@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace EventsUnlimited
 {
-    public partial class FrmOrder : FrmTemplate
+    public partial class FrmCustomerOrder : FrmTemplate
     {
         private SQLManager sqlManager;
         private int index;
         private Control[] controls;
 
-        public FrmOrder()
+        public FrmCustomerOrder()
         {
             InitializeComponent();
         }
