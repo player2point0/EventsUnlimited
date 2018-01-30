@@ -33,7 +33,6 @@
             this.btnCard = new System.Windows.Forms.Button();
             this.btnCustomerOrder = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlStockOrderActions = new System.Windows.Forms.Panel();
             this.btnStockOrder = new System.Windows.Forms.Button();
             this.PnlSharedActions = new System.Windows.Forms.Panel();
@@ -43,10 +42,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlCustomerOrderActions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PnlStockOrderActions.SuspendLayout();
             this.PnlSharedActions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnExit
@@ -56,6 +56,7 @@
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(239, 112);
             this.BtnExit.TabIndex = 0;
+            this.BtnExit.Tag = "";
             this.BtnExit.Text = "Exit";
             this.BtnExit.UseVisualStyleBackColor = true;
             this.BtnExit.Click += new System.EventHandler(this.button1_Click);
@@ -63,6 +64,7 @@
             // PnlCustomerOrderActions
             // 
             this.PnlCustomerOrderActions.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PnlCustomerOrderActions.BackColor = System.Drawing.Color.White;
             this.PnlCustomerOrderActions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlCustomerOrderActions.Controls.Add(this.btnCard);
             this.PnlCustomerOrderActions.Controls.Add(this.btnCustomerOrder);
@@ -78,6 +80,7 @@
             this.btnCard.Name = "btnCard";
             this.btnCard.Size = new System.Drawing.Size(140, 80);
             this.btnCard.TabIndex = 2;
+            this.btnCard.Tag = "";
             this.btnCard.Text = "Card";
             this.btnCard.UseVisualStyleBackColor = true;
             this.btnCard.Click += new System.EventHandler(this.btnCard_Click);
@@ -88,6 +91,7 @@
             this.btnCustomerOrder.Name = "btnCustomerOrder";
             this.btnCustomerOrder.Size = new System.Drawing.Size(140, 80);
             this.btnCustomerOrder.TabIndex = 1;
+            this.btnCustomerOrder.Tag = "";
             this.btnCustomerOrder.Text = "CustomerOrder";
             this.btnCustomerOrder.UseVisualStyleBackColor = true;
             this.btnCustomerOrder.Click += new System.EventHandler(this.btnCustomerOrder_Click);
@@ -98,20 +102,10 @@
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(140, 80);
             this.btnCustomer.TabIndex = 0;
+            this.btnCustomer.Tag = "";
             this.btnCustomer.Text = "Customer";
             this.btnCustomer.UseVisualStyleBackColor = true;
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackgroundImage = global::EventsUnlimited.Properties.Resources.Logo;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(332, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(515, 172);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // PnlStockOrderActions
             // 
@@ -129,6 +123,7 @@
             this.btnStockOrder.Name = "btnStockOrder";
             this.btnStockOrder.Size = new System.Drawing.Size(140, 80);
             this.btnStockOrder.TabIndex = 0;
+            this.btnStockOrder.Tag = "";
             this.btnStockOrder.Text = "StockOrder";
             this.btnStockOrder.UseVisualStyleBackColor = true;
             this.btnStockOrder.Click += new System.EventHandler(this.btnStockOrder_Click);
@@ -178,19 +173,23 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(676, 216);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 20);
             this.label1.TabIndex = 5;
+            this.label1.Tag = "f1";
             this.label1.Text = "Stock Actions";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Location = new System.Drawing.Point(117, 216);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(135, 20);
             this.label2.TabIndex = 6;
+            this.label2.Tag = "f1";
             this.label2.Text = "Customer Actions";
             // 
             // label3
@@ -200,12 +199,25 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 20);
             this.label3.TabIndex = 6;
+            this.label3.Tag = "f1";
             this.label3.Text = "Shared Actions";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackgroundImage = global::EventsUnlimited.Properties.Resources.Logo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(332, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(515, 172);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1178, 778);
             this.ControlBox = false;
             this.Controls.Add(this.label3);
@@ -221,11 +233,12 @@
             this.Name = "FrmMenu";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Tag = "b2";
             this.Text = "Events Unlimited";
             this.PnlCustomerOrderActions.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PnlStockOrderActions.ResumeLayout(false);
             this.PnlSharedActions.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

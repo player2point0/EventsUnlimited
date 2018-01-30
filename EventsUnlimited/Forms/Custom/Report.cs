@@ -18,6 +18,9 @@ namespace EventsUnlimited
         public FrmReport()
         {
             InitializeComponent();
+
+            Control.ControlCollection controls = this.Controls;
+            Program.SetColors(ref controls);
         }
 
         private void FrmReport_Load(object sender, EventArgs e)

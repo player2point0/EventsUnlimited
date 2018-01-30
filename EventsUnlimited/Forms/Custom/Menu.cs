@@ -15,6 +15,9 @@ namespace EventsUnlimited
         public FrmMenu()
         {
             InitializeComponent();
+
+            Control.ControlCollection controls = this.Controls;
+            Program.SetColors(ref controls);
         }
 
         private void button1_Click(object sender, EventArgs e)

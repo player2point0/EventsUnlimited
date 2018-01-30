@@ -154,11 +154,12 @@
             // 
             // BtnHome
             // 
+            this.BtnHome.BackgroundImage = global::EventsUnlimited.Properties.Resources.Logo;
+            this.BtnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnHome.Location = new System.Drawing.Point(0, 3);
             this.BtnHome.Name = "BtnHome";
             this.BtnHome.Size = new System.Drawing.Size(233, 145);
             this.BtnHome.TabIndex = 1;
-            this.BtnHome.Text = "Home";
             this.BtnHome.UseVisualStyleBackColor = true;
             this.BtnHome.Click += new System.EventHandler(this.BtnHome_Click);
             // 

@@ -15,6 +15,9 @@ namespace EventsUnlimited
         public LsvDisplay()
         {
             InitializeComponent();
+
+            Control.ControlCollection controls = this.Controls;
+            Program.SetColors(ref controls);
         }
 
         private void BtnClose_Click(object sender, EventArgs e)

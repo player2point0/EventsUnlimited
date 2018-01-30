@@ -16,6 +16,9 @@ namespace EventsUnlimited
         {
             InitializeComponent();
 
+            Control.ControlCollection _controls = this.Controls;
+            Program.SetColors(ref _controls);
+
             string name = "Stock";
             string[] primaryKeys = new string[] { "StockId" };
             string[] fields = new string[] { "StockId", "StockName", "StockAmount", "StockCost", "StockShelfLife", "StockDeliveryTime", "SupplierId" };

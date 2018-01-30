@@ -19,6 +19,9 @@ namespace EventsUnlimited
         {
             InitializeComponent();
 
+            Control.ControlCollection controls = this.Controls;
+            Program.SetColors(ref controls);
+
             helpFileName = _helpFileName;
         }
 

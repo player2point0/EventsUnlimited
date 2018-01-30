@@ -44,5 +44,50 @@ namespace EventsUnlimited.Properties {
                 return ((string)(this["EventsUnlimitedConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("143, 10, 47")]
+        public global::System.Drawing.Color color1 {
+            get {
+                return ((global::System.Drawing.Color)(this["color1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("210, 35, 81")]
+        public global::System.Drawing.Color color2 {
+            get {
+                return ((global::System.Drawing.Color)(this["color2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("241, 174, 40")]
+        public global::System.Drawing.Color color3 {
+            get {
+                return ((global::System.Drawing.Color)(this["color3"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("246, 238, 243")]
+        public global::System.Drawing.Color color4 {
+            get {
+                return ((global::System.Drawing.Color)(this["color4"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("13, 7, 10")]
+        public global::System.Drawing.Color color5 {
+            get {
+                return ((global::System.Drawing.Color)(this["color5"]));
+            }
+        }
     }
 }
