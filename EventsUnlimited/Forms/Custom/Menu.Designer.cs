@@ -56,7 +56,7 @@
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(239, 112);
             this.BtnExit.TabIndex = 0;
-            this.BtnExit.Tag = "";
+            this.BtnExit.Tag = "54";
             this.BtnExit.Text = "Exit";
             this.BtnExit.UseVisualStyleBackColor = true;
             this.BtnExit.Click += new System.EventHandler(this.button1_Click);
@@ -73,6 +73,7 @@
             this.PnlCustomerOrderActions.Name = "PnlCustomerOrderActions";
             this.PnlCustomerOrderActions.Size = new System.Drawing.Size(379, 269);
             this.PnlCustomerOrderActions.TabIndex = 1;
+            this.PnlCustomerOrderActions.Tag = "";
             // 
             // btnCard
             // 
@@ -80,7 +81,7 @@
             this.btnCard.Name = "btnCard";
             this.btnCard.Size = new System.Drawing.Size(140, 80);
             this.btnCard.TabIndex = 2;
-            this.btnCard.Tag = "";
+            this.btnCard.Tag = "54";
             this.btnCard.Text = "Card";
             this.btnCard.UseVisualStyleBackColor = true;
             this.btnCard.Click += new System.EventHandler(this.btnCard_Click);
@@ -91,7 +92,7 @@
             this.btnCustomerOrder.Name = "btnCustomerOrder";
             this.btnCustomerOrder.Size = new System.Drawing.Size(140, 80);
             this.btnCustomerOrder.TabIndex = 1;
-            this.btnCustomerOrder.Tag = "";
+            this.btnCustomerOrder.Tag = "54";
             this.btnCustomerOrder.Text = "CustomerOrder";
             this.btnCustomerOrder.UseVisualStyleBackColor = true;
             this.btnCustomerOrder.Click += new System.EventHandler(this.btnCustomerOrder_Click);
@@ -102,7 +103,7 @@
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(140, 80);
             this.btnCustomer.TabIndex = 0;
-            this.btnCustomer.Tag = "";
+            this.btnCustomer.Tag = "54";
             this.btnCustomer.Text = "Customer";
             this.btnCustomer.UseVisualStyleBackColor = true;
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
@@ -116,6 +117,7 @@
             this.PnlStockOrderActions.Name = "PnlStockOrderActions";
             this.PnlStockOrderActions.Size = new System.Drawing.Size(379, 269);
             this.PnlStockOrderActions.TabIndex = 3;
+            this.PnlStockOrderActions.Tag = "";
             // 
             // btnStockOrder
             // 
@@ -123,7 +125,7 @@
             this.btnStockOrder.Name = "btnStockOrder";
             this.btnStockOrder.Size = new System.Drawing.Size(140, 80);
             this.btnStockOrder.TabIndex = 0;
-            this.btnStockOrder.Tag = "";
+            this.btnStockOrder.Tag = "54";
             this.btnStockOrder.Text = "StockOrder";
             this.btnStockOrder.UseVisualStyleBackColor = true;
             this.btnStockOrder.Click += new System.EventHandler(this.btnStockOrder_Click);
@@ -139,6 +141,7 @@
             this.PnlSharedActions.Name = "PnlSharedActions";
             this.PnlSharedActions.Size = new System.Drawing.Size(628, 119);
             this.PnlSharedActions.TabIndex = 4;
+            this.PnlSharedActions.Tag = "";
             // 
             // btnStock
             // 
@@ -146,6 +149,7 @@
             this.btnStock.Name = "btnStock";
             this.btnStock.Size = new System.Drawing.Size(140, 80);
             this.btnStock.TabIndex = 2;
+            this.btnStock.Tag = "54";
             this.btnStock.Text = "Stock";
             this.btnStock.UseVisualStyleBackColor = true;
             this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
@@ -156,6 +160,7 @@
             this.btnSupplier.Name = "btnSupplier";
             this.btnSupplier.Size = new System.Drawing.Size(140, 80);
             this.btnSupplier.TabIndex = 1;
+            this.btnSupplier.Tag = "54";
             this.btnSupplier.Text = "Supplier";
             this.btnSupplier.UseVisualStyleBackColor = true;
             this.btnSupplier.Click += new System.EventHandler(this.btnSupplier_Click);
@@ -166,6 +171,7 @@
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Size = new System.Drawing.Size(140, 80);
             this.btnStaff.TabIndex = 0;
+            this.btnStaff.Tag = "54";
             this.btnStaff.Text = "Staff";
             this.btnStaff.UseVisualStyleBackColor = true;
             this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
@@ -178,7 +184,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 20);
             this.label1.TabIndex = 5;
-            this.label1.Tag = "f1";
+            this.label1.Tag = "10";
             this.label1.Text = "Stock Actions";
             // 
             // label2
@@ -189,7 +195,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(135, 20);
             this.label2.TabIndex = 6;
-            this.label2.Tag = "f1";
+            this.label2.Tag = "10";
             this.label2.Text = "Customer Actions";
             // 
             // label3
@@ -199,7 +205,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 20);
             this.label3.TabIndex = 6;
-            this.label3.Tag = "f1";
+            this.label3.Tag = "10";
             this.label3.Text = "Shared Actions";
             // 
             // pictureBox1

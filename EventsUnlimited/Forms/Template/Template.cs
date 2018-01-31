@@ -132,11 +132,5 @@ namespace EventsUnlimited
             string message = sqlManager.ShowTable(ref index, ref controls);
             Print(message);
         }
-
-        private void btnReport_Click(object sender, EventArgs e)
-        {
-            FrmReport Report = new FrmReport();
-            Report.Show();
-        }
     }
 }

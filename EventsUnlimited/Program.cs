@@ -45,30 +45,44 @@ namespace EventsUnlimited
                 try
                 {
                     string tag = c.Tag.ToString();
-                    char type = tag[0];
-                    char color = tag[1];
+                    char fore = tag[0];
+                    char back = tag[1];
 
-                    switch (color)
+                    switch (fore)
                     {
                         case '1':
-                            if (type == 'f') c.ForeColor = Properties.Settings.Default.color1;
-                            else c.BackColor = Properties.Settings.Default.color1;
+                            c.ForeColor = Properties.Settings.Default.color1;
                             break;
                         case '2':
-                            if (type == 'f') c.ForeColor = Properties.Settings.Default.color2;
-                            else c.BackColor = Properties.Settings.Default.color2;
+                            c.ForeColor = Properties.Settings.Default.color2;
                             break;
                         case '3':
-                            if (type == 'f') c.ForeColor = Properties.Settings.Default.color3;
-                            else c.BackColor = Properties.Settings.Default.color3;
+                            c.ForeColor = Properties.Settings.Default.color3;
                             break;
                         case '4':
-                            if (type == 'f') c.ForeColor = Properties.Settings.Default.color4;
-                            else c.BackColor = Properties.Settings.Default.color4;
+                            c.ForeColor = Properties.Settings.Default.color4;
                             break;
                         case '5':
-                            if (type == 'f') c.ForeColor = Properties.Settings.Default.color5;
-                            else c.BackColor = Properties.Settings.Default.color5;
+                            c.ForeColor = Properties.Settings.Default.color5;
+                            break;
+                    }
+
+                    switch (back)
+                    {
+                        case '1':
+                            c.BackColor = Properties.Settings.Default.color1;
+                            break;
+                        case '2':
+                            c.BackColor = Properties.Settings.Default.color2;
+                            break;
+                        case '3':
+                            c.BackColor = Properties.Settings.Default.color3;
+                            break;
+                        case '4':
+                            c.BackColor = Properties.Settings.Default.color4;
+                            break;
+                        case '5':
+                            c.BackColor = Properties.Settings.Default.color5;
                             break;
                     }
                 }

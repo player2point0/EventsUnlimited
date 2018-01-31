@@ -63,6 +63,7 @@
             this.BtnClear.Name = "BtnClear";
             this.BtnClear.Size = new System.Drawing.Size(233, 145);
             this.BtnClear.TabIndex = 4;
+            this.BtnClear.Tag = "54";
             this.BtnClear.Text = "Clear";
             this.BtnClear.UseVisualStyleBackColor = true;
             this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
@@ -74,6 +75,7 @@
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(233, 145);
             this.BtnDelete.TabIndex = 3;
+            this.BtnDelete.Tag = "54";
             this.BtnDelete.Text = "Delete";
             this.BtnDelete.UseVisualStyleBackColor = true;
             this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
@@ -85,6 +87,7 @@
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(233, 145);
             this.BtnSave.TabIndex = 2;
+            this.BtnSave.Tag = "54";
             this.BtnSave.Text = "Save";
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -96,6 +99,7 @@
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(233, 145);
             this.BtnNew.TabIndex = 1;
+            this.BtnNew.Tag = "54";
             this.BtnNew.Text = "New";
             this.BtnNew.UseVisualStyleBackColor = true;
             this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
@@ -106,6 +110,7 @@
             this.BtnEdit.Name = "BtnEdit";
             this.BtnEdit.Size = new System.Drawing.Size(233, 145);
             this.BtnEdit.TabIndex = 0;
+            this.BtnEdit.Tag = "54";
             this.BtnEdit.Text = "Edit";
             this.BtnEdit.UseVisualStyleBackColor = true;
             this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
@@ -127,6 +132,7 @@
             this.BtnHelp.Name = "BtnHelp";
             this.BtnHelp.Size = new System.Drawing.Size(233, 145);
             this.BtnHelp.TabIndex = 4;
+            this.BtnHelp.Tag = "54";
             this.BtnHelp.Text = "Help";
             this.BtnHelp.UseVisualStyleBackColor = true;
             this.BtnHelp.Click += new System.EventHandler(this.BtnHelp_Click);
@@ -137,6 +143,7 @@
             this.BtnPrevious.Name = "BtnPrevious";
             this.BtnPrevious.Size = new System.Drawing.Size(233, 145);
             this.BtnPrevious.TabIndex = 3;
+            this.BtnPrevious.Tag = "54";
             this.BtnPrevious.Text = "Previous";
             this.BtnPrevious.UseVisualStyleBackColor = true;
             this.BtnPrevious.Click += new System.EventHandler(this.BtnPrevious_Click);
@@ -147,6 +154,7 @@
             this.BtnNext.Name = "BtnNext";
             this.BtnNext.Size = new System.Drawing.Size(233, 145);
             this.BtnNext.TabIndex = 2;
+            this.BtnNext.Tag = "54";
             this.BtnNext.Text = "Next";
             this.BtnNext.UseVisualStyleBackColor = true;
             this.BtnNext.Click += new System.EventHandler(this.BtnNext_Click);
@@ -159,6 +167,7 @@
             this.BtnHome.Name = "BtnHome";
             this.BtnHome.Size = new System.Drawing.Size(233, 145);
             this.BtnHome.TabIndex = 1;
+            this.BtnHome.Tag = "54";
             this.BtnHome.UseVisualStyleBackColor = true;
             this.BtnHome.Click += new System.EventHandler(this.BtnHome_Click);
             // 
@@ -168,6 +177,7 @@
             this.LsvMessageBox.Name = "LsvMessageBox";
             this.LsvMessageBox.Size = new System.Drawing.Size(350, 582);
             this.LsvMessageBox.TabIndex = 5;
+            this.LsvMessageBox.Tag = "10";
             this.LsvMessageBox.UseCompatibleStateImageBehavior = false;
             this.LsvMessageBox.View = System.Windows.Forms.View.Tile;
             // 

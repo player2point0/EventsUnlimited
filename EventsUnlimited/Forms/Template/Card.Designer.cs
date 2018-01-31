@@ -100,6 +100,7 @@
             this.PnlCardLabels.Name = "PnlCardLabels";
             this.PnlCardLabels.Size = new System.Drawing.Size(209, 338);
             this.PnlCardLabels.TabIndex = 11;
+            this.PnlCardLabels.Tag = "";
             // 
             // PnlCardInput
             // 
