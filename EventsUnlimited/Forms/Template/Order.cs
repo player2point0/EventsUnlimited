@@ -69,5 +69,10 @@ namespace EventsUnlimited
         {
         }
 
+        private void BtnReport_Click(object sender, EventArgs e)
+        {
+            FrmCustomerOrderReport report = new FrmCustomerOrderReport();
+            report.Show();
+        }
     }
 }

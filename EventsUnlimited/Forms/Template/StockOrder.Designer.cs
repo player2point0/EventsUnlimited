@@ -29,20 +29,21 @@
         private void InitializeComponent()
         {
             this.PnlStockOrderLabels = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PnlStockOrderInput = new System.Windows.Forms.Panel();
-            this.LblStockOrderID = new System.Windows.Forms.Label();
-            this.CbxStaffID = new System.Windows.Forms.ComboBox();
-            this.DtpStockOrderDate = new System.Windows.Forms.DateTimePicker();
-            this.CbxStock = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.NudStockQuantity = new System.Windows.Forms.NumericUpDown();
-            this.BtnAddStock = new System.Windows.Forms.Button();
-            this.BtnRemoveStock = new System.Windows.Forms.Button();
             this.BtnOverview = new System.Windows.Forms.Button();
+            this.BtnRemoveStock = new System.Windows.Forms.Button();
+            this.BtnAddStock = new System.Windows.Forms.Button();
+            this.NudStockQuantity = new System.Windows.Forms.NumericUpDown();
+            this.CbxStock = new System.Windows.Forms.ComboBox();
+            this.DtpStockOrderDate = new System.Windows.Forms.DateTimePicker();
+            this.CbxStaffID = new System.Windows.Forms.ComboBox();
+            this.LblStockOrderID = new System.Windows.Forms.Label();
+            this.BtnReport = new System.Windows.Forms.Button();
             this.PnlStockOrderLabels.SuspendLayout();
             this.PnlStockOrderInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudStockQuantity)).BeginInit();
@@ -59,6 +60,15 @@
             this.PnlStockOrderLabels.Name = "PnlStockOrderLabels";
             this.PnlStockOrderLabels.Size = new System.Drawing.Size(236, 409);
             this.PnlStockOrderLabels.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 152);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(113, 20);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Stock Quantity";
             // 
             // label4
             // 
@@ -98,6 +108,7 @@
             // 
             // PnlStockOrderInput
             // 
+            this.PnlStockOrderInput.Controls.Add(this.BtnReport);
             this.PnlStockOrderInput.Controls.Add(this.BtnOverview);
             this.PnlStockOrderInput.Controls.Add(this.BtnRemoveStock);
             this.PnlStockOrderInput.Controls.Add(this.BtnAddStock);
@@ -111,62 +122,14 @@
             this.PnlStockOrderInput.Size = new System.Drawing.Size(252, 409);
             this.PnlStockOrderInput.TabIndex = 7;
             // 
-            // LblStockOrderID
+            // BtnOverview
             // 
-            this.LblStockOrderID.AutoSize = true;
-            this.LblStockOrderID.Location = new System.Drawing.Point(35, 16);
-            this.LblStockOrderID.Name = "LblStockOrderID";
-            this.LblStockOrderID.Size = new System.Drawing.Size(115, 20);
-            this.LblStockOrderID.TabIndex = 0;
-            this.LblStockOrderID.Text = "Stock Order ID";
-            // 
-            // CbxStaffID
-            // 
-            this.CbxStaffID.FormattingEnabled = true;
-            this.CbxStaffID.Location = new System.Drawing.Point(39, 50);
-            this.CbxStaffID.Name = "CbxStaffID";
-            this.CbxStaffID.Size = new System.Drawing.Size(121, 28);
-            this.CbxStaffID.TabIndex = 1;
-            // 
-            // DtpStockOrderDate
-            // 
-            this.DtpStockOrderDate.Location = new System.Drawing.Point(39, 86);
-            this.DtpStockOrderDate.Name = "DtpStockOrderDate";
-            this.DtpStockOrderDate.Size = new System.Drawing.Size(200, 26);
-            this.DtpStockOrderDate.TabIndex = 2;
-            // 
-            // CbxStock
-            // 
-            this.CbxStock.FormattingEnabled = true;
-            this.CbxStock.Location = new System.Drawing.Point(39, 119);
-            this.CbxStock.Name = "CbxStock";
-            this.CbxStock.Size = new System.Drawing.Size(121, 28);
-            this.CbxStock.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 152);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 20);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Stock Quantity";
-            // 
-            // NudStockQuantity
-            // 
-            this.NudStockQuantity.Location = new System.Drawing.Point(39, 154);
-            this.NudStockQuantity.Name = "NudStockQuantity";
-            this.NudStockQuantity.Size = new System.Drawing.Size(120, 26);
-            this.NudStockQuantity.TabIndex = 4;
-            // 
-            // BtnAddStock
-            // 
-            this.BtnAddStock.Location = new System.Drawing.Point(39, 199);
-            this.BtnAddStock.Name = "BtnAddStock";
-            this.BtnAddStock.Size = new System.Drawing.Size(66, 35);
-            this.BtnAddStock.TabIndex = 5;
-            this.BtnAddStock.Text = "Add";
-            this.BtnAddStock.UseVisualStyleBackColor = true;
+            this.BtnOverview.Location = new System.Drawing.Point(39, 264);
+            this.BtnOverview.Name = "BtnOverview";
+            this.BtnOverview.Size = new System.Drawing.Size(176, 38);
+            this.BtnOverview.TabIndex = 7;
+            this.BtnOverview.Text = "Overview";
+            this.BtnOverview.UseVisualStyleBackColor = true;
             // 
             // BtnRemoveStock
             // 
@@ -177,14 +140,63 @@
             this.BtnRemoveStock.Text = "Remove";
             this.BtnRemoveStock.UseVisualStyleBackColor = true;
             // 
-            // BtnOverview
+            // BtnAddStock
             // 
-            this.BtnOverview.Location = new System.Drawing.Point(39, 264);
-            this.BtnOverview.Name = "BtnOverview";
-            this.BtnOverview.Size = new System.Drawing.Size(176, 38);
-            this.BtnOverview.TabIndex = 7;
-            this.BtnOverview.Text = "Overview";
-            this.BtnOverview.UseVisualStyleBackColor = true;
+            this.BtnAddStock.Location = new System.Drawing.Point(39, 199);
+            this.BtnAddStock.Name = "BtnAddStock";
+            this.BtnAddStock.Size = new System.Drawing.Size(66, 35);
+            this.BtnAddStock.TabIndex = 5;
+            this.BtnAddStock.Text = "Add";
+            this.BtnAddStock.UseVisualStyleBackColor = true;
+            // 
+            // NudStockQuantity
+            // 
+            this.NudStockQuantity.Location = new System.Drawing.Point(39, 154);
+            this.NudStockQuantity.Name = "NudStockQuantity";
+            this.NudStockQuantity.Size = new System.Drawing.Size(120, 26);
+            this.NudStockQuantity.TabIndex = 4;
+            // 
+            // CbxStock
+            // 
+            this.CbxStock.FormattingEnabled = true;
+            this.CbxStock.Location = new System.Drawing.Point(39, 119);
+            this.CbxStock.Name = "CbxStock";
+            this.CbxStock.Size = new System.Drawing.Size(121, 28);
+            this.CbxStock.TabIndex = 3;
+            // 
+            // DtpStockOrderDate
+            // 
+            this.DtpStockOrderDate.Location = new System.Drawing.Point(39, 86);
+            this.DtpStockOrderDate.Name = "DtpStockOrderDate";
+            this.DtpStockOrderDate.Size = new System.Drawing.Size(200, 26);
+            this.DtpStockOrderDate.TabIndex = 2;
+            // 
+            // CbxStaffID
+            // 
+            this.CbxStaffID.FormattingEnabled = true;
+            this.CbxStaffID.Location = new System.Drawing.Point(39, 50);
+            this.CbxStaffID.Name = "CbxStaffID";
+            this.CbxStaffID.Size = new System.Drawing.Size(121, 28);
+            this.CbxStaffID.TabIndex = 1;
+            // 
+            // LblStockOrderID
+            // 
+            this.LblStockOrderID.AutoSize = true;
+            this.LblStockOrderID.Location = new System.Drawing.Point(35, 16);
+            this.LblStockOrderID.Name = "LblStockOrderID";
+            this.LblStockOrderID.Size = new System.Drawing.Size(115, 20);
+            this.LblStockOrderID.TabIndex = 0;
+            this.LblStockOrderID.Text = "Stock Order ID";
+            // 
+            // BtnReport
+            // 
+            this.BtnReport.Location = new System.Drawing.Point(39, 319);
+            this.BtnReport.Name = "BtnReport";
+            this.BtnReport.Size = new System.Drawing.Size(176, 34);
+            this.BtnReport.TabIndex = 8;
+            this.BtnReport.Text = "Report";
+            this.BtnReport.UseVisualStyleBackColor = true;
+            this.BtnReport.Click += new System.EventHandler(this.BtnReport_Click);
             // 
             // FrmStockOrder
             // 
@@ -224,5 +236,6 @@
         private System.Windows.Forms.NumericUpDown NudStockQuantity;
         private System.Windows.Forms.Button BtnRemoveStock;
         private System.Windows.Forms.Button BtnOverview;
+        private System.Windows.Forms.Button BtnReport;
     }
 }

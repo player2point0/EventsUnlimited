@@ -11,6 +11,21 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -64,6 +79,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Custom\CustomerOrderReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Custom\CustomerOrderReport.Designer.cs">
+      <DependentUpon>CustomerOrderReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="EventsUnlimitedDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -146,14 +167,20 @@
       <DependentUpon>ValidationTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Exceptions\ValidationException.cs" />
-    <Compile Include="Forms\Custom\Report.cs">
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Forms\Custom\StockOrderReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Custom\Report.Designer.cs">
-      <DependentUpon>Report.cs</DependentUpon>
+    <Compile Include="Forms\Custom\StockOrderReport.Designer.cs">
+      <DependentUpon>StockOrderReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="Reports\Card.rdlc" />
+    <EmbeddedResource Include="Forms\Custom\CustomerOrderReport.resx">
+      <DependentUpon>CustomerOrderReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Custom\StockOrderReport.resx">
+      <DependentUpon>StockOrderReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CustomerOrder.rdlc" />
     <EmbeddedResource Include="Forms\Template\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,10 +227,7 @@
     <EmbeddedResource Include="Controls\ValidationTextBox.resx">
       <DependentUpon>ValidationTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Customer.rdlc" />
-    <EmbeddedResource Include="Forms\Custom\Report.resx">
-      <DependentUpon>Report.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\StockOrder.rdlc" />
     <None Include="EventsUnlimitedDataSet.xsc">
       <DependentUpon>EventsUnlimitedDataSet.xsd</DependentUpon>
     </None>
@@ -237,7 +261,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Color1.bmp" />
-    <Content Include="Icon.ico" />
+    <Content Include="Resources\Icon.ico" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -251,6 +275,18 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

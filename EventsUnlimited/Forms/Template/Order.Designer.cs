@@ -53,6 +53,7 @@
             this.CbxCustomerID = new System.Windows.Forms.ComboBox();
             this.CbxStaffID = new System.Windows.Forms.ComboBox();
             this.LblOrderID = new System.Windows.Forms.Label();
+            this.BtnReport = new System.Windows.Forms.Button();
             this.PnlOrderLabels.SuspendLayout();
             this.PnlOrderInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudStockQuantity)).BeginInit();
@@ -167,6 +168,7 @@
             // 
             // PnlOrderInput
             // 
+            this.PnlOrderInput.Controls.Add(this.BtnReport);
             this.PnlOrderInput.Controls.Add(this.TbxOrderAddress);
             this.PnlOrderInput.Controls.Add(this.NudStockQuantity);
             this.PnlOrderInput.Controls.Add(this.BtnOverview);
@@ -182,7 +184,7 @@
             this.PnlOrderInput.Controls.Add(this.LblOrderID);
             this.PnlOrderInput.Location = new System.Drawing.Point(530, 177);
             this.PnlOrderInput.Name = "PnlOrderInput";
-            this.PnlOrderInput.Size = new System.Drawing.Size(264, 557);
+            this.PnlOrderInput.Size = new System.Drawing.Size(264, 565);
             this.PnlOrderInput.TabIndex = 7;
             // 
             // TbxOrderAddress
@@ -207,7 +209,7 @@
             // 
             // BtnOverview
             // 
-            this.BtnOverview.Location = new System.Drawing.Point(30, 500);
+            this.BtnOverview.Location = new System.Drawing.Point(30, 480);
             this.BtnOverview.Name = "BtnOverview";
             this.BtnOverview.Size = new System.Drawing.Size(189, 34);
             this.BtnOverview.TabIndex = 11;
@@ -216,7 +218,7 @@
             // 
             // TbxOrderNotes
             // 
-            this.TbxOrderNotes.Location = new System.Drawing.Point(30, 406);
+            this.TbxOrderNotes.Location = new System.Drawing.Point(30, 386);
             this.TbxOrderNotes.Multiline = true;
             this.TbxOrderNotes.Name = "TbxOrderNotes";
             this.TbxOrderNotes.Size = new System.Drawing.Size(189, 88);
@@ -297,6 +299,16 @@
             this.LblOrderID.TabIndex = 0;
             this.LblOrderID.Text = "Order ID";
             // 
+            // BtnReport
+            // 
+            this.BtnReport.Location = new System.Drawing.Point(31, 520);
+            this.BtnReport.Name = "BtnReport";
+            this.BtnReport.Size = new System.Drawing.Size(188, 37);
+            this.BtnReport.TabIndex = 14;
+            this.BtnReport.Text = "Report";
+            this.BtnReport.UseVisualStyleBackColor = true;
+            this.BtnReport.Click += new System.EventHandler(this.BtnReport_Click);
+            // 
             // FrmCustomerOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -345,5 +357,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown NudStockQuantity;
         private ValidationTextBox TbxOrderAddress;
+        private System.Windows.Forms.Button BtnReport;
     }
 }

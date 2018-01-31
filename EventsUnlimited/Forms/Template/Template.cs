@@ -29,7 +29,7 @@ namespace EventsUnlimited
         private void Template_Load(object sender, EventArgs e)
         {
             //CAUSED THE object reference not set to an instance of an object PROBLEM
-            this.Height = 600;//NEED TO FIX SCALE PROBLEM
+            this.Height = 550;//NEED TO FIX SCALE PROBLEM
         }
 
         public void Initialise(string _name, string[] _primaryKeys, string[] _fields, Control[] _controls, string _helpFileName)
