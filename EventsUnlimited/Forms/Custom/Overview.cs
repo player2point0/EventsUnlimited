@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EventsUnlimited
 {
-    public partial class LsvDisplay : Form
+    public partial class FrmOverview : Form
     {
-        public LsvDisplay()
+        public FrmOverview()
         {
             InitializeComponent();
 

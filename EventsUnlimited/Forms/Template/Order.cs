@@ -19,9 +19,6 @@ namespace EventsUnlimited
         public FrmCustomerOrder()
         {
             InitializeComponent();
-
-            Control.ControlCollection _controls = this.Controls;
-            Program.SetColors(ref _controls);
         }
 
         private void FrmOrder_Load(object sender, EventArgs e)

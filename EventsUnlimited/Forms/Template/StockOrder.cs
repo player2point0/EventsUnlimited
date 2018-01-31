@@ -12,21 +12,55 @@ namespace EventsUnlimited
 {
     public partial class FrmStockOrder : FrmTemplate
     {
-        private SQLManager sqlManager;
+        private SQLManager Stock;
+        private Control[] StockControls;
+        private SQLManager Staff;
+        private Control[] StaffControls;
+        private SQLManager StockOrder;
+        private Control[] StockOrderControls;
+        private SQLManager StockOrderStock;
+        private Control[] StockOrderStockControls;
+
         private int index;
-        private Control[] controls;
+
+        private List<string> StockId;
+        private List<string> Quantity;
 
         public FrmStockOrder()
         {
             InitializeComponent();
 
-            Control.ControlCollection _controls = this.Controls;
-            Program.SetColors(ref _controls);
+            Stock = new SQLManager("Stock", new string[] { "StockId" }, new string[] { "StockId", "StockName" });
+            StockControls = new Control[] { CbxStock };
+
+            Staff = new SQLManager("Staff", new string[] { "StaffId" }, new string[] { "StaffId", "StaffName" });
+            StaffControls = new Control[] { CbxStaffID };
+
+            StockOrder = new SQLManager("StockOrder", new string[] { "StockOrderId" }, new string[] { "StockOrderId", "StockOrderDate", "staffId" });
+            StockOrderControls = new Control[] { LblStockOrderID, DtpStockOrderDate , CbxStaffID};
+
+            StockOrderStock = new SQLManager("StockOrderStock", new string[] { "StockOrderId", "StockId" }, new string[] { "StockQuantity"});
+            StockOrderStockControls = new Control[] { NudStockQuantity };
+
+            index = 0;
+            StockId = new List<string>();
+            Quantity = new List<string>();
         }
 
         private void FrmStockOrder_Load(object sender, EventArgs e)
         {
+            Stock.ReadTable();
+            Print(Stock.ShowTable(ref index, ref StockControls));
+            Stock.PopulateComboBox(ref CbxStock);
 
+            Staff.ReadTable();
+            Staff.PopulateComboBox(ref CbxStaffID);
+            
+            StockOrder.ReadTable();
+            Print(StockOrder.ShowTable(ref index, ref StockOrderControls));
+
+            StockOrderStock.ReadTable();
+            Print(StockOrderStock.ShowTable(ref index, ref StockOrderStockControls));
         }
 
         protected override void BtnEdit_Click(object sender, EventArgs e)
@@ -35,44 +69,116 @@ namespace EventsUnlimited
             PnlStockOrderInput.Enabled = !PnlStockOrderInput.Enabled;
         }
 
-        public void ClearControls()
+        protected override void ClearControls()
         {
-            foreach (var c in controls)
-            {
-                c.Text = "";
-            }
-        }
+            LblStockOrderID.Text = StockOrder.GenerateNewPrimaryKey().ToString();
 
-        protected override void BtnNew_Click(object sender, EventArgs e)
-        {
-            ClearControls();
+            StockId = new List<string>();
+            Quantity = new List<string>();
+
+            NudStockQuantity.Value = 0;
+            CbxStaffID.ResetText();
+            CbxStock.ResetText();
+            DtpStockOrderDate.Value = DateTime.Now;
         }
 
         protected override void BtnSave_Click(object sender, EventArgs e)
         {
+            if(CbxStaffID.SelectedValue == null)
+            {
+                Print("Please select a member of staff");
+                return;
+            }
+
+            if(CbxStock.SelectedValue == null)
+            {
+                Print("Please add stock");
+                return;
+            }
+
+            //save a new StockOrder
+            StockOrder.AddRow(ref StockOrderControls);
+            //save each item of stock in the StockOrderStock table
+            string StockOrderId = LblStockOrderID.Text;
+
+            for (int i = 0;i<StockId.Count;i++)
+            {
+                StockOrderStock.AddRow(new string[] { StockOrderId, StockId[i], Quantity[i]});
+            }
         }
 
         protected override void BtnDelete_Click(object sender, EventArgs e)
         {
-        }
+            string stockId = LblStockOrderID.Text;
 
-        protected override void BtnClear_Click(object sender, EventArgs e)
-        {
-            ClearControls();
+            //delete all in StockOrderStock with the stock id
+            StockOrderStock.DeleteAllWith("StockId", stockId);
+            //delete record in StockOrder with the stock id
+            StockOrder.DeleteRow(new string[] { stockId });
         }
 
         protected override void BtnNext_Click(object sender, EventArgs e)
         {
+            index++;
+            Print(Stock.ShowTable(ref index, ref StockControls));
+            Print(Staff.ShowTable(ref index, ref StaffControls));
+            Print(StockOrder.ShowTable(ref index, ref StockOrderControls));
+            Print(StockOrderStock.ShowTable(ref index, ref StockOrderStockControls));
+
+            StockId = new List<string>();
+            Quantity = new List<string>();
         }
 
         protected override void BtnPrevious_Click(object sender, EventArgs e)
         {
+            index--;
+            Print(Stock.ShowTable(ref index, ref StockControls));
+            Print(Staff.ShowTable(ref index, ref StaffControls));
+            Print(StockOrder.ShowTable(ref index, ref StockOrderControls));
+            Print(StockOrderStock.ShowTable(ref index, ref StockOrderStockControls));
+
+            StockId = new List<string>();
+            Quantity = new List<string>();
         }
 
         private void BtnReport_Click(object sender, EventArgs e)
         {
             FrmStockOrderReport report = new FrmStockOrderReport();
             report.Show();
+        }
+        private void BtnAddStock_Click(object sender, EventArgs e)
+        {
+            Container current = (Container) CbxStock.SelectedItem;
+            string name = current.ToString();
+            string value = NudStockQuantity.Value.ToString();
+
+            StockId.Add(name);
+            Quantity.Add(value);
+
+            Print(value + " " + name + " added");
+        }
+        private void BtnRemoveStock_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Container current = (Container)CbxStock.SelectedItem;
+                string name = current.ToString();
+                int index = StockId.IndexOf(name);
+
+                StockId.RemoveAt(index);
+                Quantity.RemoveAt(index);
+                Print(name + " removed");
+            }
+
+            catch
+            {
+
+            }
+        }
+        private void BtnOverview_Click(object sender, EventArgs e)
+        {
+            FrmOverview overview = new FrmOverview();
+            overview.Show();
         }
     }
 }

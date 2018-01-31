@@ -1,6 +1,6 @@
 ﻿namespace EventsUnlimited
 {
-    partial class LsvDisplay
+    partial class FrmOverview
     {
         /// <summary>
         /// Required designer variable.
@@ -50,14 +50,14 @@
             this.BtnClose.UseVisualStyleBackColor = true;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // LsvDisplay
+            // FrmOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 744);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.LstDisplay);
-            this.Name = "LsvDisplay";
+            this.Name = "FrmOverview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Overview";
             this.ResumeLayout(false);

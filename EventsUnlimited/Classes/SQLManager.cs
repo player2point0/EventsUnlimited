@@ -119,6 +119,21 @@ namespace EventsUnlimited
             return "Record added";
         }
 
+        public string AddRow(string[] values)
+        {
+            dataRow = dataTable.NewRow();
+
+            for (int i = 0; i < table.Fields.Length; i++)
+            {
+                dataRow[table.Fields[i]] = values[i];
+            }
+
+            dataTable.Rows.Add(dataRow);
+            sqlAdapter.Update(dataTable);
+
+            return "Record added";
+        }
+
         public string EditRow(string[] rowKeys, ref Control[] controls)
         {
             DialogResult edit = MessageBox.Show("Do you want to update the record?", "Edit record", MessageBoxButtons.YesNo);
@@ -147,6 +162,37 @@ namespace EventsUnlimited
             primaryKeys.Sort();
             //GENERATE NEW KEY BY ADDING ONE TO THE LARGEST KEY
             return (primaryKeys[primaryKeys.Count - 1] + 1); ;
+        }
+
+        public void PopulateComboBox(ref ComboBox display)
+        {
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                var item = new Container(dr[table.PrimaryKeys[0]].ToString(), dr[table.Fields[1]].ToString());
+
+                display.Items.Add(item);
+            }
+        }
+
+        public string DeleteAllWith(string field, string condition)
+        {
+            //delete any row which has the conditions
+            int num = 0;
+
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                dataRow = dataTable.Rows[i];
+
+                if (dataRow[field].ToString() == condition)
+                {
+                    dataRow.Delete();
+                    sqlAdapter.Update(dataTable);
+
+                    num++;
+                }
+            }
+
+            return num + " rows deleted";
         }
     }
 }

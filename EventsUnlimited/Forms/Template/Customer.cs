@@ -15,10 +15,7 @@ namespace EventsUnlimited
         public FrmCustomer()
         {
             InitializeComponent();
-
-            Control.ControlCollection _controls = this.Controls;
-            Program.SetColors(ref _controls);
-
+            
             string name = "Customer";
             string[] primaryKeys = new string[] { "CustomerId" };
             string[] fields = new string[] { "CustomerId", "CustomerName", "CustomerAddress", "CustomerPhoneNumber" };

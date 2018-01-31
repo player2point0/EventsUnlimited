@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PnlStockOrderInput = new System.Windows.Forms.Panel();
+            this.BtnReport = new System.Windows.Forms.Button();
             this.BtnOverview = new System.Windows.Forms.Button();
             this.BtnRemoveStock = new System.Windows.Forms.Button();
             this.BtnAddStock = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.DtpStockOrderDate = new System.Windows.Forms.DateTimePicker();
             this.CbxStaffID = new System.Windows.Forms.ComboBox();
             this.LblStockOrderID = new System.Windows.Forms.Label();
-            this.BtnReport = new System.Windows.Forms.Button();
             this.PnlStockOrderLabels.SuspendLayout();
             this.PnlStockOrderInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudStockQuantity)).BeginInit();
@@ -117,10 +117,21 @@
             this.PnlStockOrderInput.Controls.Add(this.DtpStockOrderDate);
             this.PnlStockOrderInput.Controls.Add(this.CbxStaffID);
             this.PnlStockOrderInput.Controls.Add(this.LblStockOrderID);
+            this.PnlStockOrderInput.Enabled = false;
             this.PnlStockOrderInput.Location = new System.Drawing.Point(519, 174);
             this.PnlStockOrderInput.Name = "PnlStockOrderInput";
             this.PnlStockOrderInput.Size = new System.Drawing.Size(252, 409);
             this.PnlStockOrderInput.TabIndex = 7;
+            // 
+            // BtnReport
+            // 
+            this.BtnReport.Location = new System.Drawing.Point(39, 319);
+            this.BtnReport.Name = "BtnReport";
+            this.BtnReport.Size = new System.Drawing.Size(176, 34);
+            this.BtnReport.TabIndex = 8;
+            this.BtnReport.Text = "Report";
+            this.BtnReport.UseVisualStyleBackColor = true;
+            this.BtnReport.Click += new System.EventHandler(this.BtnReport_Click);
             // 
             // BtnOverview
             // 
@@ -130,6 +141,7 @@
             this.BtnOverview.TabIndex = 7;
             this.BtnOverview.Text = "Overview";
             this.BtnOverview.UseVisualStyleBackColor = true;
+            this.BtnOverview.Click += new System.EventHandler(this.BtnOverview_Click);
             // 
             // BtnRemoveStock
             // 
@@ -139,6 +151,7 @@
             this.BtnRemoveStock.TabIndex = 6;
             this.BtnRemoveStock.Text = "Remove";
             this.BtnRemoveStock.UseVisualStyleBackColor = true;
+            this.BtnRemoveStock.Click += new System.EventHandler(this.BtnRemoveStock_Click);
             // 
             // BtnAddStock
             // 
@@ -148,6 +161,7 @@
             this.BtnAddStock.TabIndex = 5;
             this.BtnAddStock.Text = "Add";
             this.BtnAddStock.UseVisualStyleBackColor = true;
+            this.BtnAddStock.Click += new System.EventHandler(this.BtnAddStock_Click);
             // 
             // NudStockQuantity
             // 
@@ -158,6 +172,7 @@
             // 
             // CbxStock
             // 
+            this.CbxStock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxStock.FormattingEnabled = true;
             this.CbxStock.Location = new System.Drawing.Point(39, 119);
             this.CbxStock.Name = "CbxStock";
@@ -173,6 +188,7 @@
             // 
             // CbxStaffID
             // 
+            this.CbxStaffID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxStaffID.FormattingEnabled = true;
             this.CbxStaffID.Location = new System.Drawing.Point(39, 50);
             this.CbxStaffID.Name = "CbxStaffID";
@@ -187,16 +203,6 @@
             this.LblStockOrderID.Size = new System.Drawing.Size(115, 20);
             this.LblStockOrderID.TabIndex = 0;
             this.LblStockOrderID.Text = "Stock Order ID";
-            // 
-            // BtnReport
-            // 
-            this.BtnReport.Location = new System.Drawing.Point(39, 319);
-            this.BtnReport.Name = "BtnReport";
-            this.BtnReport.Size = new System.Drawing.Size(176, 34);
-            this.BtnReport.TabIndex = 8;
-            this.BtnReport.Text = "Report";
-            this.BtnReport.UseVisualStyleBackColor = true;
-            this.BtnReport.Click += new System.EventHandler(this.BtnReport_Click);
             // 
             // FrmStockOrder
             // 

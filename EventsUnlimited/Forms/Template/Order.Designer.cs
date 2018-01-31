@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PnlOrderInput = new System.Windows.Forms.Panel();
+            this.BtnReport = new System.Windows.Forms.Button();
             this.TbxOrderAddress = new EventsUnlimited.ValidationTextBox();
             this.NudStockQuantity = new System.Windows.Forms.NumericUpDown();
             this.BtnOverview = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@
             this.CbxCustomerID = new System.Windows.Forms.ComboBox();
             this.CbxStaffID = new System.Windows.Forms.ComboBox();
             this.LblOrderID = new System.Windows.Forms.Label();
-            this.BtnReport = new System.Windows.Forms.Button();
             this.PnlOrderLabels.SuspendLayout();
             this.PnlOrderInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudStockQuantity)).BeginInit();
@@ -187,6 +187,16 @@
             this.PnlOrderInput.Size = new System.Drawing.Size(264, 565);
             this.PnlOrderInput.TabIndex = 7;
             // 
+            // BtnReport
+            // 
+            this.BtnReport.Location = new System.Drawing.Point(31, 520);
+            this.BtnReport.Name = "BtnReport";
+            this.BtnReport.Size = new System.Drawing.Size(188, 37);
+            this.BtnReport.TabIndex = 14;
+            this.BtnReport.Text = "Report";
+            this.BtnReport.UseVisualStyleBackColor = true;
+            this.BtnReport.Click += new System.EventHandler(this.BtnReport_Click);
+            // 
             // TbxOrderAddress
             // 
             this.TbxOrderAddress.Field = "Order Address";
@@ -244,6 +254,7 @@
             // 
             // CbxStock
             // 
+            this.CbxStock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxStock.FormattingEnabled = true;
             this.CbxStock.Location = new System.Drawing.Point(30, 270);
             this.CbxStock.Name = "CbxStock";
@@ -268,6 +279,7 @@
             // 
             // CbxCardID
             // 
+            this.CbxCardID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxCardID.FormattingEnabled = true;
             this.CbxCardID.Location = new System.Drawing.Point(30, 108);
             this.CbxCardID.Name = "CbxCardID";
@@ -276,6 +288,7 @@
             // 
             // CbxCustomerID
             // 
+            this.CbxCustomerID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxCustomerID.FormattingEnabled = true;
             this.CbxCustomerID.Location = new System.Drawing.Point(30, 78);
             this.CbxCustomerID.Name = "CbxCustomerID";
@@ -284,6 +297,7 @@
             // 
             // CbxStaffID
             // 
+            this.CbxStaffID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxStaffID.FormattingEnabled = true;
             this.CbxStaffID.Location = new System.Drawing.Point(30, 47);
             this.CbxStaffID.Name = "CbxStaffID";
@@ -298,16 +312,6 @@
             this.LblOrderID.Size = new System.Drawing.Size(70, 20);
             this.LblOrderID.TabIndex = 0;
             this.LblOrderID.Text = "Order ID";
-            // 
-            // BtnReport
-            // 
-            this.BtnReport.Location = new System.Drawing.Point(31, 520);
-            this.BtnReport.Name = "BtnReport";
-            this.BtnReport.Size = new System.Drawing.Size(188, 37);
-            this.BtnReport.TabIndex = 14;
-            this.BtnReport.Text = "Report";
-            this.BtnReport.UseVisualStyleBackColor = true;
-            this.BtnReport.Click += new System.EventHandler(this.BtnReport_Click);
             // 
             // FrmCustomerOrder
             // 

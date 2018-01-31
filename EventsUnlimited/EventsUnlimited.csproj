@@ -79,6 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Container.cs" />
     <Compile Include="Forms\Custom\CustomerOrderReport.cs">
       <SubType>Form</SubType>
     </Compile>

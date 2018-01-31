@@ -16,9 +16,6 @@ namespace EventsUnlimited
         {
             InitializeComponent();
 
-            Control.ControlCollection _controls = this.Controls;
-            Program.SetColors(ref _controls);
-
             string name = "CustomerCard";
             string[] primaryKeys = new string[] { "CardId" };
             string[] fields = new string[] { "CardId", "CardNumber", "cardExpiryDate", "CardHolderName", "CardSecurityCode" };
