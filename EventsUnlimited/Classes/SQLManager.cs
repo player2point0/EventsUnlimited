@@ -194,5 +194,11 @@ namespace EventsUnlimited
 
             return num + " rows deleted";
         }
+
+        public DataTable GetTable
+        {
+            get { return dataTable; }
+        }
+
     }
 }
