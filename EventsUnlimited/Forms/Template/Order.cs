@@ -71,5 +71,22 @@ namespace EventsUnlimited
             FrmCustomerOrderReport report = new FrmCustomerOrderReport();
             report.Show();
         }
+
+        private void CbxStaffID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void CbxCustomerID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void CbxCardID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void CbxStock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

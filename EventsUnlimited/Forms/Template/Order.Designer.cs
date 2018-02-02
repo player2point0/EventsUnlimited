@@ -260,6 +260,7 @@
             this.CbxStock.Name = "CbxStock";
             this.CbxStock.Size = new System.Drawing.Size(161, 28);
             this.CbxStock.TabIndex = 7;
+            this.CbxStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbxStock_KeyPress);
             // 
             // DtpOrderDate
             // 
@@ -285,6 +286,7 @@
             this.CbxCardID.Name = "CbxCardID";
             this.CbxCardID.Size = new System.Drawing.Size(121, 28);
             this.CbxCardID.TabIndex = 3;
+            this.CbxCardID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbxCardID_KeyPress);
             // 
             // CbxCustomerID
             // 
@@ -294,6 +296,7 @@
             this.CbxCustomerID.Name = "CbxCustomerID";
             this.CbxCustomerID.Size = new System.Drawing.Size(121, 28);
             this.CbxCustomerID.TabIndex = 2;
+            this.CbxCustomerID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbxCustomerID_KeyPress);
             // 
             // CbxStaffID
             // 
@@ -303,6 +306,7 @@
             this.CbxStaffID.Name = "CbxStaffID";
             this.CbxStaffID.Size = new System.Drawing.Size(121, 28);
             this.CbxStaffID.TabIndex = 1;
+            this.CbxStaffID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbxStaffID_KeyPress);
             // 
             // LblOrderID
             // 

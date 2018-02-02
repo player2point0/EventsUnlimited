@@ -39,7 +39,7 @@ namespace EventsUnlimited
             StockOrder = new SQLManager("StockOrder", new string[] { "StockOrderId" }, new string[] { "StockOrderId", "StockOrderDate", "staffId" });
             StockOrderControls = new Control[] { LblStockOrderID, DtpStockOrderDate , CbxStaffID};
 
-            StockOrderStock = new SQLManager("StockOrderStock", new string[] { "StockOrderId", "StockId" }, new string[] { "StockQuantity"});
+            StockOrderStock = new SQLManager("StockOrderStock", new string[] { "StockOrderId", "StockId" }, new string[] { "StockOrderId", "StockId", "StockQuantity" });
             StockOrderStockControls = new Control[] { NudStockQuantity };
 
             index = 0;
@@ -76,7 +76,7 @@ namespace EventsUnlimited
             StockId = new List<string>();
             Quantity = new List<string>();
 
-            NudStockQuantity.Value = 0;
+            NudStockQuantity.Value = 1;
             CbxStaffID.ResetText();
             CbxStock.ResetText();
             DtpStockOrderDate.Value = DateTime.Now;
@@ -84,13 +84,13 @@ namespace EventsUnlimited
 
         protected override void BtnSave_Click(object sender, EventArgs e)
         {
-            if(CbxStaffID.SelectedValue == null)
+            if(CbxStaffID.SelectedItem == null)
             {
                 Print("Please select a member of staff");
                 return;
             }
 
-            if(CbxStock.SelectedValue == null)
+            if(CbxStock.SelectedItem == null)
             {
                 Print("Please add stock");
                 return;
@@ -100,6 +100,8 @@ namespace EventsUnlimited
             StockOrder.AddRow(ref StockOrderControls);
             //save each item of stock in the StockOrderStock table
             string StockOrderId = LblStockOrderID.Text;
+
+            Program.Log(StockOrderId);
 
             for (int i = 0;i<StockId.Count;i++)
             {
@@ -149,25 +151,25 @@ namespace EventsUnlimited
         private void BtnAddStock_Click(object sender, EventArgs e)
         {
             Container current = (Container) CbxStock.SelectedItem;
-            string name = current.ToString();
+            string name = current.Id;
             string value = NudStockQuantity.Value.ToString();
 
             StockId.Add(name);
             Quantity.Add(value);
 
-            Print(value + " " + name + " added");
+            Print(value + " " + current.ToString() + " added");
         }
         private void BtnRemoveStock_Click(object sender, EventArgs e)
         {
             try
             {
                 Container current = (Container)CbxStock.SelectedItem;
-                string name = current.ToString();
+                string name = current.Id;
                 int index = StockId.IndexOf(name);
 
                 StockId.RemoveAt(index);
                 Quantity.RemoveAt(index);
-                Print(name + " removed");
+                Print(current.ToString() + " removed");
             }
 
             catch
@@ -179,6 +181,15 @@ namespace EventsUnlimited
         {
             FrmOverview overview = new FrmOverview();
             overview.Show();
+        }
+
+        private void CbxStock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void CbxStaffID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

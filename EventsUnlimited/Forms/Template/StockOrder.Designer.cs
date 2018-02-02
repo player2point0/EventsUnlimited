@@ -166,18 +166,28 @@
             // NudStockQuantity
             // 
             this.NudStockQuantity.Location = new System.Drawing.Point(39, 154);
+            this.NudStockQuantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.NudStockQuantity.Name = "NudStockQuantity";
             this.NudStockQuantity.Size = new System.Drawing.Size(120, 26);
             this.NudStockQuantity.TabIndex = 4;
+            this.NudStockQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // CbxStock
             // 
-            this.CbxStock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxStock.FormattingEnabled = true;
             this.CbxStock.Location = new System.Drawing.Point(39, 119);
             this.CbxStock.Name = "CbxStock";
             this.CbxStock.Size = new System.Drawing.Size(121, 28);
             this.CbxStock.TabIndex = 3;
+            this.CbxStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbxStock_KeyPress);
             // 
             // DtpStockOrderDate
             // 
@@ -188,12 +198,12 @@
             // 
             // CbxStaffID
             // 
-            this.CbxStaffID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxStaffID.FormattingEnabled = true;
             this.CbxStaffID.Location = new System.Drawing.Point(39, 50);
             this.CbxStaffID.Name = "CbxStaffID";
             this.CbxStaffID.Size = new System.Drawing.Size(121, 28);
             this.CbxStaffID.TabIndex = 1;
+            this.CbxStaffID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbxStaffID_KeyPress);
             // 
             // LblStockOrderID
             // 
