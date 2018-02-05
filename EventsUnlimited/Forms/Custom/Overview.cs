@@ -12,12 +12,20 @@ namespace EventsUnlimited
 {
     public partial class FrmOverview : Form
     {
-        public FrmOverview()
+        private string id;
+        private string[] columnNames;
+        
+
+        public FrmOverview(string _id, string[] _columnNames)
         {
             InitializeComponent();
 
-            Control.ControlCollection controls = this.Controls;
-            Program.SetColors(ref controls);
+            id = _id;
+            columnNames = _columnNames;
+
+
+
+
         }
 
         private void BtnClose_Click(object sender, EventArgs e)

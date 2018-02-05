@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LstDisplay = new System.Windows.Forms.ListView();
+            this.LsvDisplay = new System.Windows.Forms.ListView();
             this.BtnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // LstDisplay
+            // LsvDisplay
             // 
-            this.LstDisplay.Location = new System.Drawing.Point(33, 26);
-            this.LstDisplay.Name = "LstDisplay";
-            this.LstDisplay.Size = new System.Drawing.Size(1119, 598);
-            this.LstDisplay.TabIndex = 0;
-            this.LstDisplay.UseCompatibleStateImageBehavior = false;
+            this.LsvDisplay.Location = new System.Drawing.Point(33, 26);
+            this.LsvDisplay.Name = "LsvDisplay";
+            this.LsvDisplay.Size = new System.Drawing.Size(1119, 598);
+            this.LsvDisplay.TabIndex = 0;
+            this.LsvDisplay.UseCompatibleStateImageBehavior = false;
             // 
             // BtnClose
             // 
@@ -56,7 +56,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 744);
             this.Controls.Add(this.BtnClose);
-            this.Controls.Add(this.LstDisplay);
+            this.Controls.Add(this.LsvDisplay);
             this.Name = "FrmOverview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Overview";
@@ -66,7 +66,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView LstDisplay;
+        private System.Windows.Forms.ListView LsvDisplay;
         private System.Windows.Forms.Button BtnClose;
     }
 }
