@@ -25,8 +25,6 @@ namespace EventsUnlimited
 
         private List<string> StockIdToAdd;
         private List<string> QuantityToAdd;
-        private List<string> CurrentStock;
-        private List<string> CurrentQuantity;
 
         public FrmStockOrder()
         {
@@ -58,54 +56,10 @@ namespace EventsUnlimited
             StockOrder.ReadTable();
             StockOrderStock.ReadTable();
 
-            UpdateView();
-        }
-
-        private void UpdateView()
-        {
             Print(StockOrder.ShowTable(ref index, ref StockOrderControls));
             string StockOrderId = LblStockOrderID.Text;
-
-            //get a list of all the stocks and their quantity
-            DataTable dt = StockOrderStock.GetTable;
-            CurrentQuantity = new List<string>();
-            CurrentStock = new List<string>();
-
-            foreach(DataRow dr in dt.Rows)
-            {
-                if(dr["StockOrderId"].ToString() == StockOrderId)
-                {
-                    CurrentStock.Add(dr["StockId"].ToString());
-                    CurrentQuantity.Add(dr["StockQuantity"].ToString());
-                    //WORKS
-                    Program.Log(dr["StockId"].ToString() + " " + dr["StockQuantity"].ToString());
-                }
-            }
-            //display the quantity
-            //DisplayQuantity();
-            //when the stock is changed change the quantity
         }
-        private void DisplayQuantity()
-        {
-            string stockId = "";
-
-            try
-            {
-                stockId = (CbxStock.SelectedItem as Container).Id;
-            }
-
-            catch
-            {
-                stockId = (CbxStock.Items[0] as Container).Id;
-            }
-
-            finally
-            {
-                int i = CurrentStock.IndexOf(stockId);
-
-                NudStockQuantity.Value = Decimal.Parse(CurrentQuantity[i]);
-            }
-        }
+        
         protected override void ClearControls()
         {
             LblStockOrderID.Text = StockOrder.GenerateNewPrimaryKey().ToString();
@@ -118,7 +72,7 @@ namespace EventsUnlimited
             CbxStock.ResetText();
             DtpStockOrderDate.Value = DateTime.Now;
         }
-
+        
         protected override void BtnEdit_Click(object sender, EventArgs e)
         {
             base.BtnEdit_Click(sender, e);
@@ -165,12 +119,14 @@ namespace EventsUnlimited
         protected override void BtnNext_Click(object sender, EventArgs e)
         {
             index++;
-            UpdateView();
+            Print(StockOrder.ShowTable(ref index, ref StockOrderControls));
+            string StockOrderId = LblStockOrderID.Text;
         }
         protected override void BtnPrevious_Click(object sender, EventArgs e)
         {
             index--;
-            UpdateView();
+            Print(StockOrder.ShowTable(ref index, ref StockOrderControls));
+            string StockOrderId = LblStockOrderID.Text;
         }
 
         private void BtnReport_Click(object sender, EventArgs e)
@@ -220,11 +176,6 @@ namespace EventsUnlimited
         private void CbxStaffID_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
-        }
-
-        private void CbxStock_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DisplayQuantity();
         }
     }
 }

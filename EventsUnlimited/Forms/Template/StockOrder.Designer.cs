@@ -58,7 +58,7 @@
             this.PnlStockOrderLabels.Controls.Add(this.label1);
             this.PnlStockOrderLabels.Location = new System.Drawing.Point(255, 174);
             this.PnlStockOrderLabels.Name = "PnlStockOrderLabels";
-            this.PnlStockOrderLabels.Size = new System.Drawing.Size(236, 409);
+            this.PnlStockOrderLabels.Size = new System.Drawing.Size(236, 264);
             this.PnlStockOrderLabels.TabIndex = 6;
             // 
             // label5
@@ -108,8 +108,6 @@
             // 
             // PnlStockOrderInput
             // 
-            this.PnlStockOrderInput.Controls.Add(this.BtnReport);
-            this.PnlStockOrderInput.Controls.Add(this.BtnOverview);
             this.PnlStockOrderInput.Controls.Add(this.BtnRemoveStock);
             this.PnlStockOrderInput.Controls.Add(this.BtnAddStock);
             this.PnlStockOrderInput.Controls.Add(this.NudStockQuantity);
@@ -120,12 +118,12 @@
             this.PnlStockOrderInput.Enabled = false;
             this.PnlStockOrderInput.Location = new System.Drawing.Point(519, 174);
             this.PnlStockOrderInput.Name = "PnlStockOrderInput";
-            this.PnlStockOrderInput.Size = new System.Drawing.Size(252, 409);
+            this.PnlStockOrderInput.Size = new System.Drawing.Size(252, 264);
             this.PnlStockOrderInput.TabIndex = 7;
             // 
             // BtnReport
             // 
-            this.BtnReport.Location = new System.Drawing.Point(39, 319);
+            this.BtnReport.Location = new System.Drawing.Point(558, 537);
             this.BtnReport.Name = "BtnReport";
             this.BtnReport.Size = new System.Drawing.Size(176, 34);
             this.BtnReport.TabIndex = 8;
@@ -135,7 +133,7 @@
             // 
             // BtnOverview
             // 
-            this.BtnOverview.Location = new System.Drawing.Point(39, 264);
+            this.BtnOverview.Location = new System.Drawing.Point(558, 464);
             this.BtnOverview.Name = "BtnOverview";
             this.BtnOverview.Size = new System.Drawing.Size(176, 38);
             this.BtnOverview.TabIndex = 7;
@@ -219,13 +217,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 744);
+            this.Controls.Add(this.BtnReport);
             this.Controls.Add(this.PnlStockOrderInput);
+            this.Controls.Add(this.BtnOverview);
             this.Controls.Add(this.PnlStockOrderLabels);
             this.Name = "FrmStockOrder";
             this.Text = "StockOrder";
             this.Load += new System.EventHandler(this.FrmStockOrder_Load);
             this.Controls.SetChildIndex(this.PnlStockOrderLabels, 0);
+            this.Controls.SetChildIndex(this.BtnOverview, 0);
             this.Controls.SetChildIndex(this.PnlStockOrderInput, 0);
+            this.Controls.SetChildIndex(this.BtnReport, 0);
             this.PnlStockOrderLabels.ResumeLayout(false);
             this.PnlStockOrderLabels.PerformLayout();
             this.PnlStockOrderInput.ResumeLayout(false);
