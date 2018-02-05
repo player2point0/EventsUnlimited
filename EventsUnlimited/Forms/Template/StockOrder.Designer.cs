@@ -187,7 +187,6 @@
             this.CbxStock.Name = "CbxStock";
             this.CbxStock.Size = new System.Drawing.Size(121, 28);
             this.CbxStock.TabIndex = 3;
-            this.CbxStock.SelectedIndexChanged += new System.EventHandler(this.CbxStock_SelectedIndexChanged);
             this.CbxStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbxStock_KeyPress);
             // 
             // DtpStockOrderDate

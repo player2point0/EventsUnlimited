@@ -28,7 +28,6 @@ namespace EventsUnlimited
         private List<string> CurrentStock;
         private List<string> CurrentQuantity;
 
-
         public FrmStockOrder()
         {
             InitializeComponent();
@@ -78,21 +77,34 @@ namespace EventsUnlimited
                 {
                     CurrentStock.Add(dr["StockId"].ToString());
                     CurrentQuantity.Add(dr["StockQuantity"].ToString());
+                    //WORKS
+                    Program.Log(dr["StockId"].ToString() + " " + dr["StockQuantity"].ToString());
                 }
             }
             //display the quantity
-            DisplayQuantity();
+            //DisplayQuantity();
             //when the stock is changed change the quantity
-
-            StockIdToAdd = new List<string>();
-            QuantityToAdd = new List<string>();
         }
         private void DisplayQuantity()
         {
-            string stockId = CbxStock.Text;//(CbxStock.SelectedItem as Container).Id;
-            int i = CurrentStock.IndexOf(stockId);
+            string stockId = "";
 
-            NudStockQuantity.Value = Decimal.Parse(CurrentQuantity[i]);
+            try
+            {
+                stockId = (CbxStock.SelectedItem as Container).Id;
+            }
+
+            catch
+            {
+                stockId = (CbxStock.Items[0] as Container).Id;
+            }
+
+            finally
+            {
+                int i = CurrentStock.IndexOf(stockId);
+
+                NudStockQuantity.Value = Decimal.Parse(CurrentQuantity[i]);
+            }
         }
         protected override void ClearControls()
         {
