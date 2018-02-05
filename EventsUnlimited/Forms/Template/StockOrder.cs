@@ -57,7 +57,6 @@ namespace EventsUnlimited
             StockOrderStock.ReadTable();
 
             Print(StockOrder.ShowTable(ref index, ref StockOrderControls));
-            string StockOrderId = LblStockOrderID.Text;
         }
         
         protected override void ClearControls()
@@ -94,39 +93,36 @@ namespace EventsUnlimited
 
             string StockOrderId = LblStockOrderID.Text;
             string StaffId = (CbxStaffID.SelectedItem as Container).Id;
-
-            Program.Log(StockOrderId);
-
+            
             //save a new StockOrder
-            StockOrder.AddRow(new string[] { StockOrderId, DtpStockOrderDate.Value.ToString(), StaffId });
+            Print(StockOrder.AddRow(new string[] { StockOrderId, DtpStockOrderDate.Value.ToString(), StaffId }));
             //save each item of stock in the StockOrderStock table
-
             for (int i = 0;i< StockIdToAdd.Count;i++)
             {
-                //StockOrderStock.AddRow(new string[] { StockOrderId, StockId[i], Quantity[i]});
+                StockOrderStock.AddRow(new string[] { StockOrderId, StockIdToAdd[i], QuantityToAdd[i]});
             }
         }
         protected override void BtnDelete_Click(object sender, EventArgs e)
         {
-            string stockId = LblStockOrderID.Text;
+            string stockOrderId = LblStockOrderID.Text;
 
             //delete all in StockOrderStock with the stock id
-            StockOrderStock.DeleteAllWith("StockId", stockId);
+            StockOrderStock.DeleteAllWith("StockOrderId", stockOrderId);
             //delete record in StockOrder with the stock id
-            StockOrder.DeleteRow(new string[] { stockId });
+            Print(StockOrder.DeleteRow(new string[] { stockOrderId }));
+            index--;
+            StockOrder.ShowTable(ref index, ref StockOrderControls);
         }
 
         protected override void BtnNext_Click(object sender, EventArgs e)
         {
             index++;
             Print(StockOrder.ShowTable(ref index, ref StockOrderControls));
-            string StockOrderId = LblStockOrderID.Text;
         }
         protected override void BtnPrevious_Click(object sender, EventArgs e)
         {
             index--;
             Print(StockOrder.ShowTable(ref index, ref StockOrderControls));
-            string StockOrderId = LblStockOrderID.Text;
         }
 
         private void BtnReport_Click(object sender, EventArgs e)
