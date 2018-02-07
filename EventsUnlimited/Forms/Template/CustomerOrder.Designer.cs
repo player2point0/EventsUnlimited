@@ -40,10 +40,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PnlOrderInput = new System.Windows.Forms.Panel();
-            this.BtnReport = new System.Windows.Forms.Button();
             this.TbxOrderAddress = new EventsUnlimited.ValidationTextBox();
             this.NudStockQuantity = new System.Windows.Forms.NumericUpDown();
-            this.BtnOverview = new System.Windows.Forms.Button();
             this.TbxOrderNotes = new System.Windows.Forms.TextBox();
             this.BtnRemoveStock = new System.Windows.Forms.Button();
             this.BtnAddStock = new System.Windows.Forms.Button();
@@ -54,6 +52,8 @@
             this.CbxCustomerID = new System.Windows.Forms.ComboBox();
             this.CbxStaffID = new System.Windows.Forms.ComboBox();
             this.LblOrderID = new System.Windows.Forms.Label();
+            this.BtnReport = new System.Windows.Forms.Button();
+            this.BtnOverview = new System.Windows.Forms.Button();
             this.PnlOrderLabels.SuspendLayout();
             this.PnlOrderInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudStockQuantity)).BeginInit();
@@ -168,10 +168,8 @@
             // 
             // PnlOrderInput
             // 
-            this.PnlOrderInput.Controls.Add(this.BtnReport);
             this.PnlOrderInput.Controls.Add(this.TbxOrderAddress);
             this.PnlOrderInput.Controls.Add(this.NudStockQuantity);
-            this.PnlOrderInput.Controls.Add(this.BtnOverview);
             this.PnlOrderInput.Controls.Add(this.TbxOrderNotes);
             this.PnlOrderInput.Controls.Add(this.BtnRemoveStock);
             this.PnlOrderInput.Controls.Add(this.BtnAddStock);
@@ -184,18 +182,8 @@
             this.PnlOrderInput.Controls.Add(this.LblOrderID);
             this.PnlOrderInput.Location = new System.Drawing.Point(530, 177);
             this.PnlOrderInput.Name = "PnlOrderInput";
-            this.PnlOrderInput.Size = new System.Drawing.Size(264, 565);
+            this.PnlOrderInput.Size = new System.Drawing.Size(264, 483);
             this.PnlOrderInput.TabIndex = 7;
-            // 
-            // BtnReport
-            // 
-            this.BtnReport.Location = new System.Drawing.Point(31, 520);
-            this.BtnReport.Name = "BtnReport";
-            this.BtnReport.Size = new System.Drawing.Size(188, 37);
-            this.BtnReport.TabIndex = 14;
-            this.BtnReport.Text = "Report";
-            this.BtnReport.UseVisualStyleBackColor = true;
-            this.BtnReport.Click += new System.EventHandler(this.BtnReport_Click);
             // 
             // TbxOrderAddress
             // 
@@ -217,15 +205,6 @@
             this.NudStockQuantity.Size = new System.Drawing.Size(120, 26);
             this.NudStockQuantity.TabIndex = 12;
             // 
-            // BtnOverview
-            // 
-            this.BtnOverview.Location = new System.Drawing.Point(30, 480);
-            this.BtnOverview.Name = "BtnOverview";
-            this.BtnOverview.Size = new System.Drawing.Size(189, 34);
-            this.BtnOverview.TabIndex = 11;
-            this.BtnOverview.Text = "Overview";
-            this.BtnOverview.UseVisualStyleBackColor = true;
-            // 
             // TbxOrderNotes
             // 
             this.TbxOrderNotes.Location = new System.Drawing.Point(30, 386);
@@ -242,6 +221,7 @@
             this.BtnRemoveStock.TabIndex = 9;
             this.BtnRemoveStock.Text = "Remove";
             this.BtnRemoveStock.UseVisualStyleBackColor = true;
+            this.BtnRemoveStock.Click += new System.EventHandler(this.BtnRemoveStock_Click);
             // 
             // BtnAddStock
             // 
@@ -251,6 +231,7 @@
             this.BtnAddStock.TabIndex = 8;
             this.BtnAddStock.Text = "Add";
             this.BtnAddStock.UseVisualStyleBackColor = true;
+            this.BtnAddStock.Click += new System.EventHandler(this.BtnAddStock_Click);
             // 
             // CbxStock
             // 
@@ -317,18 +298,42 @@
             this.LblOrderID.TabIndex = 0;
             this.LblOrderID.Text = "Order ID";
             // 
+            // BtnReport
+            // 
+            this.BtnReport.Location = new System.Drawing.Point(549, 706);
+            this.BtnReport.Name = "BtnReport";
+            this.BtnReport.Size = new System.Drawing.Size(188, 28);
+            this.BtnReport.TabIndex = 14;
+            this.BtnReport.Text = "Report";
+            this.BtnReport.UseVisualStyleBackColor = true;
+            this.BtnReport.Click += new System.EventHandler(this.BtnReport_Click);
+            // 
+            // BtnOverview
+            // 
+            this.BtnOverview.Location = new System.Drawing.Point(549, 666);
+            this.BtnOverview.Name = "BtnOverview";
+            this.BtnOverview.Size = new System.Drawing.Size(189, 34);
+            this.BtnOverview.TabIndex = 11;
+            this.BtnOverview.Text = "Overview";
+            this.BtnOverview.UseVisualStyleBackColor = true;
+            this.BtnOverview.Click += new System.EventHandler(this.BtnOverview_Click);
+            // 
             // FrmCustomerOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 744);
+            this.Controls.Add(this.BtnReport);
             this.Controls.Add(this.PnlOrderInput);
             this.Controls.Add(this.PnlOrderLabels);
+            this.Controls.Add(this.BtnOverview);
             this.Name = "FrmCustomerOrder";
             this.Text = "CustomerOrder";
             this.Load += new System.EventHandler(this.FrmOrder_Load);
+            this.Controls.SetChildIndex(this.BtnOverview, 0);
             this.Controls.SetChildIndex(this.PnlOrderLabels, 0);
             this.Controls.SetChildIndex(this.PnlOrderInput, 0);
+            this.Controls.SetChildIndex(this.BtnReport, 0);
             this.PnlOrderLabels.ResumeLayout(false);
             this.PnlOrderLabels.PerformLayout();
             this.PnlOrderInput.ResumeLayout(false);

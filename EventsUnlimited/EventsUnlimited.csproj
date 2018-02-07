@@ -109,11 +109,11 @@
     <Compile Include="Forms\Custom\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Template\Order.cs">
+    <Compile Include="Forms\Template\CustomerOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Template\Order.Designer.cs">
-      <DependentUpon>Order.cs</DependentUpon>
+    <Compile Include="Forms\Template\CustomerOrder.Designer.cs">
+      <DependentUpon>CustomerOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Custom\Overview.cs">
       <SubType>Form</SubType>
@@ -192,8 +192,8 @@
     <EmbeddedResource Include="Forms\Custom\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Template\Order.resx">
-      <DependentUpon>Order.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Template\CustomerOrder.resx">
+      <DependentUpon>CustomerOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Custom\Overview.resx">
       <DependentUpon>Overview.cs</DependentUpon>

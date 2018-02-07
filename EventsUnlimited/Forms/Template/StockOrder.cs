@@ -13,13 +13,10 @@ namespace EventsUnlimited
     public partial class FrmStockOrder : FrmTemplate
     {
         private SQLManager Stock;
-        private Control[] StockControls;
         private SQLManager Staff;
-        private Control[] StaffControls;
         private SQLManager StockOrder;
-        private Control[] StockOrderControls;
         private SQLManager StockOrderStock;
-        private Control[] StockOrderStockControls;
+        private Control[] StockOrderControls;
 
         private int index;
 
@@ -32,16 +29,11 @@ namespace EventsUnlimited
             InitializeComponent();
 
             Stock = new SQLManager("Stock", new string[] { "StockId" }, new string[] { "StockId", "StockName" });
-            StockControls = new Control[] { CbxStock };
-
+            StockOrderStock = new SQLManager("StockOrderStock", new string[] { "StockOrderId", "StockId" }, new string[] { "StockOrderId", "StockId", "StockQuantity" });
             Staff = new SQLManager("Staff", new string[] { "StaffId" }, new string[] { "StaffId", "StaffName" });
-            StaffControls = new Control[] { CbxStaffID };
 
             StockOrder = new SQLManager("StockOrder", new string[] { "StockOrderId" }, new string[] { "StockOrderId", "StockOrderDate", "StaffId" });
             StockOrderControls = new Control[] { LblStockOrderID, DtpStockOrderDate , CbxStaffID};
-
-            StockOrderStock = new SQLManager("StockOrderStock", new string[] { "StockOrderId", "StockId" }, new string[] { "StockOrderId", "StockId", "StockQuantity" });
-            StockOrderStockControls = new Control[] { NudStockQuantity };
 
             index = 0;
             newOrder = false;
@@ -73,6 +65,13 @@ namespace EventsUnlimited
             CbxStock.ResetText();
             DtpStockOrderDate.Value = DateTime.Now;
         }
+        private bool StaffOrStockEmpty()
+        {
+            if (CbxStaffID.SelectedItem == null) Print("Please select a member of staff");
+            if (StockIdToAdd.Count <= 0) Print("Please add stock");
+
+            return (CbxStaffID.SelectedItem == null) || (StockIdToAdd.Count <= 0);
+        }
 
         protected override void BtnNew_Click(object sender, EventArgs e)
         {
@@ -86,17 +85,7 @@ namespace EventsUnlimited
         }
         protected override void BtnSave_Click(object sender, EventArgs e)
         {
-            if(CbxStaffID.SelectedItem == null)
-            {
-                Print("Please select a member of staff");
-                return;
-            }
-
-            if(StockIdToAdd.Count <= 0)
-            {
-                Print("Please add stock");
-                return;
-            }
+            if (StaffOrStockEmpty()) return;
 
             string StockOrderId = LblStockOrderID.Text;
             string StaffId = (CbxStaffID.SelectedItem as Container).Id;
@@ -143,6 +132,54 @@ namespace EventsUnlimited
             FrmStockOrderReport report = new FrmStockOrderReport();
             report.Show();
         }
+        private void BtnOverview_Click(object sender, EventArgs e)
+        {
+            //REFACTOR
+
+            string[] columns = new string[] { "StockOrderId", "StaffId", "StaffName", "StockOrderDate", "StockId", "StockName", "StockQuantity" };
+
+            //StockOrderId - get from form
+            string StockOrderId = LblStockOrderID.Text;
+            string staffId;
+            string staffName;
+            string stockOrderDate;
+            List<string> stockId;
+
+            if (newOrder)
+            {
+                if (StaffOrStockEmpty()) return;
+
+                staffId = (CbxStaffID.SelectedItem as Container).Id;
+                stockId = StockIdToAdd;
+                stockOrderDate = DtpStockOrderDate.Value.ToString();
+            }
+
+            else
+            {
+                //get staffId from the stockOrder table
+                staffId = StockOrder.GetData(new string[] { StockOrderId }, new string[] { "StaffId" })[0];
+                //get the stockIds from the stockOrderStock table
+                stockId = StockOrderStock.GetAllValues("StockOrderId", StockOrderId, "StockId");
+                //get the stockOrderDate from the stockOrder table
+                stockOrderDate = StockOrder.GetData(new string[] { StockOrderId }, new string[] { "StockOrderDate" })[0];
+            }
+
+            FrmOverview overview = new FrmOverview(columns);
+            overview.Show();
+
+            //staffName - get from staff table
+            staffName = Staff.GetData(new string[] { staffId }, new string[] { "StaffName" })[0];
+
+            for (int i = 0; i < stockId.Count; i++)
+            {
+                //StockName - get from stock table
+                string stockName = Stock.GetData(new string[] { stockId[i] }, new string[] { "StockName" })[0];
+                //stockQuantity - get from stockOrderStock table
+                string stockQuantity = StockOrderStock.GetData(new string[] { StockOrderId, stockId[i] }, new string[] { "StockQuantity" })[0];
+
+                overview.Add(new string[] { StockOrderId, staffId, staffName, stockOrderDate, stockId[i], stockName, stockQuantity });
+            }
+        }
         private void BtnAddStock_Click(object sender, EventArgs e)
         {
             Container current = (Container) CbxStock.SelectedItem;
@@ -156,6 +193,7 @@ namespace EventsUnlimited
         }
         private void BtnRemoveStock_Click(object sender, EventArgs e)
         {
+            //test
             try
             {
                 Container current = (Container)CbxStock.SelectedItem;
@@ -170,64 +208,6 @@ namespace EventsUnlimited
             catch
             {
 
-            }
-        }
-        private void BtnOverview_Click(object sender, EventArgs e)
-        {
-            //REFACTOR
-
-            string[] columns = new string[] {"StockOrderId", "StaffId", "StaffName", "StockOrderDate", "StockId", "StockName", "StockQuantity"  };
-            
-            //StockOrderId - get from form
-            string StockOrderId = LblStockOrderID.Text;
-            string staffId;
-            string staffName;
-            string stockOrderDate;
-            List<string> stockId;
-            
-            if(newOrder)
-            {
-                if (CbxStaffID.SelectedItem == null)
-                {
-                    Print("Please select a member of staff");
-                    return;
-                }
-
-                if (StockIdToAdd.Count <= 0)
-                {
-                    Print("Please add stock");
-                    return;
-                }
-
-                staffId = (CbxStaffID.SelectedItem as Container).Id;
-                stockId = StockIdToAdd;
-                stockOrderDate = DtpStockOrderDate.Value.ToString();
-            }
-
-            else
-            {
-                //get staffId from the stockOrder table
-                staffId = StockOrder.GetData(new string[] {StockOrderId },new string[] { "StaffId" })[0];
-                //get the stockIds from the stockOrderStock table
-                stockId = StockOrderStock.GetAllValues("StockOrderId", StockOrderId, "StockId");
-                //get the stockOrderDate from the stockOrder table
-                stockOrderDate = StockOrder.GetData(new string[] { StockOrderId }, new string[] { "StockOrderDate"})[0];
-            }
-
-            FrmOverview overview = new FrmOverview(columns);
-            overview.Show();
-
-            //staffName - get from staff table
-            staffName = Staff.GetData(new string[] { staffId }, new string[] { "StaffName" })[0];
-
-            for(int i = 0;i<stockId.Count;i++)
-            {
-                //StockName - get from stock table
-                string stockName = Stock.GetData(new string[] { stockId[i] }, new string[] { "StockName" })[0];
-                //stockQuantity - get from stockOrderStock table
-                string stockQuantity = StockOrderStock.GetData(new string[] { StockOrderId, stockId[i] }, new string[] { "StockQuantity" })[0];
-
-                overview.Add(new string[] { StockOrderId, staffId, staffName, stockOrderDate, stockId[i], stockName, stockQuantity });
             }
         }
 
