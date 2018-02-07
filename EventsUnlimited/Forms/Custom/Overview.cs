@@ -12,20 +12,18 @@ namespace EventsUnlimited
 {
     public partial class FrmOverview : Form
     {
-        private string id;
-        private string[] columnNames;
-        
+        private LsvController display;
 
-        public FrmOverview(string _id, string[] _columnNames)
+        public FrmOverview(string[] _columnNames)
         {
             InitializeComponent();
+            
+            display = new LsvController(ref LsvDisplay, _columnNames);
+        }
 
-            id = _id;
-            columnNames = _columnNames;
-
-
-
-
+        public void Add(string[] values)
+        {
+            display.AddRow(ref LsvDisplay, values);
         }
 
         private void BtnClose_Click(object sender, EventArgs e)

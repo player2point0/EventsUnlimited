@@ -25,6 +25,7 @@ namespace EventsUnlimited
 
         private List<string> StockIdToAdd;
         private List<string> QuantityToAdd;
+        private bool newOrder;
 
         public FrmStockOrder()
         {
@@ -43,6 +44,7 @@ namespace EventsUnlimited
             StockOrderStockControls = new Control[] { NudStockQuantity };
 
             index = 0;
+            newOrder = false;
         }
 
         private void FrmStockOrder_Load(object sender, EventArgs e)
@@ -71,7 +73,12 @@ namespace EventsUnlimited
             CbxStock.ResetText();
             DtpStockOrderDate.Value = DateTime.Now;
         }
-        
+
+        protected override void BtnNew_Click(object sender, EventArgs e)
+        {
+            base.BtnNew_Click(sender, e);
+            newOrder = true;
+        }
         protected override void BtnEdit_Click(object sender, EventArgs e)
         {
             base.BtnEdit_Click(sender, e);
@@ -85,7 +92,7 @@ namespace EventsUnlimited
                 return;
             }
 
-            if(CbxStock.SelectedItem == null)
+            if(StockIdToAdd.Count <= 0)
             {
                 Print("Please add stock");
                 return;
@@ -101,6 +108,8 @@ namespace EventsUnlimited
             {
                 StockOrderStock.AddRow(new string[] { StockOrderId, StockIdToAdd[i], QuantityToAdd[i]});
             }
+
+            newOrder = false;
         }
         protected override void BtnDelete_Click(object sender, EventArgs e)
         {
@@ -112,17 +121,21 @@ namespace EventsUnlimited
             Print(StockOrder.DeleteRow(new string[] { stockOrderId }));
             index--;
             StockOrder.ShowTable(ref index, ref StockOrderControls);
+            
+            newOrder = false;
         }
 
         protected override void BtnNext_Click(object sender, EventArgs e)
         {
             index++;
             Print(StockOrder.ShowTable(ref index, ref StockOrderControls));
+            newOrder = false;
         }
         protected override void BtnPrevious_Click(object sender, EventArgs e)
         {
             index--;
             Print(StockOrder.ShowTable(ref index, ref StockOrderControls));
+            newOrder = false;
         }
 
         private void BtnReport_Click(object sender, EventArgs e)
@@ -161,8 +174,61 @@ namespace EventsUnlimited
         }
         private void BtnOverview_Click(object sender, EventArgs e)
         {
-            FrmOverview overview = new FrmOverview();
+            //REFACTOR
+
+            string[] columns = new string[] {"StockOrderId", "StaffId", "StaffName", "StockOrderDate", "StockId", "StockName", "StockQuantity"  };
+            
+            //StockOrderId - get from form
+            string StockOrderId = LblStockOrderID.Text;
+            string staffId;
+            string staffName;
+            string stockOrderDate;
+            List<string> stockId;
+            
+            if(newOrder)
+            {
+                if (CbxStaffID.SelectedItem == null)
+                {
+                    Print("Please select a member of staff");
+                    return;
+                }
+
+                if (StockIdToAdd.Count <= 0)
+                {
+                    Print("Please add stock");
+                    return;
+                }
+
+                staffId = (CbxStaffID.SelectedItem as Container).Id;
+                stockId = StockIdToAdd;
+                stockOrderDate = DtpStockOrderDate.Value.ToString();
+            }
+
+            else
+            {
+                //get staffId from the stockOrder table
+                staffId = StockOrder.GetData(new string[] {StockOrderId },new string[] { "StaffId" })[0];
+                //get the stockIds from the stockOrderStock table
+                stockId = StockOrderStock.GetAllValues("StockOrderId", StockOrderId, "StockId");
+                //get the stockOrderDate from the stockOrder table
+                stockOrderDate = StockOrder.GetData(new string[] { StockOrderId }, new string[] { "StockOrderDate"})[0];
+            }
+
+            FrmOverview overview = new FrmOverview(columns);
             overview.Show();
+
+            //staffName - get from staff table
+            staffName = Staff.GetData(new string[] { staffId }, new string[] { "StaffName" })[0];
+
+            for(int i = 0;i<stockId.Count;i++)
+            {
+                //StockName - get from stock table
+                string stockName = Stock.GetData(new string[] { stockId[i] }, new string[] { "StockName" })[0];
+                //stockQuantity - get from stockOrderStock table
+                string stockQuantity = StockOrderStock.GetData(new string[] { StockOrderId, stockId[i] }, new string[] { "StockQuantity" })[0];
+
+                overview.Add(new string[] { StockOrderId, staffId, staffName, stockOrderDate, stockId[i], stockName, stockQuantity });
+            }
         }
 
         private void CbxStock_KeyPress(object sender, KeyPressEventArgs e)

@@ -195,9 +195,45 @@ namespace EventsUnlimited
             return num + " rows deleted";
         }
 
-        public DataTable GetTable
+        public string[] GetData(string[] keys, string[] fields)
         {
-            get { return dataTable; }
+            string[] output = new string[fields.Length];
+
+            try
+            {
+                dataRow = dataTable.Rows.Find(keys);
+
+                if (dataRow == null) throw new Exception();
+
+                for (int i = 0; i < fields.Length; i++)
+                {
+                    output[i] = dataRow[fields[i]].ToString();
+                }
+
+                return output;
+            }
+
+            catch (Exception)
+            {
+                return output;
+            }
+        }
+
+        public List<string> GetAllValues(string key, string keyCondition, string field)
+        {
+            List<string> output = new List<string>();
+
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                dataRow = dataTable.Rows[i];
+
+                if (dataRow[key].ToString() == keyCondition)
+                {
+                    output.Add(dataRow[field].ToString());
+                }
+            }
+
+            return output;
         }
 
     }

@@ -39,6 +39,7 @@
             this.LsvDisplay.Size = new System.Drawing.Size(1119, 598);
             this.LsvDisplay.TabIndex = 0;
             this.LsvDisplay.UseCompatibleStateImageBehavior = false;
+            this.LsvDisplay.View = System.Windows.Forms.View.Details;
             // 
             // BtnClose
             // 
