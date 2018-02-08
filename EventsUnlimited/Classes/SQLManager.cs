@@ -24,9 +24,11 @@ namespace EventsUnlimited
         {
             connection = Program.GetConnectionString();
             table = new Table(_name, _primaryKeys, (_primaryKeys.Length > 1), _fields);
+
+            ReadTable();
         }
 
-        public void ReadTable()
+        private void ReadTable()
         {
             string sql = @"select * from " + table.Name;
             sqlAdapter = new SqlDataAdapter(sql, connection);

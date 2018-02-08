@@ -41,14 +41,8 @@ namespace EventsUnlimited
 
         private void FrmStockOrder_Load(object sender, EventArgs e)
         {
-            Stock.ReadTable();
             Stock.PopulateComboBox(ref CbxStock);
-
-            Staff.ReadTable();
             Staff.PopulateComboBox(ref CbxStaffID);
-            
-            StockOrder.ReadTable();
-            StockOrderStock.ReadTable();
 
             Print(StockOrder.ShowTable(ref index, ref StockOrderControls));
         }

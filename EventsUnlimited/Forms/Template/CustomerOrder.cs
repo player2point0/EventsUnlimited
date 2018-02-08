@@ -45,21 +45,11 @@ namespace EventsUnlimited
 
         private void FrmOrder_Load(object sender, EventArgs e)
         {
-            Staff.ReadTable();
             Staff.PopulateComboBox(ref CbxStaffID);
-
-            Customer.ReadTable();
             Customer.PopulateComboBox(ref CbxCustomerID);
-
-            Card.ReadTable();
             Card.PopulateComboBox(ref CbxCardID);
-
-            Stock.ReadTable();
             Stock.PopulateComboBox(ref CbxStock);
 
-            CustomerOrderStock.ReadTable();
-
-            CustomerOrder.ReadTable();
             Print(CustomerOrder.ShowTable(ref index, ref CustomerOrderControls));
         }
         

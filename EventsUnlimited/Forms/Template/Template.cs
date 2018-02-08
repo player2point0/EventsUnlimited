@@ -39,7 +39,6 @@ namespace EventsUnlimited
             index = 0;
             newPrimaryKey = -1;
 
-            sqlManager.ReadTable();
             sqlManager.ShowTable(ref index, ref controls);
 
             helpFileName = _helpFileName;
