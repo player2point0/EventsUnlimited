@@ -56,6 +56,13 @@ namespace EventsUnlimited
 
             for (int i = 0; i < controls.Length; i++)
             {
+
+                if(controls[i] is CheckBox)
+                {
+                    (controls[i] as CheckBox).Checked = bool.Parse(dataRow[table.Fields[i]].ToString());
+                    continue;
+                }
+
                 controls[i].Text = dataRow[table.Fields[i]].ToString();
             }
 
