@@ -12,17 +12,13 @@ namespace EventsUnlimited
 {
     public partial class FrmCustomerOrder : FrmTemplate
     {
-
         private SQLManager CustomerOrder;
         private Control[] CustomerOrderControls;
         private SQLManager Staff;
-        private Control[] StaffControls;
         private SQLManager Customer;
-        private Control[] CustomerControls;
         private SQLManager Card;
-        private Control[] CardControls;
+        private SQLManager Stock;
         private SQLManager CustomerOrderStock;
-        private Control[] CustomerOrderStockControls;
         
         private int index;
 
@@ -34,28 +30,46 @@ namespace EventsUnlimited
         {
             InitializeComponent();
 
-            CustomerOrder = new SQLManager("OrderId", new string[] { "OrderId" }, new string[] { "OrderId", "OrderPaid", "OrderNotes", "OrderAddress", "OrderDate", "CustomerId", "CardId", "StaffId" });
-            CustomerOrderControls = new Control[] { };
+            CustomerOrder = new SQLManager("CustomerOrder", new string[] { "OrderId" }, new string[] { "OrderId", "OrderPaid", "OrderNotes", "OrderAddress", "OrderDate", "CustomerId", "CardId", "StaffId" });
+            CustomerOrderControls = new Control[] { LblOrderID, CbxOrderPaid, TbxOrderNotes, TbxOrderAddress, DtpOrderDate, CbxCustomerID, CbxCardID, CbxStaffID};
 
-
+            Staff = new SQLManager("Staff", new string[] { "StaffId" }, new string[] { "StaffId", "StaffName", "StaffAddress", "StaffPhoneNumber" });
+            Customer = new SQLManager("Customer", new string[] { "CustomerId"}, new string[] { "CustomerId", "CustomerName", "CustomerAddress", "CustomerPhoneNumber" });
+            Card = new SQLManager("CustomerCard", new string[] { "CardId" }, new string[] { "CardId", "CardNumber", "cardExpiryDate", "CardHolderName", "CardSecurityCode" });
+            Stock = new SQLManager("Stock", new string[] { "StockId" }, new string[] { "StockId", "StockName" });
+            CustomerOrderStock = new SQLManager("CustomerOrderStock", new string[] { "OrderId", "StockId" }, new string[] { "OrderId", "StockId", "StockQuantity" });
+ 
             index = 0;
             newOrder = false;
         }
 
         private void FrmOrder_Load(object sender, EventArgs e)
         {
+            Staff.ReadTable();
+            Staff.PopulateComboBox(ref CbxStaffID);
 
+            Customer.ReadTable();
+            Customer.PopulateComboBox(ref CbxCustomerID);
+
+            Card.ReadTable();
+            Card.PopulateComboBox(ref CbxCardID);
+
+            Stock.ReadTable();
+            Stock.PopulateComboBox(ref CbxStock);
+
+            CustomerOrder.ReadTable();
+            Print(CustomerOrder.ShowTable(ref index, ref CustomerOrderControls));
         }
-
         
-        public void ClearControls()
+        protected override void ClearControls()
         {
             
         }
 
         protected override void BtnNew_Click(object sender, EventArgs e)
         {
-            ClearControls();
+            base.BtnNew_Click(sender, e);
+            newOrder = true;
         }
         protected override void BtnEdit_Click(object sender, EventArgs e)
         {
@@ -71,9 +85,15 @@ namespace EventsUnlimited
 
         protected override void BtnNext_Click(object sender, EventArgs e)
         {
+            index++;
+            Print(CustomerOrder.ShowTable(ref index, ref CustomerOrderControls));
+            newOrder = false;
         }
         protected override void BtnPrevious_Click(object sender, EventArgs e)
         {
+            index--;
+            Print(CustomerOrder.ShowTable(ref index, ref CustomerOrderControls));
+            newOrder = false;
         }
 
         private void BtnReport_Click(object sender, EventArgs e)
