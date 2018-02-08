@@ -110,6 +110,11 @@ namespace EventsUnlimited
                         dataRow[table.Fields[i]] = controls[i].ToString();
                     }
 
+                    else if(controls[i] is CheckBox)
+                    {
+                        dataRow[table.Fields[i]] = int.Parse(controls[i].ToString());
+                    }
+
                     else
                     {
                         dataRow[table.Fields[i]] = controls[i].Text.ToString();

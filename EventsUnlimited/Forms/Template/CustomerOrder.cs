@@ -38,7 +38,9 @@ namespace EventsUnlimited
             Card = new SQLManager("CustomerCard", new string[] { "CardId" }, new string[] { "CardId", "CardNumber", "cardExpiryDate", "CardHolderName", "CardSecurityCode" });
             Stock = new SQLManager("Stock", new string[] { "StockId" }, new string[] { "StockId", "StockName" });
             CustomerOrderStock = new SQLManager("CustomerOrderStock", new string[] { "OrderId", "StockId" }, new string[] { "OrderId", "StockId", "StockQuantity" });
- 
+
+            StockIdToAdd = new List<string>();
+            QuantityToAdd = new List<string>();
             index = 0;
             newOrder = false;
         }
@@ -106,7 +108,7 @@ namespace EventsUnlimited
 
             for(int i = 0;i<StockIdToAdd.Count;i++)
             {
-                CustomerOrderStock.AddRow(new string[] { CustomerOrderId, StockIdToAdd[i], QuantityToAdd[i] });
+                //CustomerOrderStock.AddRow(new string[] { CustomerOrderId, StockIdToAdd[i], QuantityToAdd[i] });
             }
 
             newOrder = false;
