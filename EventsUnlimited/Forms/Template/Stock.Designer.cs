@@ -37,13 +37,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PnlStockInput = new System.Windows.Forms.Panel();
+            this.TbxSupplierID = new EventsUnlimited.ValidationTextBox();
             this.TbxStockDeliveryTime = new EventsUnlimited.ValidationTextBox();
             this.TbxStockShelfLife = new EventsUnlimited.ValidationTextBox();
             this.TbxStockCost = new EventsUnlimited.ValidationTextBox();
             this.TbxStockAmount = new EventsUnlimited.ValidationTextBox();
             this.TbxStockName = new EventsUnlimited.ValidationTextBox();
             this.LblStockID = new System.Windows.Forms.Label();
-            this.TbxSupplierID = new EventsUnlimited.ValidationTextBox();
             this.PnlStockLabels.SuspendLayout();
             this.PnlStockInput.SuspendLayout();
             this.SuspendLayout();
@@ -134,10 +134,24 @@
             this.PnlStockInput.Controls.Add(this.TbxStockAmount);
             this.PnlStockInput.Controls.Add(this.TbxStockName);
             this.PnlStockInput.Controls.Add(this.LblStockID);
+            this.PnlStockInput.Enabled = false;
             this.PnlStockInput.Location = new System.Drawing.Point(528, 174);
             this.PnlStockInput.Name = "PnlStockInput";
             this.PnlStockInput.Size = new System.Drawing.Size(254, 409);
             this.PnlStockInput.TabIndex = 7;
+            // 
+            // TbxSupplierID
+            // 
+            this.TbxSupplierID.Field = "Supplier ID";
+            this.TbxSupplierID.LettersOnly = false;
+            this.TbxSupplierID.Location = new System.Drawing.Point(23, 283);
+            this.TbxSupplierID.MaxSize = 100;
+            this.TbxSupplierID.MinSize = 1;
+            this.TbxSupplierID.Name = "TbxSupplierID";
+            this.TbxSupplierID.NumbersOnly = true;
+            this.TbxSupplierID.Required = true;
+            this.TbxSupplierID.Size = new System.Drawing.Size(100, 26);
+            this.TbxSupplierID.TabIndex = 12;
             // 
             // TbxStockDeliveryTime
             // 
@@ -212,19 +226,6 @@
             this.LblStockID.Size = new System.Drawing.Size(71, 20);
             this.LblStockID.TabIndex = 0;
             this.LblStockID.Text = "Stock ID";
-            // 
-            // TbxSupplierID
-            // 
-            this.TbxSupplierID.Field = "Supplier ID";
-            this.TbxSupplierID.LettersOnly = false;
-            this.TbxSupplierID.Location = new System.Drawing.Point(23, 283);
-            this.TbxSupplierID.MaxSize = 100;
-            this.TbxSupplierID.MinSize = 1;
-            this.TbxSupplierID.Name = "TbxSupplierID";
-            this.TbxSupplierID.NumbersOnly = true;
-            this.TbxSupplierID.Required = true;
-            this.TbxSupplierID.Size = new System.Drawing.Size(100, 26);
-            this.TbxSupplierID.TabIndex = 12;
             // 
             // FrmStock
             // 

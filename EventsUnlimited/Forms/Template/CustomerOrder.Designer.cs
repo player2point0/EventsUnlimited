@@ -180,6 +180,7 @@
             this.PnlOrderInput.Controls.Add(this.CbxCustomerID);
             this.PnlOrderInput.Controls.Add(this.CbxStaffID);
             this.PnlOrderInput.Controls.Add(this.LblOrderID);
+            this.PnlOrderInput.Enabled = false;
             this.PnlOrderInput.Location = new System.Drawing.Point(530, 177);
             this.PnlOrderInput.Name = "PnlOrderInput";
             this.PnlOrderInput.Size = new System.Drawing.Size(264, 483);
@@ -302,7 +303,7 @@
             // 
             this.BtnReport.Location = new System.Drawing.Point(549, 706);
             this.BtnReport.Name = "BtnReport";
-            this.BtnReport.Size = new System.Drawing.Size(188, 28);
+            this.BtnReport.Size = new System.Drawing.Size(188, 39);
             this.BtnReport.TabIndex = 14;
             this.BtnReport.Text = "Report";
             this.BtnReport.UseVisualStyleBackColor = true;

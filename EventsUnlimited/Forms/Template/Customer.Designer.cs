@@ -95,6 +95,7 @@
             this.PnlCustomerInput.Controls.Add(this.TbxCustomerAddress);
             this.PnlCustomerInput.Controls.Add(this.TbxCustomerName);
             this.PnlCustomerInput.Controls.Add(this.LblCustomerID);
+            this.PnlCustomerInput.Enabled = false;
             this.PnlCustomerInput.Location = new System.Drawing.Point(510, 174);
             this.PnlCustomerInput.Name = "PnlCustomerInput";
             this.PnlCustomerInput.Size = new System.Drawing.Size(220, 375);

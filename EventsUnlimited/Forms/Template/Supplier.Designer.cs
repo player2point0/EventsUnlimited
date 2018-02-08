@@ -95,6 +95,7 @@
             this.PnlSupplierInput.Controls.Add(this.TbxSupplierAddress);
             this.PnlSupplierInput.Controls.Add(this.TbxSupplierName);
             this.PnlSupplierInput.Controls.Add(this.LblSupplierID);
+            this.PnlSupplierInput.Enabled = false;
             this.PnlSupplierInput.Location = new System.Drawing.Point(517, 161);
             this.PnlSupplierInput.Name = "PnlSupplierInput";
             this.PnlSupplierInput.Size = new System.Drawing.Size(261, 439);

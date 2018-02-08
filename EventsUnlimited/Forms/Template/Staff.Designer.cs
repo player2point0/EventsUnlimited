@@ -95,6 +95,7 @@
             this.PnlStaffInput.Controls.Add(this.TbxStaffAddress);
             this.PnlStaffInput.Controls.Add(this.TbxStaffName);
             this.PnlStaffInput.Controls.Add(this.LblStaffID);
+            this.PnlStaffInput.Enabled = false;
             this.PnlStaffInput.Location = new System.Drawing.Point(526, 169);
             this.PnlStaffInput.Name = "PnlStaffInput";
             this.PnlStaffInput.Size = new System.Drawing.Size(264, 374);
