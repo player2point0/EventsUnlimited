@@ -65,7 +65,7 @@ namespace EventsUnlimited
             CbxStock.ResetText();
             DtpStockOrderDate.Value = DateTime.Now;
         }
-        private bool StaffOrStockEmpty()
+        private bool EmptyFields()
         {
             if (CbxStaffID.SelectedItem == null) Print("Please select a member of staff");
             if (StockIdToAdd.Count <= 0) Print("Please add stock");
@@ -85,7 +85,7 @@ namespace EventsUnlimited
         }
         protected override void BtnSave_Click(object sender, EventArgs e)
         {
-            if (StaffOrStockEmpty()) return;
+            if (EmptyFields()) return;
 
             string StockOrderId = LblStockOrderID.Text;
             string StaffId = (CbxStaffID.SelectedItem as Container).Id;
@@ -147,7 +147,7 @@ namespace EventsUnlimited
 
             if (newOrder)
             {
-                if (StaffOrStockEmpty()) return;
+                if (EmptyFields()) return;
 
                 staffId = (CbxStaffID.SelectedItem as Container).Id;
                 stockId = StockIdToAdd;
@@ -193,7 +193,6 @@ namespace EventsUnlimited
         }
         private void BtnRemoveStock_Click(object sender, EventArgs e)
         {
-            //test
             try
             {
                 Container current = (Container)CbxStock.SelectedItem;
@@ -207,7 +206,7 @@ namespace EventsUnlimited
 
             catch
             {
-
+                Print("No stock selected");
             }
         }
 

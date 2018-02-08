@@ -57,6 +57,8 @@ namespace EventsUnlimited
             Stock.ReadTable();
             Stock.PopulateComboBox(ref CbxStock);
 
+            CustomerOrderStock.ReadTable();
+
             CustomerOrder.ReadTable();
             Print(CustomerOrder.ShowTable(ref index, ref CustomerOrderControls));
         }
@@ -73,10 +75,25 @@ namespace EventsUnlimited
             CbxCardID.ResetText();
             CbxStock.ResetText();
             NudStockQuantity.Value = 1;
-            CbxOrderPaid.ResetText();
+            CbxOrderPaid.Checked = false;
             DtpOrderDate.Value = DateTime.Now;
             TbxOrderAddress.ResetText();
             TbxOrderNotes.ResetText();
+        }
+        public bool EmptyFields()
+        {
+            bool staff = CbxStaffID.SelectedItem == null;
+            bool customer = CbxCustomerID.SelectedItem == null;
+            bool card = CbxCardID.SelectedItem == null;
+            bool stock = StockIdToAdd.Count <= 0;
+
+            if (staff) Print("Please select a member of staff");
+            if (customer) Print("Please select a customer");
+            if (card) Print("Please select a card");
+            if (stock) Print("Please add stock");
+
+
+            return staff || customer || card || stock;
         }
 
         protected override void BtnNew_Click(object sender, EventArgs e)
@@ -91,9 +108,30 @@ namespace EventsUnlimited
         }
         protected override void BtnSave_Click(object sender, EventArgs e)
         {
+            if (EmptyFields()) return;
+
+            string CustomerOrderId = LblOrderID.Text;
+
+            Print(CustomerOrder.AddRow(ref CustomerOrderControls));
+
+            for(int i = 0;i<StockIdToAdd.Count;i++)
+            {
+                CustomerOrderStock.AddRow(new string[] { CustomerOrderId, StockIdToAdd[i], QuantityToAdd[i] });
+            }
+
+            newOrder = false;
         }
         protected override void BtnDelete_Click(object sender, EventArgs e)
         {
+            string CustomerOrderId = LblOrderID.Text;
+
+            CustomerOrderStock.DeleteAllWith("CustomerOrderId", CustomerOrderId);
+            Print(CustomerOrder.DeleteRow(new string[] { CustomerOrderId }));
+
+            index--;
+            CustomerOrder.ShowTable(ref index, ref CustomerOrderControls);
+
+            newOrder = false;
         }
 
         protected override void BtnNext_Click(object sender, EventArgs e)
@@ -120,11 +158,32 @@ namespace EventsUnlimited
         }
         private void BtnAddStock_Click(object sender, EventArgs e)
         {
+            Container current = (Container)CbxStock.SelectedItem;
+            string name = current.Id;
+            string value = NudStockQuantity.Value.ToString();
 
+            StockIdToAdd.Add(name);
+            QuantityToAdd.Add(value);
+
+            Print(value + " " + current.ToString() + " added");
         }
         private void BtnRemoveStock_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Container current = (Container)CbxStock.SelectedItem;
+                string name = current.Id;
+                int index = StockIdToAdd.IndexOf(name);
 
+                StockIdToAdd.RemoveAt(index);
+                QuantityToAdd.RemoveAt(index);
+                Print(current.ToString() + " removed");
+            }
+
+            catch
+            {
+                Print("No stock selected");
+            }
         }
 
         private void CbxStaffID_KeyPress(object sender, KeyPressEventArgs e)
