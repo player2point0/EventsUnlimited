@@ -236,7 +236,6 @@
             // 
             // CbxStock
             // 
-            this.CbxStock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxStock.FormattingEnabled = true;
             this.CbxStock.Location = new System.Drawing.Point(30, 270);
             this.CbxStock.Name = "CbxStock";
@@ -262,7 +261,6 @@
             // 
             // CbxCardID
             // 
-            this.CbxCardID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxCardID.FormattingEnabled = true;
             this.CbxCardID.Location = new System.Drawing.Point(30, 108);
             this.CbxCardID.Name = "CbxCardID";
@@ -272,7 +270,6 @@
             // 
             // CbxCustomerID
             // 
-            this.CbxCustomerID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxCustomerID.FormattingEnabled = true;
             this.CbxCustomerID.Location = new System.Drawing.Point(30, 78);
             this.CbxCustomerID.Name = "CbxCustomerID";
@@ -282,7 +279,6 @@
             // 
             // CbxStaffID
             // 
-            this.CbxStaffID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxStaffID.FormattingEnabled = true;
             this.CbxStaffID.Location = new System.Drawing.Point(30, 47);
             this.CbxStaffID.Name = "CbxStaffID";
@@ -329,7 +325,7 @@
             this.Controls.Add(this.PnlOrderLabels);
             this.Controls.Add(this.BtnOverview);
             this.Name = "FrmCustomerOrder";
-            this.Text = "CustomerOrder";
+            this.Text = "";
             this.Load += new System.EventHandler(this.FrmOrder_Load);
             this.Controls.SetChildIndex(this.BtnOverview, 0);
             this.Controls.SetChildIndex(this.PnlOrderLabels, 0);

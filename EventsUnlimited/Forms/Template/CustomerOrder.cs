@@ -63,7 +63,20 @@ namespace EventsUnlimited
         
         protected override void ClearControls()
         {
-            
+            LblOrderID.Text = CustomerOrder.GenerateNewPrimaryKey().ToString();
+
+            StockIdToAdd = new List<string>();
+            QuantityToAdd = new List<string>();
+
+            CbxStaffID.ResetText();
+            CbxCustomerID.ResetText();
+            CbxCardID.ResetText();
+            CbxStock.ResetText();
+            NudStockQuantity.Value = 1;
+            CbxOrderPaid.ResetText();
+            DtpOrderDate.Value = DateTime.Now;
+            TbxOrderAddress.ResetText();
+            TbxOrderNotes.ResetText();
         }
 
         protected override void BtnNew_Click(object sender, EventArgs e)
