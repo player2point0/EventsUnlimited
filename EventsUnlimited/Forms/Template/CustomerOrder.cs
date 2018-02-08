@@ -108,7 +108,7 @@ namespace EventsUnlimited
 
             for(int i = 0;i<StockIdToAdd.Count;i++)
             {
-                //CustomerOrderStock.AddRow(new string[] { CustomerOrderId, StockIdToAdd[i], QuantityToAdd[i] });
+                CustomerOrderStock.AddRow(new string[] { CustomerOrderId, StockIdToAdd[i], QuantityToAdd[i] });
             }
 
             newOrder = false;
