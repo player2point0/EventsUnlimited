@@ -112,7 +112,19 @@ namespace EventsUnlimited
 
                     else if(controls[i] is CheckBox)
                     {
-                        dataRow[table.Fields[i]] = int.Parse(controls[i].ToString());
+                        bool val = (controls[i] as CheckBox).Checked;
+
+                        if(val) dataRow[table.Fields[i]] = 1;
+
+                        else dataRow[table.Fields[i]] = 0;
+                    }
+
+
+                    else if(controls[i] is ComboBox)
+                    {
+                        Container c = (controls[i] as ComboBox).SelectedItem as Container;
+
+                        dataRow[table.Fields[i]] = c.Id;
                     }
 
                     else
