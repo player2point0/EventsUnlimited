@@ -80,10 +80,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Container.cs" />
-    <Compile Include="Forms\Custom\CustomerOrderReport.cs">
+    <Compile Include="Forms\Reports\CustomerOrderReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Custom\CustomerOrderReport.Designer.cs">
+    <Compile Include="Forms\Reports\CustomerOrderReport.Designer.cs">
       <DependentUpon>CustomerOrderReport.cs</DependentUpon>
     </Compile>
     <Compile Include="EventsUnlimitedDataSet.Designer.cs">
@@ -169,14 +169,14 @@
       <DependentUpon>ValidationTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Exceptions\ValidationException.cs" />
-    <Compile Include="Forms\Custom\StockOrderReport.cs">
+    <Compile Include="Forms\Reports\StockOrderReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Custom\StockOrderReport.Designer.cs">
+    <Compile Include="Forms\Reports\StockOrderReport.Designer.cs">
       <DependentUpon>StockOrderReport.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="Forms\Custom\CustomerOrderReport.resx">
+    <EmbeddedResource Include="Forms\Reports\CustomerOrderReport.resx">
       <DependentUpon>CustomerOrderReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CustomerOrder.rdlc" />
@@ -226,7 +226,7 @@
     <EmbeddedResource Include="Controls\ValidationTextBox.resx">
       <DependentUpon>ValidationTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Custom\StockOrderReport.resx">
+    <EmbeddedResource Include="Forms\Reports\StockOrderReport.resx">
       <DependentUpon>StockOrderReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\StockOrder.rdlc" />
@@ -262,7 +262,6 @@
     <None Include="Resources\Logo.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Color1.bmp" />
     <Content Include="Resources\Icon.ico" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
