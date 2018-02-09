@@ -146,18 +146,14 @@ namespace EventsUnlimited
         }
         private void BtnOverview_Click(object sender, EventArgs e)
         {
-
             //REFACTOR
-            /*
-            string[] columns = new string[] { "CustomerOrderId", "StaffName", "CustomerName", "CardNumber", "OrderPaid", "OrderAddress", "OrderDate", "StockName", "StockQuantity" };
+
+            string[] columns = new string[] { "OrderId", "StaffName", "CustomerName", "CardNumber", "OrderPaid", "OrderAddress", "OrderDate", "StockName", "StockQuantity" };
 
             string CustomerOrderId = LblOrderID.Text;
             string staffId;
-            string staffName;
             string customerId;
-            string customerName;
             string cardId;
-            string cardNumber;
             string orderPaid;
             string orderAddress;
             string OrderDate;
@@ -167,26 +163,45 @@ namespace EventsUnlimited
             {
                 if (EmptyFields()) return;
 
+                staffId = (CbxStaffID.SelectedItem as Container).Id;
+                customerId = (CbxCustomerID.SelectedItem as Container).Id;
+                cardId = (CbxCardID.SelectedItem as Container).Id;
 
+                orderPaid = CbxOrderPaid.ToString();
+                orderAddress = TbxOrderAddress.ToString();
+                OrderDate = DtpOrderDate.ToString();
+
+                stockId = StockIdToAdd;
             }
 
             else
             {
+                staffId = CustomerOrder.GetData(new string[] { CustomerOrderId }, new string[] { "StaffId" })[0];
+                customerId = CustomerOrder.GetData(new string[] { CustomerOrderId }, new string[] { "CustomerId" })[0];
+                cardId = CustomerOrder.GetData(new string[] { CustomerOrderId }, new string[] { "CardId" })[0];
 
+                orderPaid = CustomerOrder.GetData(new string[] { CustomerOrderId }, new string[] { "OrderPaid" })[0];
+                orderAddress = CustomerOrder.GetData(new string[] { CustomerOrderId }, new string[] { "OrderAddress" })[0];
+                OrderDate = CustomerOrder.GetData(new string[] { CustomerOrderId }, new string[] { "OrderDate" })[0];
+
+                stockId = CustomerOrderStock.GetAllValues("OrderId", CustomerOrderId, "StockId");
             }
 
             FrmOverview overview = new FrmOverview(columns);
             overview.Show();
 
+            string staffName = Staff.GetData(new string[] { staffId }, new string[] { "StaffName" })[0];
+            string customerName = Customer.GetData(new string[] { customerId }, new string[] { "CustomerName" })[0];
+            string cardNumber = Card.GetData(new string[] { cardId }, new string[] { "CardNumber" })[0];
+
             for (int i = 0; i < stockId.Count; i++)
             {
-                string stockName;
-                string quantity;
+                string stockName = Stock.GetData(new string[] { stockId[i] }, new string[] { "StockName" })[0];
+                string quantity = CustomerOrderStock.GetData(new string[] { CustomerOrderId, stockId[i] }, new string[] { "StockQuantity" })[0];
 
-                
                 overview.Add(new string[] { CustomerOrderId, staffName, customerName, cardNumber, orderPaid, orderAddress, OrderDate, stockName, quantity});
             }
-            */
+            
         }
         private void BtnAddStock_Click(object sender, EventArgs e)
         {

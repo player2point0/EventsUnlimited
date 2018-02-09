@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace EventsUnlimited
 {
-    public partial class FrmStockOrder : MultiTableTemplate
+    public partial class FrmStockOrder : FrmTemplate
     {
         private SQLManager Stock;
         private SQLManager Staff;
