@@ -80,6 +80,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Container.cs" />
+    <Compile Include="Forms\Custom\CustomerOrderReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Custom\CustomerOrderReport.Designer.cs">
+      <DependentUpon>CustomerOrderReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="EventsUnlimitedDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -176,6 +182,10 @@
       <DependentUpon>StockOrderReport.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Forms\Custom\CustomerOrderReport.resx">
+      <DependentUpon>CustomerOrderReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CustomerOrder.rdlc" />
     <EmbeddedResource Include="Forms\Template\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,7 +235,7 @@
     <EmbeddedResource Include="Forms\Custom\StockOrderReport.resx">
       <DependentUpon>StockOrderReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StockOrder.rdlc" />
+    <EmbeddedResource Include="Reports\StockOrder.rdlc" />
     <None Include="EventsUnlimitedDataSet.xsc">
       <DependentUpon>EventsUnlimitedDataSet.xsd</DependentUpon>
     </None>
@@ -286,8 +296,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reports\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

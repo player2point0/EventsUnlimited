@@ -1264,6 +1264,16 @@ namespace EventsUnlimited {
             
             private global::System.Data.DataColumn columnStaffId;
             
+            private global::System.Data.DataColumn columnStockQuantity;
+            
+            private global::System.Data.DataColumn columnStaffName;
+            
+            private global::System.Data.DataColumn columnCardNumber;
+            
+            private global::System.Data.DataColumn columnCustomerName;
+            
+            private global::System.Data.DataColumn columnStockName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public CustomerOrderDataTable() {
@@ -1363,6 +1373,46 @@ namespace EventsUnlimited {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn StockQuantityColumn {
+                get {
+                    return this.columnStockQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn StaffNameColumn {
+                get {
+                    return this.columnStaffName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CardNumberColumn {
+                get {
+                    return this.columnCardNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CustomerNameColumn {
+                get {
+                    return this.columnCustomerName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn StockNameColumn {
+                get {
+                    return this.columnStockName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1398,7 +1448,7 @@ namespace EventsUnlimited {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CustomerOrderRow AddCustomerOrderRow(int OrderId, bool OrderPaid, string OrderNotes, string OrderAddress, System.DateTime OrderDate, CustomerRow parentCustomerRowByFK__CustomerO__Custo__4959E263, CustomerCardRow parentCustomerCardRowByFK__CustomerO__CardI__4A4E069C, StaffRow parentStaffRowByFK__CustomerO__Staff__4B422AD5) {
+            public CustomerOrderRow AddCustomerOrderRow(int OrderId, bool OrderPaid, string OrderNotes, string OrderAddress, System.DateTime OrderDate, CustomerRow parentCustomerRowByFK__CustomerO__Custo__4959E263, CustomerCardRow parentCustomerCardRowByFK__CustomerO__CardI__4A4E069C, StaffRow parentStaffRowByFK__CustomerO__Staff__4B422AD5, int StockQuantity, string StaffName, string CardNumber, string CustomerName, string StockName) {
                 CustomerOrderRow rowCustomerOrderRow = ((CustomerOrderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         OrderId,
@@ -1408,7 +1458,12 @@ namespace EventsUnlimited {
                         OrderDate,
                         null,
                         null,
-                        null};
+                        null,
+                        StockQuantity,
+                        StaffName,
+                        CardNumber,
+                        CustomerName,
+                        StockName};
                 if ((parentCustomerRowByFK__CustomerO__Custo__4959E263 != null)) {
                     columnValuesArray[5] = parentCustomerRowByFK__CustomerO__Custo__4959E263[0];
                 }
@@ -1455,6 +1510,11 @@ namespace EventsUnlimited {
                 this.columnCustomerId = base.Columns["CustomerId"];
                 this.columnCardId = base.Columns["CardId"];
                 this.columnStaffId = base.Columns["StaffId"];
+                this.columnStockQuantity = base.Columns["StockQuantity"];
+                this.columnStaffName = base.Columns["StaffName"];
+                this.columnCardNumber = base.Columns["CardNumber"];
+                this.columnCustomerName = base.Columns["CustomerName"];
+                this.columnStockName = base.Columns["StockName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1476,12 +1536,26 @@ namespace EventsUnlimited {
                 base.Columns.Add(this.columnCardId);
                 this.columnStaffId = new global::System.Data.DataColumn("StaffId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStaffId);
+                this.columnStockQuantity = new global::System.Data.DataColumn("StockQuantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStockQuantity);
+                this.columnStaffName = new global::System.Data.DataColumn("StaffName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStaffName);
+                this.columnCardNumber = new global::System.Data.DataColumn("CardNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCardNumber);
+                this.columnCustomerName = new global::System.Data.DataColumn("CustomerName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCustomerName);
+                this.columnStockName = new global::System.Data.DataColumn("StockName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStockName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnOrderId}, true));
                 this.columnOrderId.AllowDBNull = false;
                 this.columnOrderId.Unique = true;
                 this.columnOrderNotes.MaxLength = 256;
                 this.columnOrderAddress.MaxLength = 128;
+                this.columnStaffName.MaxLength = 64;
+                this.columnCardNumber.MaxLength = 20;
+                this.columnCustomerName.MaxLength = 64;
+                this.columnStockName.MaxLength = 64;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3951,6 +4025,86 @@ namespace EventsUnlimited {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int StockQuantity {
+                get {
+                    try {
+                        return ((int)(this[this.tableCustomerOrder.StockQuantityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'StockQuantity\' in table \'CustomerOrder\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCustomerOrder.StockQuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string StaffName {
+                get {
+                    try {
+                        return ((string)(this[this.tableCustomerOrder.StaffNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'StaffName\' in table \'CustomerOrder\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCustomerOrder.StaffNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string CardNumber {
+                get {
+                    try {
+                        return ((string)(this[this.tableCustomerOrder.CardNumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CardNumber\' in table \'CustomerOrder\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCustomerOrder.CardNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string CustomerName {
+                get {
+                    try {
+                        return ((string)(this[this.tableCustomerOrder.CustomerNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CustomerName\' in table \'CustomerOrder\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCustomerOrder.CustomerNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string StockName {
+                get {
+                    try {
+                        return ((string)(this[this.tableCustomerOrder.StockNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'StockName\' in table \'CustomerOrder\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCustomerOrder.StockNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public CustomerCardRow CustomerCardRow {
                 get {
                     return ((CustomerCardRow)(this.GetParentRow(this.Table.ParentRelations["FK__CustomerO__CardI__4A4E069C"])));
@@ -4075,6 +4229,66 @@ namespace EventsUnlimited {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetStaffIdNull() {
                 this[this.tableCustomerOrder.StaffIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsStockQuantityNull() {
+                return this.IsNull(this.tableCustomerOrder.StockQuantityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetStockQuantityNull() {
+                this[this.tableCustomerOrder.StockQuantityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsStaffNameNull() {
+                return this.IsNull(this.tableCustomerOrder.StaffNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetStaffNameNull() {
+                this[this.tableCustomerOrder.StaffNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCardNumberNull() {
+                return this.IsNull(this.tableCustomerOrder.CardNumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCardNumberNull() {
+                this[this.tableCustomerOrder.CardNumberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCustomerNameNull() {
+                return this.IsNull(this.tableCustomerOrder.CustomerNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCustomerNameNull() {
+                this[this.tableCustomerOrder.CustomerNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsStockNameNull() {
+                return this.IsNull(this.tableCustomerOrder.StockNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetStockNameNull() {
+                this[this.tableCustomerOrder.StockNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6250,67 +6464,12 @@ SELECT CardId, CardNumber, cardExpiryDate, CardHolderName, CardSecurityCode FROM
             tableMapping.ColumnMappings.Add("CustomerId", "CustomerId");
             tableMapping.ColumnMappings.Add("CardId", "CardId");
             tableMapping.ColumnMappings.Add("StaffId", "StaffId");
+            tableMapping.ColumnMappings.Add("StockQuantity", "StockQuantity");
+            tableMapping.ColumnMappings.Add("StaffName", "StaffName");
+            tableMapping.ColumnMappings.Add("CardNumber", "CardNumber");
+            tableMapping.ColumnMappings.Add("CustomerName", "CustomerName");
+            tableMapping.ColumnMappings.Add("StockName", "StockName");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[CustomerOrder] WHERE (([OrderId] = @Original_OrderId) AND ((@IsNull_OrderPaid = 1 AND [OrderPaid] IS NULL) OR ([OrderPaid] = @Original_OrderPaid)) AND ((@IsNull_OrderNotes = 1 AND [OrderNotes] IS NULL) OR ([OrderNotes] = @Original_OrderNotes)) AND ((@IsNull_OrderAddress = 1 AND [OrderAddress] IS NULL) OR ([OrderAddress] = @Original_OrderAddress)) AND ((@IsNull_OrderDate = 1 AND [OrderDate] IS NULL) OR ([OrderDate] = @Original_OrderDate)) AND ((@IsNull_CustomerId = 1 AND [CustomerId] IS NULL) OR ([CustomerId] = @Original_CustomerId)) AND ((@IsNull_CardId = 1 AND [CardId] IS NULL) OR ([CardId] = @Original_CardId)) AND ((@IsNull_StaffId = 1 AND [StaffId] IS NULL) OR ([StaffId] = @Original_StaffId)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OrderPaid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderPaid", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderPaid", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderPaid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OrderNotes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderNotes", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderNotes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderNotes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OrderAddress", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderAddress", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderAddress", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderAddress", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OrderDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CustomerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CustomerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CardId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CardId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CardId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CardId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_StaffId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StaffId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StaffId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StaffId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[CustomerOrder] ([OrderId], [OrderPaid], [OrderNotes], [OrderAddress], [OrderDate], [CustomerId], [CardId], [StaffId]) VALUES (@OrderId, @OrderPaid, @OrderNotes, @OrderAddress, @OrderDate, @CustomerId, @CardId, @StaffId);
-SELECT OrderId, OrderPaid, OrderNotes, OrderAddress, OrderDate, CustomerId, CardId, StaffId FROM CustomerOrder WHERE (OrderId = @OrderId)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderPaid", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderPaid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderNotes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderNotes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderAddress", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderAddress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CardId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CardId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StaffId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StaffId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[CustomerOrder] SET [OrderId] = @OrderId, [OrderPaid] = @OrderPaid, [OrderNotes] = @OrderNotes, [OrderAddress] = @OrderAddress, [OrderDate] = @OrderDate, [CustomerId] = @CustomerId, [CardId] = @CardId, [StaffId] = @StaffId WHERE (([OrderId] = @Original_OrderId) AND ((@IsNull_OrderPaid = 1 AND [OrderPaid] IS NULL) OR ([OrderPaid] = @Original_OrderPaid)) AND ((@IsNull_OrderNotes = 1 AND [OrderNotes] IS NULL) OR ([OrderNotes] = @Original_OrderNotes)) AND ((@IsNull_OrderAddress = 1 AND [OrderAddress] IS NULL) OR ([OrderAddress] = @Original_OrderAddress)) AND ((@IsNull_OrderDate = 1 AND [OrderDate] IS NULL) OR ([OrderDate] = @Original_OrderDate)) AND ((@IsNull_CustomerId = 1 AND [CustomerId] IS NULL) OR ([CustomerId] = @Original_CustomerId)) AND ((@IsNull_CardId = 1 AND [CardId] IS NULL) OR ([CardId] = @Original_CardId)) AND ((@IsNull_StaffId = 1 AND [StaffId] IS NULL) OR ([StaffId] = @Original_StaffId)));
-SELECT OrderId, OrderPaid, OrderNotes, OrderAddress, OrderDate, CustomerId, CardId, StaffId FROM CustomerOrder WHERE (OrderId = @OrderId)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderPaid", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderPaid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderNotes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderNotes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderAddress", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderAddress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CardId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CardId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StaffId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StaffId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OrderPaid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderPaid", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderPaid", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderPaid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OrderNotes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderNotes", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderNotes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderNotes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OrderAddress", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderAddress", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderAddress", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderAddress", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OrderDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CustomerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CustomerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CardId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CardId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CardId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CardId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_StaffId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StaffId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StaffId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StaffId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6326,8 +6485,14 @@ SELECT OrderId, OrderPaid, OrderNotes, OrderAddress, OrderDate, CustomerId, Card
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT OrderId, OrderPaid, OrderNotes, OrderAddress, OrderDate, CustomerId, CardI" +
-                "d, StaffId FROM dbo.CustomerOrder";
+            this._commandCollection[0].CommandText = @"SELECT CustomerOrder.OrderId, CustomerOrder.OrderPaid, CustomerOrder.OrderNotes, CustomerOrder.OrderAddress, CustomerOrder.OrderDate, CustomerOrder.CustomerId, CustomerOrder.CardId, CustomerOrder.StaffId, StockOrderStock.StockQuantity, Staff.StaffName, 
+             CustomerCard.CardNumber, Customer.CustomerName, Stock.StockName
+FROM   Stock INNER JOIN
+             StockOrderStock ON Stock.StockId = StockOrderStock.StockId CROSS JOIN
+             CustomerOrder INNER JOIN
+             Staff ON CustomerOrder.StaffId = Staff.StaffId INNER JOIN
+             Customer ON CustomerOrder.CustomerId = Customer.CustomerId INNER JOIN
+             CustomerCard ON CustomerOrder.CardId = CustomerCard.CardId";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6353,322 +6518,6 @@ SELECT OrderId, OrderPaid, OrderNotes, OrderAddress, OrderDate, CustomerId, Card
             EventsUnlimitedDataSet.CustomerOrderDataTable dataTable = new EventsUnlimitedDataSet.CustomerOrderDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(EventsUnlimitedDataSet.CustomerOrderDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(EventsUnlimitedDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "CustomerOrder");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_OrderId, global::System.Nullable<bool> Original_OrderPaid, string Original_OrderNotes, string Original_OrderAddress, global::System.Nullable<global::System.DateTime> Original_OrderDate, global::System.Nullable<int> Original_CustomerId, global::System.Nullable<int> Original_CardId, global::System.Nullable<int> Original_StaffId) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_OrderId));
-            if ((Original_OrderPaid.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((bool)(Original_OrderPaid.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Original_OrderNotes == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_OrderNotes));
-            }
-            if ((Original_OrderAddress == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_OrderAddress));
-            }
-            if ((Original_OrderDate.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_OrderDate.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_CustomerId.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_CustomerId.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_CardId.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_CardId.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((Original_StaffId.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_StaffId.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int OrderId, global::System.Nullable<bool> OrderPaid, string OrderNotes, string OrderAddress, global::System.Nullable<global::System.DateTime> OrderDate, global::System.Nullable<int> CustomerId, global::System.Nullable<int> CardId, global::System.Nullable<int> StaffId) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(OrderId));
-            if ((OrderPaid.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((bool)(OrderPaid.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((OrderNotes == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(OrderNotes));
-            }
-            if ((OrderAddress == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(OrderAddress));
-            }
-            if ((OrderDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(OrderDate.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((CustomerId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(CustomerId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((CardId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(CardId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((StaffId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(StaffId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int OrderId, 
-                    global::System.Nullable<bool> OrderPaid, 
-                    string OrderNotes, 
-                    string OrderAddress, 
-                    global::System.Nullable<global::System.DateTime> OrderDate, 
-                    global::System.Nullable<int> CustomerId, 
-                    global::System.Nullable<int> CardId, 
-                    global::System.Nullable<int> StaffId, 
-                    int Original_OrderId, 
-                    global::System.Nullable<bool> Original_OrderPaid, 
-                    string Original_OrderNotes, 
-                    string Original_OrderAddress, 
-                    global::System.Nullable<global::System.DateTime> Original_OrderDate, 
-                    global::System.Nullable<int> Original_CustomerId, 
-                    global::System.Nullable<int> Original_CardId, 
-                    global::System.Nullable<int> Original_StaffId) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(OrderId));
-            if ((OrderPaid.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((bool)(OrderPaid.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((OrderNotes == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(OrderNotes));
-            }
-            if ((OrderAddress == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(OrderAddress));
-            }
-            if ((OrderDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(OrderDate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((CustomerId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(CustomerId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((CardId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(CardId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((StaffId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(StaffId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_OrderId));
-            if ((Original_OrderPaid.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(Original_OrderPaid.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_OrderNotes == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_OrderNotes));
-            }
-            if ((Original_OrderAddress == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_OrderAddress));
-            }
-            if ((Original_OrderDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_OrderDate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((Original_CustomerId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_CustomerId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            if ((Original_CardId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_CardId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            if ((Original_StaffId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_StaffId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<bool> OrderPaid, string OrderNotes, string OrderAddress, global::System.Nullable<global::System.DateTime> OrderDate, global::System.Nullable<int> CustomerId, global::System.Nullable<int> CardId, global::System.Nullable<int> StaffId, int Original_OrderId, global::System.Nullable<bool> Original_OrderPaid, string Original_OrderNotes, string Original_OrderAddress, global::System.Nullable<global::System.DateTime> Original_OrderDate, global::System.Nullable<int> Original_CustomerId, global::System.Nullable<int> Original_CardId, global::System.Nullable<int> Original_StaffId) {
-            return this.Update(Original_OrderId, OrderPaid, OrderNotes, OrderAddress, OrderDate, CustomerId, CardId, StaffId, Original_OrderId, Original_OrderPaid, Original_OrderNotes, Original_OrderAddress, Original_OrderDate, Original_CustomerId, Original_CardId, Original_StaffId);
         }
     }
     
@@ -8830,8 +8679,6 @@ SELECT SupplierId, SupplierName, SupplierAddress, SupplierPhoneNumber FROM Suppl
         
         private CustomerCardTableAdapter _customerCardTableAdapter;
         
-        private CustomerOrderTableAdapter _customerOrderTableAdapter;
-        
         private CustomerOrderStockTableAdapter _customerOrderStockTableAdapter;
         
         private StaffTableAdapter _staffTableAdapter;
@@ -8882,20 +8729,6 @@ SELECT SupplierId, SupplierName, SupplierAddress, SupplierPhoneNumber FROM Suppl
             }
             set {
                 this._customerCardTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public CustomerOrderTableAdapter CustomerOrderTableAdapter {
-            get {
-                return this._customerOrderTableAdapter;
-            }
-            set {
-                this._customerOrderTableAdapter = value;
             }
         }
         
@@ -8996,10 +8829,6 @@ SELECT SupplierId, SupplierName, SupplierAddress, SupplierPhoneNumber FROM Suppl
                             && (this._customerCardTableAdapter.Connection != null))) {
                     return this._customerCardTableAdapter.Connection;
                 }
-                if (((this._customerOrderTableAdapter != null) 
-                            && (this._customerOrderTableAdapter.Connection != null))) {
-                    return this._customerOrderTableAdapter.Connection;
-                }
                 if (((this._customerOrderStockTableAdapter != null) 
                             && (this._customerOrderStockTableAdapter.Connection != null))) {
                     return this._customerOrderStockTableAdapter.Connection;
@@ -9037,9 +8866,6 @@ SELECT SupplierId, SupplierName, SupplierAddress, SupplierPhoneNumber FROM Suppl
                     count = (count + 1);
                 }
                 if ((this._customerCardTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._customerOrderTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._customerOrderStockTableAdapter != null)) {
@@ -9101,15 +8927,6 @@ SELECT SupplierId, SupplierName, SupplierAddress, SupplierPhoneNumber FROM Suppl
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._supplierTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._customerOrderTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.CustomerOrder.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._customerOrderTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -9182,14 +8999,6 @@ SELECT SupplierId, SupplierName, SupplierAddress, SupplierPhoneNumber FROM Suppl
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._customerOrderTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.CustomerOrder.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._customerOrderTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._stockTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Stock.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -9245,14 +9054,6 @@ SELECT SupplierId, SupplierName, SupplierAddress, SupplierPhoneNumber FROM Suppl
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._stockTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._customerOrderTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.CustomerOrder.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._customerOrderTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -9337,11 +9138,6 @@ SELECT SupplierId, SupplierName, SupplierAddress, SupplierPhoneNumber FROM Suppl
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._customerOrderTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._customerOrderTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._customerOrderStockTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._customerOrderStockTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -9415,15 +9211,6 @@ SELECT SupplierId, SupplierName, SupplierAddress, SupplierPhoneNumber FROM Suppl
                     if (this._customerCardTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._customerCardTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._customerCardTableAdapter.Adapter);
-                    }
-                }
-                if ((this._customerOrderTableAdapter != null)) {
-                    revertConnections.Add(this._customerOrderTableAdapter, this._customerOrderTableAdapter.Connection);
-                    this._customerOrderTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._customerOrderTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._customerOrderTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._customerOrderTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._customerOrderTableAdapter.Adapter);
                     }
                 }
                 if ((this._customerOrderStockTableAdapter != null)) {
@@ -9536,10 +9323,6 @@ SELECT SupplierId, SupplierName, SupplierAddress, SupplierPhoneNumber FROM Suppl
                 if ((this._customerCardTableAdapter != null)) {
                     this._customerCardTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._customerCardTableAdapter]));
                     this._customerCardTableAdapter.Transaction = null;
-                }
-                if ((this._customerOrderTableAdapter != null)) {
-                    this._customerOrderTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._customerOrderTableAdapter]));
-                    this._customerOrderTableAdapter.Transaction = null;
                 }
                 if ((this._customerOrderStockTableAdapter != null)) {
                     this._customerOrderStockTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._customerOrderStockTableAdapter]));

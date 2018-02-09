@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EventsUnlimited
 {
-    public partial class FrmStockOrderReport : Form
+    public partial class FrmCustomerOrderReport : Form
     {
-        public FrmStockOrderReport()
+        public FrmCustomerOrderReport()
         {
             InitializeComponent();
         }
@@ -22,13 +22,13 @@ namespace EventsUnlimited
             this.Close();
         }
 
-        private void FrmStockOrderReport_Load(object sender, EventArgs e)
+        private void FrmCustomerOrderReport_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'EventsUnlimitedDataSet.StockOrder' table. You can move, or remove it, as needed.
             try
             {
-                this.StockOrderTableAdapter.Fill(this.EventsUnlimitedDataSet.StockOrder);
+                this.CustomerOrderTableAdapter.Fill(this.EventsUnlimitedDataSet.CustomerOrder);
             }
+
 
             catch
             {
