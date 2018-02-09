@@ -30,24 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.StockOrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.EventsUnlimitedDataSet = new EventsUnlimited.EventsUnlimitedDataSet();
             this.BtnClose = new System.Windows.Forms.Button();
-            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.EventsUnlimitedDataSet = new EventsUnlimited.EventsUnlimitedDataSet();
+            this.StockOrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.StockOrderTableAdapter = new EventsUnlimited.EventsUnlimitedDataSetTableAdapters.StockOrderTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.StockOrderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EventsUnlimitedDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StockOrderBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // StockOrderBindingSource
-            // 
-            this.StockOrderBindingSource.DataMember = "StockOrder";
-            this.StockOrderBindingSource.DataSource = this.EventsUnlimitedDataSet;
-            // 
-            // EventsUnlimitedDataSet
-            // 
-            this.EventsUnlimitedDataSet.DataSetName = "EventsUnlimitedDataSet";
-            this.EventsUnlimitedDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // BtnClose
             // 
@@ -59,17 +49,27 @@
             this.BtnClose.UseVisualStyleBackColor = true;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // reportViewer
+            // reportViewer1
             // 
-            reportDataSource1.Name = "StockOrderList";
+            reportDataSource1.Name = "StockOrderSet";
             reportDataSource1.Value = this.StockOrderBindingSource;
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer.LocalReport.ReportEmbeddedResource = "EventsUnlimited.Reports.StockOrder.rdlc";
-            this.reportViewer.Location = new System.Drawing.Point(13, 13);
-            this.reportViewer.Name = "reportViewer";
-            this.reportViewer.ServerReport.BearerToken = null;
-            this.reportViewer.Size = new System.Drawing.Size(1153, 622);
-            this.reportViewer.TabIndex = 1;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "EventsUnlimited.Reports.StockOrder.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(13, 13);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1153, 642);
+            this.reportViewer1.TabIndex = 1;
+            // 
+            // EventsUnlimitedDataSet
+            // 
+            this.EventsUnlimitedDataSet.DataSetName = "EventsUnlimitedDataSet";
+            this.EventsUnlimitedDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // StockOrderBindingSource
+            // 
+            this.StockOrderBindingSource.DataMember = "StockOrder";
+            this.StockOrderBindingSource.DataSource = this.EventsUnlimitedDataSet;
             // 
             // StockOrderTableAdapter
             // 
@@ -80,14 +80,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 744);
-            this.Controls.Add(this.reportViewer);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.BtnClose);
             this.Name = "FrmStockOrderReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StockOrderReport";
             this.Load += new System.EventHandler(this.StockOrderReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.StockOrderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EventsUnlimitedDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StockOrderBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -95,7 +95,7 @@
         #endregion
 
         private System.Windows.Forms.Button BtnClose;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource StockOrderBindingSource;
         private EventsUnlimitedDataSet EventsUnlimitedDataSet;
         private EventsUnlimitedDataSetTableAdapters.StockOrderTableAdapter StockOrderTableAdapter;

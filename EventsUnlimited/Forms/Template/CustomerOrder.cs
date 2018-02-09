@@ -139,13 +139,14 @@ namespace EventsUnlimited
             Print(CustomerOrder.ShowTable(ref index, ref CustomerOrderControls));
             newOrder = false;
         }
-
+        
         private void BtnReport_Click(object sender, EventArgs e)
         {
             FrmCustomerOrderReport report = new FrmCustomerOrderReport();
             report.Show();
         }
         //COULD MOVE TO THE TEMPLATE FORM
+        //USE A REPORT TO DISPLAY THE ORDER DETAILS FOR EXISTING ORDERS
         private void BtnOverview_Click(object sender, EventArgs e)
         {
             //REFACTOR

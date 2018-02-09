@@ -21,8 +21,7 @@ namespace EventsUnlimited
         {
             // TODO: This line of code loads data into the 'EventsUnlimitedDataSet.StockOrder' table. You can move, or remove it, as needed.
             this.StockOrderTableAdapter.Fill(this.EventsUnlimitedDataSet.StockOrder);
-
-            this.reportViewer.RefreshReport();
+            this.reportViewer1.RefreshReport();
         }
 
         private void BtnClose_Click(object sender, EventArgs e)

@@ -128,6 +128,7 @@ namespace EventsUnlimited
             report.Show();
         }
         //COULD MOVE TO THE TEMPLATE FORM
+        //USE A REPORT TO DISPLAY THE ORDER DETAILS FOR EXISTING ORDERS
         private void BtnOverview_Click(object sender, EventArgs e)
         {
             //REFACTOR
