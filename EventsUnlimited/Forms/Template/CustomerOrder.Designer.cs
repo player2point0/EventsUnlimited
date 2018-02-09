@@ -52,7 +52,6 @@
             this.CbxCustomerID = new System.Windows.Forms.ComboBox();
             this.CbxStaffID = new System.Windows.Forms.ComboBox();
             this.LblOrderID = new System.Windows.Forms.Label();
-            this.BtnReport = new System.Windows.Forms.Button();
             this.BtnOverview = new System.Windows.Forms.Button();
             this.PnlOrderLabels.SuspendLayout();
             this.PnlOrderInput.SuspendLayout();
@@ -295,16 +294,6 @@
             this.LblOrderID.TabIndex = 0;
             this.LblOrderID.Text = "Order ID";
             // 
-            // BtnReport
-            // 
-            this.BtnReport.Location = new System.Drawing.Point(549, 706);
-            this.BtnReport.Name = "BtnReport";
-            this.BtnReport.Size = new System.Drawing.Size(188, 39);
-            this.BtnReport.TabIndex = 14;
-            this.BtnReport.Text = "Report";
-            this.BtnReport.UseVisualStyleBackColor = true;
-            this.BtnReport.Click += new System.EventHandler(this.BtnReport_Click);
-            // 
             // BtnOverview
             // 
             this.BtnOverview.Location = new System.Drawing.Point(549, 666);
@@ -320,7 +309,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 744);
-            this.Controls.Add(this.BtnReport);
             this.Controls.Add(this.PnlOrderInput);
             this.Controls.Add(this.PnlOrderLabels);
             this.Controls.Add(this.BtnOverview);
@@ -330,7 +318,6 @@
             this.Controls.SetChildIndex(this.BtnOverview, 0);
             this.Controls.SetChildIndex(this.PnlOrderLabels, 0);
             this.Controls.SetChildIndex(this.PnlOrderInput, 0);
-            this.Controls.SetChildIndex(this.BtnReport, 0);
             this.PnlOrderLabels.ResumeLayout(false);
             this.PnlOrderLabels.PerformLayout();
             this.PnlOrderInput.ResumeLayout(false);
@@ -367,6 +354,5 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown NudStockQuantity;
         private ValidationTextBox TbxOrderAddress;
-        private System.Windows.Forms.Button BtnReport;
     }
 }

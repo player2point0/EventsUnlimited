@@ -98,7 +98,7 @@ namespace EventsUnlimited
             base.BtnEdit_Click(sender, e);
             PnlOrderInput.Enabled = !PnlOrderInput.Enabled;
         }
-        //COULD MOVE TO THE TEMPLATE FORM
+
         protected override void BtnSave_Click(object sender, EventArgs e)
         {
             if (EmptyFields()) return;
@@ -140,17 +140,14 @@ namespace EventsUnlimited
             newOrder = false;
         }
         
-        private void BtnReport_Click(object sender, EventArgs e)
-        {
-            FrmCustomerOrderReport report = new FrmCustomerOrderReport();
-            report.Show();
-        }
-        //COULD MOVE TO THE TEMPLATE FORM
         //USE A REPORT TO DISPLAY THE ORDER DETAILS FOR EXISTING ORDERS
         private void BtnOverview_Click(object sender, EventArgs e)
         {
-            //REFACTOR
+            FrmCustomerOrderReport report = new FrmCustomerOrderReport();
+            report.Show();
 
+            //REFACTOR
+            /*
             string[] columns = new string[] { "OrderId", "StaffName", "CustomerName", "CardNumber", "OrderPaid", "OrderAddress", "OrderDate", "StockName", "StockQuantity" };
 
             string CustomerOrderId = LblOrderID.Text;
@@ -204,7 +201,7 @@ namespace EventsUnlimited
 
                 overview.Add(new string[] { CustomerOrderId, staffName, customerName, cardNumber, orderPaid, orderAddress, OrderDate, stockName, quantity});
             }
-            
+            */
         }
         private void BtnAddStock_Click(object sender, EventArgs e)
         {

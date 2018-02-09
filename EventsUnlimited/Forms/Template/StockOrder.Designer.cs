@@ -35,8 +35,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PnlStockOrderInput = new System.Windows.Forms.Panel();
-            this.BtnReport = new System.Windows.Forms.Button();
-            this.BtnOverview = new System.Windows.Forms.Button();
             this.BtnRemoveStock = new System.Windows.Forms.Button();
             this.BtnAddStock = new System.Windows.Forms.Button();
             this.NudStockQuantity = new System.Windows.Forms.NumericUpDown();
@@ -44,6 +42,7 @@
             this.DtpStockOrderDate = new System.Windows.Forms.DateTimePicker();
             this.CbxStaffID = new System.Windows.Forms.ComboBox();
             this.LblStockOrderID = new System.Windows.Forms.Label();
+            this.BtnOverview = new System.Windows.Forms.Button();
             this.PnlStockOrderLabels.SuspendLayout();
             this.PnlStockOrderInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudStockQuantity)).BeginInit();
@@ -121,26 +120,6 @@
             this.PnlStockOrderInput.Size = new System.Drawing.Size(252, 264);
             this.PnlStockOrderInput.TabIndex = 7;
             // 
-            // BtnReport
-            // 
-            this.BtnReport.Location = new System.Drawing.Point(558, 537);
-            this.BtnReport.Name = "BtnReport";
-            this.BtnReport.Size = new System.Drawing.Size(176, 34);
-            this.BtnReport.TabIndex = 8;
-            this.BtnReport.Text = "Report";
-            this.BtnReport.UseVisualStyleBackColor = true;
-            this.BtnReport.Click += new System.EventHandler(this.BtnReport_Click);
-            // 
-            // BtnOverview
-            // 
-            this.BtnOverview.Location = new System.Drawing.Point(558, 464);
-            this.BtnOverview.Name = "BtnOverview";
-            this.BtnOverview.Size = new System.Drawing.Size(176, 38);
-            this.BtnOverview.TabIndex = 7;
-            this.BtnOverview.Text = "Overview";
-            this.BtnOverview.UseVisualStyleBackColor = true;
-            this.BtnOverview.Click += new System.EventHandler(this.BtnOverview_Click);
-            // 
             // BtnRemoveStock
             // 
             this.BtnRemoveStock.Location = new System.Drawing.Point(126, 199);
@@ -212,12 +191,21 @@
             this.LblStockOrderID.TabIndex = 0;
             this.LblStockOrderID.Text = "Stock Order ID";
             // 
+            // BtnOverview
+            // 
+            this.BtnOverview.Location = new System.Drawing.Point(558, 464);
+            this.BtnOverview.Name = "BtnOverview";
+            this.BtnOverview.Size = new System.Drawing.Size(176, 38);
+            this.BtnOverview.TabIndex = 7;
+            this.BtnOverview.Text = "Overview";
+            this.BtnOverview.UseVisualStyleBackColor = true;
+            this.BtnOverview.Click += new System.EventHandler(this.BtnOverview_Click);
+            // 
             // FrmStockOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 744);
-            this.Controls.Add(this.BtnReport);
             this.Controls.Add(this.PnlStockOrderInput);
             this.Controls.Add(this.BtnOverview);
             this.Controls.Add(this.PnlStockOrderLabels);
@@ -227,7 +215,6 @@
             this.Controls.SetChildIndex(this.PnlStockOrderLabels, 0);
             this.Controls.SetChildIndex(this.BtnOverview, 0);
             this.Controls.SetChildIndex(this.PnlStockOrderInput, 0);
-            this.Controls.SetChildIndex(this.BtnReport, 0);
             this.PnlStockOrderLabels.ResumeLayout(false);
             this.PnlStockOrderLabels.PerformLayout();
             this.PnlStockOrderInput.ResumeLayout(false);
@@ -254,6 +241,5 @@
         private System.Windows.Forms.NumericUpDown NudStockQuantity;
         private System.Windows.Forms.Button BtnRemoveStock;
         private System.Windows.Forms.Button BtnOverview;
-        private System.Windows.Forms.Button BtnReport;
     }
 }

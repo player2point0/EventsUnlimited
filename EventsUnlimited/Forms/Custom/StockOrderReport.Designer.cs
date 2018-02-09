@@ -30,14 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.StockOrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.EventsUnlimitedDataSet = new EventsUnlimited.EventsUnlimitedDataSet();
             this.BtnClose = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.EventsUnlimitedDataSet = new EventsUnlimited.EventsUnlimitedDataSet();
-            this.StockOrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.StockOrderTableAdapter = new EventsUnlimited.EventsUnlimitedDataSetTableAdapters.StockOrderTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.EventsUnlimitedDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StockOrderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EventsUnlimitedDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // StockOrderBindingSource
+            // 
+            this.StockOrderBindingSource.DataMember = "StockOrder";
+            this.StockOrderBindingSource.DataSource = this.EventsUnlimitedDataSet;
+            // 
+            // EventsUnlimitedDataSet
+            // 
+            this.EventsUnlimitedDataSet.DataSetName = "EventsUnlimitedDataSet";
+            this.EventsUnlimitedDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // BtnClose
             // 
@@ -54,22 +64,12 @@
             reportDataSource1.Name = "StockOrder";
             reportDataSource1.Value = this.StockOrderBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "EventsUnlimited.StockOrder.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "EventsUnlimited.Reports.StockOrder.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(13, 13);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(996, 410);
             this.reportViewer1.TabIndex = 1;
-            // 
-            // EventsUnlimitedDataSet
-            // 
-            this.EventsUnlimitedDataSet.DataSetName = "EventsUnlimitedDataSet";
-            this.EventsUnlimitedDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // StockOrderBindingSource
-            // 
-            this.StockOrderBindingSource.DataMember = "StockOrder";
-            this.StockOrderBindingSource.DataSource = this.EventsUnlimitedDataSet;
             // 
             // StockOrderTableAdapter
             // 
@@ -85,8 +85,8 @@
             this.Name = "FrmStockOrderReport";
             this.Text = "StockOrderReport";
             this.Load += new System.EventHandler(this.FrmStockOrderReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.EventsUnlimitedDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StockOrderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EventsUnlimitedDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

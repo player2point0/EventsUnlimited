@@ -77,7 +77,7 @@ namespace EventsUnlimited
             base.BtnEdit_Click(sender, e);
             PnlStockOrderInput.Enabled = !PnlStockOrderInput.Enabled;
         }
-        //COULD MOVE TO THE TEMPLATE FORM
+
         protected override void BtnSave_Click(object sender, EventArgs e)
         {
             if (EmptyFields()) return;
@@ -122,17 +122,14 @@ namespace EventsUnlimited
             newOrder = false;
         }
 
-        private void BtnReport_Click(object sender, EventArgs e)
-        {
-            FrmStockOrderReport report = new FrmStockOrderReport();
-            report.Show();
-        }
-        //COULD MOVE TO THE TEMPLATE FORM
         //USE A REPORT TO DISPLAY THE ORDER DETAILS FOR EXISTING ORDERS
         private void BtnOverview_Click(object sender, EventArgs e)
         {
-            //REFACTOR
+            FrmStockOrderReport report = new FrmStockOrderReport();
+            report.Show();
 
+            //REFACTOR
+            /*
             string[] columns = new string[] { "StockOrderId", "StaffName", "StockOrderDate", "StockName", "StockQuantity" };
 
             //StockOrderId - get from form
@@ -176,6 +173,7 @@ namespace EventsUnlimited
 
                 overview.Add(new string[] { StockOrderId, staffName, stockOrderDate, stockName, stockQuantity });
             }
+            */
         }
         private void BtnAddStock_Click(object sender, EventArgs e)
         {

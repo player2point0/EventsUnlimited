@@ -128,12 +128,6 @@
       <DependentUpon>Help.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\LsvController.cs" />
-    <Compile Include="MultiTableTemplate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MultiTableTemplate.Designer.cs">
-      <DependentUpon>MultiTableTemplate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\Template\Staff.cs">
