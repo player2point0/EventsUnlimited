@@ -41,9 +41,9 @@
             // 
             // BtnClose
             // 
-            this.BtnClose.Location = new System.Drawing.Point(506, 673);
+            this.BtnClose.Location = new System.Drawing.Point(441, 429);
             this.BtnClose.Name = "BtnClose";
-            this.BtnClose.Size = new System.Drawing.Size(141, 49);
+            this.BtnClose.Size = new System.Drawing.Size(128, 51);
             this.BtnClose.TabIndex = 0;
             this.BtnClose.Text = "Close";
             this.BtnClose.UseVisualStyleBackColor = true;
@@ -51,14 +51,14 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "StockOrderSet";
+            reportDataSource1.Name = "StockOrder";
             reportDataSource1.Value = this.StockOrderBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "EventsUnlimited.Reports.StockOrder.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "EventsUnlimited.StockOrder.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(13, 13);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1153, 642);
+            this.reportViewer1.Size = new System.Drawing.Size(996, 410);
             this.reportViewer1.TabIndex = 1;
             // 
             // EventsUnlimitedDataSet
@@ -79,13 +79,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1178, 744);
+            this.ClientSize = new System.Drawing.Size(1021, 530);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.BtnClose);
             this.Name = "FrmStockOrderReport";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StockOrderReport";
-            this.Load += new System.EventHandler(this.StockOrderReport_Load);
+            this.Load += new System.EventHandler(this.FrmStockOrderReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.EventsUnlimitedDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StockOrderBindingSource)).EndInit();
             this.ResumeLayout(false);

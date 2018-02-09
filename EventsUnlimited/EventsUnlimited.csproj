@@ -80,12 +80,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Container.cs" />
-    <Compile Include="Forms\Custom\CustomerOrderReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Custom\CustomerOrderReport.Designer.cs">
-      <DependentUpon>CustomerOrderReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="EventsUnlimitedDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -175,20 +169,13 @@
       <DependentUpon>ValidationTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Exceptions\ValidationException.cs" />
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Forms\Custom\StockOrderReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Custom\StockOrderReport.Designer.cs">
       <DependentUpon>StockOrderReport.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\Custom\CustomerOrderReport.resx">
-      <DependentUpon>CustomerOrderReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Custom\StockOrderReport.resx">
-      <DependentUpon>StockOrderReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\CustomerOrder.rdlc" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Forms\Template\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,7 +222,10 @@
     <EmbeddedResource Include="Controls\ValidationTextBox.resx">
       <DependentUpon>ValidationTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\StockOrder.rdlc" />
+    <EmbeddedResource Include="Forms\Custom\StockOrderReport.resx">
+      <DependentUpon>StockOrderReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockOrder.rdlc" />
     <None Include="EventsUnlimitedDataSet.xsc">
       <DependentUpon>EventsUnlimitedDataSet.xsd</DependentUpon>
     </None>
@@ -295,6 +285,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

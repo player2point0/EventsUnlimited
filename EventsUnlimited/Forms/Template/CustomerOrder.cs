@@ -142,8 +142,8 @@ namespace EventsUnlimited
         
         private void BtnReport_Click(object sender, EventArgs e)
         {
-            FrmCustomerOrderReport report = new FrmCustomerOrderReport();
-            report.Show();
+            //FrmCustomerOrderReport report = new FrmCustomerOrderReport();
+            //report.Show();
         }
         //COULD MOVE TO THE TEMPLATE FORM
         //USE A REPORT TO DISPLAY THE ORDER DETAILS FOR EXISTING ORDERS
