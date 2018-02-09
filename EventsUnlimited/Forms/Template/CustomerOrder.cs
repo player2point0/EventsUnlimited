@@ -98,6 +98,7 @@ namespace EventsUnlimited
             base.BtnEdit_Click(sender, e);
             PnlOrderInput.Enabled = !PnlOrderInput.Enabled;
         }
+        //COULD MOVE TO THE TEMPLATE FORM
         protected override void BtnSave_Click(object sender, EventArgs e)
         {
             if (EmptyFields()) return;
@@ -144,6 +145,7 @@ namespace EventsUnlimited
             FrmCustomerOrderReport report = new FrmCustomerOrderReport();
             report.Show();
         }
+        //COULD MOVE TO THE TEMPLATE FORM
         private void BtnOverview_Click(object sender, EventArgs e)
         {
             //REFACTOR
@@ -232,7 +234,7 @@ namespace EventsUnlimited
                 Print("No stock selected");
             }
         }
-
+        //PREVENTS TYPING IN THE COMBO BOXES
         private void CbxStaffID_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;

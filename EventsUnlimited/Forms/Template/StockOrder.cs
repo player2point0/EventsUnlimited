@@ -77,6 +77,7 @@ namespace EventsUnlimited
             base.BtnEdit_Click(sender, e);
             PnlStockOrderInput.Enabled = !PnlStockOrderInput.Enabled;
         }
+        //COULD MOVE TO THE TEMPLATE FORM
         protected override void BtnSave_Click(object sender, EventArgs e)
         {
             if (EmptyFields()) return;
@@ -126,6 +127,7 @@ namespace EventsUnlimited
             FrmStockOrderReport report = new FrmStockOrderReport();
             report.Show();
         }
+        //COULD MOVE TO THE TEMPLATE FORM
         private void BtnOverview_Click(object sender, EventArgs e)
         {
             //REFACTOR
@@ -203,7 +205,7 @@ namespace EventsUnlimited
                 Print("No stock selected");
             }
         }
-
+        //PREVENTS TYPING IN THE COMBO BOXES
         private void CbxStock_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
