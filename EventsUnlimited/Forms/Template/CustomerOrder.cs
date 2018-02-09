@@ -168,7 +168,7 @@ namespace EventsUnlimited
             else
             {
                 //NEED TO PASS IN CUSTOMER ORDER ID AND USE IN QUERY
-                FrmCustomerOrderReport report = new FrmCustomerOrderReport();
+                FrmCustomerOrderReport report = new FrmCustomerOrderReport(CustomerOrderId);
                 report.Show();
                 return;
             }

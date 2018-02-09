@@ -12,9 +12,12 @@ namespace EventsUnlimited
 {
     public partial class FrmCustomerOrderReport : Form
     {
-        public FrmCustomerOrderReport()
+        private int id;
+
+        public FrmCustomerOrderReport(string _id)
         {
             InitializeComponent();
+            id = int.Parse(_id);
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -26,9 +29,8 @@ namespace EventsUnlimited
         {
             try
             {
-                this.CustomerOrderTableAdapter.Fill(this.EventsUnlimitedDataSet.CustomerOrder);
+                this.CustomerOrderTableAdapter.Fill(this.EventsUnlimitedDataSet.CustomerOrder, id);
             }
-
 
             catch
             {

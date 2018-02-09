@@ -12,9 +12,12 @@ namespace EventsUnlimited
 {
     public partial class FrmStockOrderReport : Form
     {
-        public FrmStockOrderReport()
+        private int id;
+
+        public FrmStockOrderReport(string _id)
         {
             InitializeComponent();
+            id = int.Parse(_id);
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -27,7 +30,7 @@ namespace EventsUnlimited
             // TODO: This line of code loads data into the 'EventsUnlimitedDataSet.StockOrder' table. You can move, or remove it, as needed.
             try
             {
-                this.StockOrderTableAdapter.Fill(this.EventsUnlimitedDataSet.StockOrder);
+                this.StockOrderTableAdapter.Fill(this.EventsUnlimitedDataSet.StockOrder, id);
             }
 
             catch

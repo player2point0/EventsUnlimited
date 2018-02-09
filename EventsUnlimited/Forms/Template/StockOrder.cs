@@ -143,7 +143,7 @@ namespace EventsUnlimited
             else
             {
                 //NEED TO PASS IN STOCK ORDER ID AND USE IN QUERY
-                FrmStockOrderReport report = new FrmStockOrderReport();
+                FrmStockOrderReport report = new FrmStockOrderReport(StockOrderId);
                 report.Show();
                 return;
             }

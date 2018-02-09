@@ -6492,16 +6492,19 @@ FROM   Stock INNER JOIN
              CustomerOrder INNER JOIN
              Staff ON CustomerOrder.StaffId = Staff.StaffId INNER JOIN
              Customer ON CustomerOrder.CustomerId = Customer.CustomerId INNER JOIN
-             CustomerCard ON CustomerOrder.CardId = CustomerCard.CardId";
+             CustomerCard ON CustomerOrder.CardId = CustomerCard.CardId
+WHERE CustomerOrder.OrderId = @ID ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OrderId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(EventsUnlimitedDataSet.CustomerOrderDataTable dataTable) {
+        public virtual int Fill(EventsUnlimitedDataSet.CustomerOrderDataTable dataTable, int ID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -6513,8 +6516,9 @@ FROM   Stock INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual EventsUnlimitedDataSet.CustomerOrderDataTable GetData() {
+        public virtual EventsUnlimitedDataSet.CustomerOrderDataTable GetData(int ID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             EventsUnlimitedDataSet.CustomerOrderDataTable dataTable = new EventsUnlimitedDataSet.CustomerOrderDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7904,16 +7908,19 @@ SELECT StockId, StockName, StockAmount, StockCost, StockShelfLife, StockDelivery
 FROM   StockOrder INNER JOIN
              Staff ON StockOrder.StaffId = Staff.StaffId INNER JOIN
              StockOrderStock ON StockOrder.StockOrderId = StockOrderStock.StockOrderId INNER JOIN
-             Stock ON StockOrderStock.StockId = Stock.StockId";
+             Stock ON StockOrderStock.StockId = Stock.StockId
+WHERE (StockOrder.StockOrderId = @ID)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StockOrderId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(EventsUnlimitedDataSet.StockOrderDataTable dataTable) {
+        public virtual int Fill(EventsUnlimitedDataSet.StockOrderDataTable dataTable, int ID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -7925,8 +7932,9 @@ FROM   StockOrder INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual EventsUnlimitedDataSet.StockOrderDataTable GetData() {
+        public virtual EventsUnlimitedDataSet.StockOrderDataTable GetData(int ID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             EventsUnlimitedDataSet.StockOrderDataTable dataTable = new EventsUnlimitedDataSet.StockOrderDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
