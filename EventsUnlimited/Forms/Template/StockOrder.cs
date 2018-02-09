@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace EventsUnlimited
 {
-    public partial class FrmStockOrder : FrmTemplate
+    public partial class FrmStockOrder : MultiTableTemplate
     {
         private SQLManager Stock;
         private SQLManager Staff;
@@ -130,7 +130,7 @@ namespace EventsUnlimited
         {
             //REFACTOR
 
-            string[] columns = new string[] { "StockOrderId", "StaffId", "StaffName", "StockOrderDate", "StockId", "StockName", "StockQuantity" };
+            string[] columns = new string[] { "StockOrderId", "StaffName", "StockOrderDate", "StockName", "StockQuantity" };
 
             //StockOrderId - get from form
             string StockOrderId = LblStockOrderID.Text;
@@ -171,7 +171,7 @@ namespace EventsUnlimited
                 //stockQuantity - get from stockOrderStock table
                 string stockQuantity = StockOrderStock.GetData(new string[] { StockOrderId, stockId[i] }, new string[] { "StockQuantity" })[0];
 
-                overview.Add(new string[] { StockOrderId, staffId, staffName, stockOrderDate, stockId[i], stockName, stockQuantity });
+                overview.Add(new string[] { StockOrderId, staffName, stockOrderDate, stockName, stockQuantity });
             }
         }
         private void BtnAddStock_Click(object sender, EventArgs e)

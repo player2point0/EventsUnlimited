@@ -147,6 +147,46 @@ namespace EventsUnlimited
         private void BtnOverview_Click(object sender, EventArgs e)
         {
 
+            //REFACTOR
+            /*
+            string[] columns = new string[] { "CustomerOrderId", "StaffName", "CustomerName", "CardNumber", "OrderPaid", "OrderAddress", "OrderDate", "StockName", "StockQuantity" };
+
+            string CustomerOrderId = LblOrderID.Text;
+            string staffId;
+            string staffName;
+            string customerId;
+            string customerName;
+            string cardId;
+            string cardNumber;
+            string orderPaid;
+            string orderAddress;
+            string OrderDate;
+            List<string> stockId;
+
+            if(newOrder)
+            {
+                if (EmptyFields()) return;
+
+
+            }
+
+            else
+            {
+
+            }
+
+            FrmOverview overview = new FrmOverview(columns);
+            overview.Show();
+
+            for (int i = 0; i < stockId.Count; i++)
+            {
+                string stockName;
+                string quantity;
+
+                
+                overview.Add(new string[] { CustomerOrderId, staffName, customerName, cardNumber, orderPaid, orderAddress, OrderDate, stockName, quantity});
+            }
+            */
         }
         private void BtnAddStock_Click(object sender, EventArgs e)
         {

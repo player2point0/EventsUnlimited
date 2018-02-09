@@ -12,6 +12,13 @@ namespace EventsUnlimited
 {
     public partial class MultiTableTemplate : FrmTemplate
     {
+        private int index;
+
+        private List<string> StockIdToAdd;
+        private List<string> QuantityToAdd;
+        private bool newOrder;
+
+
         public MultiTableTemplate()
         {
             InitializeComponent();
