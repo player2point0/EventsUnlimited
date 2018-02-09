@@ -122,58 +122,41 @@ namespace EventsUnlimited
             newOrder = false;
         }
 
-        //USE A REPORT TO DISPLAY THE ORDER DETAILS FOR EXISTING ORDERS
         private void BtnOverview_Click(object sender, EventArgs e)
         {
-            FrmStockOrderReport report = new FrmStockOrderReport();
-            report.Show();
-
-            //REFACTOR
-            /*
             string[] columns = new string[] { "StockOrderId", "StaffName", "StockOrderDate", "StockName", "StockQuantity" };
 
-            //StockOrderId - get from form
             string StockOrderId = LblStockOrderID.Text;
             string staffId;
             string staffName;
             string stockOrderDate;
-            List<string> stockId;
 
             if (newOrder)
             {
                 if (EmptyFields()) return;
 
                 staffId = (CbxStaffID.SelectedItem as Container).Id;
-                stockId = StockIdToAdd;
+                staffName = Staff.GetData(new string[] { staffId }, new string[] { "StaffName" })[0];
                 stockOrderDate = DtpStockOrderDate.Value.ToString();
             }
 
             else
             {
-                //get staffId from the stockOrder table
-                staffId = StockOrder.GetData(new string[] { StockOrderId }, new string[] { "StaffId" })[0];
-                //get the stockIds from the stockOrderStock table
-                stockId = StockOrderStock.GetAllValues("StockOrderId", StockOrderId, "StockId");
-                //get the stockOrderDate from the stockOrder table
-                stockOrderDate = StockOrder.GetData(new string[] { StockOrderId }, new string[] { "StockOrderDate" })[0];
+                //NEED TO PASS IN STOCK ORDER ID AND USE IN QUERY
+                FrmStockOrderReport report = new FrmStockOrderReport();
+                report.Show();
+                return;
             }
 
             FrmOverview overview = new FrmOverview(columns);
             overview.Show();
-
-            //staffName - get from staff table
-            staffName = Staff.GetData(new string[] { staffId }, new string[] { "StaffName" })[0];
-
-            for (int i = 0; i < stockId.Count; i++)
+            
+            for (int i = 0; i < StockIdToAdd.Count; i++)
             {
-                //StockName - get from stock table
-                string stockName = Stock.GetData(new string[] { stockId[i] }, new string[] { "StockName" })[0];
-                //stockQuantity - get from stockOrderStock table
-                string stockQuantity = StockOrderStock.GetData(new string[] { StockOrderId, stockId[i] }, new string[] { "StockQuantity" })[0];
+                string stockName = Stock.GetData(new string[] { StockIdToAdd[i] }, new string[] { "StockName" })[0];
 
-                overview.Add(new string[] { StockOrderId, staffName, stockOrderDate, stockName, stockQuantity });
+                overview.Add(new string[] { StockOrderId, staffName, stockOrderDate, stockName, QuantityToAdd[i] });
             }
-            */
         }
         private void BtnAddStock_Click(object sender, EventArgs e)
         {
