@@ -46,6 +46,7 @@
             // 
             // PnlEdit
             // 
+            this.PnlEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PnlEdit.Controls.Add(this.BtnClear);
             this.PnlEdit.Controls.Add(this.BtnDelete);
             this.PnlEdit.Controls.Add(this.BtnSave);
@@ -183,9 +184,9 @@
             // 
             // FrmTemplate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1178, 760);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1178, 844);
             this.ControlBox = false;
             this.Controls.Add(this.PnlEdit);
             this.Controls.Add(this.PnlNavigation);
@@ -194,7 +195,6 @@
             this.Name = "FrmTemplate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Template";
-            this.Load += new System.EventHandler(this.Template_Load);
             this.PnlEdit.ResumeLayout(false);
             this.PnlNavigation.ResumeLayout(false);
             this.ResumeLayout(false);
