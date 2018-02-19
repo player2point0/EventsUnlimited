@@ -80,8 +80,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1021, 530);
+            this.ControlBox = false;
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.BtnClose);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmStockOrderReport";
             this.Text = "StockOrderReport";
             this.Load += new System.EventHandler(this.FrmStockOrderReport_Load);

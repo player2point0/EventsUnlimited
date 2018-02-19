@@ -30,14 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.CustomerOrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.EventsUnlimitedDataSet = new EventsUnlimited.EventsUnlimitedDataSet();
             this.BtnClose = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.EventsUnlimitedDataSet = new EventsUnlimited.EventsUnlimitedDataSet();
-            this.CustomerOrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CustomerOrderTableAdapter = new EventsUnlimited.EventsUnlimitedDataSetTableAdapters.CustomerOrderTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.EventsUnlimitedDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerOrderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EventsUnlimitedDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // CustomerOrderBindingSource
+            // 
+            this.CustomerOrderBindingSource.DataMember = "CustomerOrder";
+            this.CustomerOrderBindingSource.DataSource = this.EventsUnlimitedDataSet;
+            // 
+            // EventsUnlimitedDataSet
+            // 
+            this.EventsUnlimitedDataSet.DataSetName = "EventsUnlimitedDataSet";
+            this.EventsUnlimitedDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // BtnClose
             // 
@@ -61,16 +71,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(1017, 418);
             this.reportViewer1.TabIndex = 1;
             // 
-            // EventsUnlimitedDataSet
-            // 
-            this.EventsUnlimitedDataSet.DataSetName = "EventsUnlimitedDataSet";
-            this.EventsUnlimitedDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // CustomerOrderBindingSource
-            // 
-            this.CustomerOrderBindingSource.DataMember = "CustomerOrder";
-            this.CustomerOrderBindingSource.DataSource = this.EventsUnlimitedDataSet;
-            // 
             // CustomerOrderTableAdapter
             // 
             this.CustomerOrderTableAdapter.ClearBeforeFill = true;
@@ -80,13 +80,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 540);
+            this.ControlBox = false;
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.BtnClose);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmCustomerOrderReport";
             this.Text = "CustomerOrderReport";
             this.Load += new System.EventHandler(this.FrmCustomerOrderReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.EventsUnlimitedDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerOrderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EventsUnlimitedDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
