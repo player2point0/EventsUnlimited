@@ -122,7 +122,7 @@
             // 
             // BtnRemoveStock
             // 
-            this.BtnRemoveStock.Location = new System.Drawing.Point(126, 199);
+            this.BtnRemoveStock.Location = new System.Drawing.Point(150, 199);
             this.BtnRemoveStock.Name = "BtnRemoveStock";
             this.BtnRemoveStock.Size = new System.Drawing.Size(89, 35);
             this.BtnRemoveStock.TabIndex = 6;
@@ -134,7 +134,7 @@
             // 
             this.BtnAddStock.Location = new System.Drawing.Point(39, 199);
             this.BtnAddStock.Name = "BtnAddStock";
-            this.BtnAddStock.Size = new System.Drawing.Size(66, 35);
+            this.BtnAddStock.Size = new System.Drawing.Size(80, 35);
             this.BtnAddStock.TabIndex = 5;
             this.BtnAddStock.Text = "Add";
             this.BtnAddStock.UseVisualStyleBackColor = true;
@@ -149,7 +149,7 @@
             0,
             0});
             this.NudStockQuantity.Name = "NudStockQuantity";
-            this.NudStockQuantity.Size = new System.Drawing.Size(120, 26);
+            this.NudStockQuantity.Size = new System.Drawing.Size(200, 26);
             this.NudStockQuantity.TabIndex = 4;
             this.NudStockQuantity.Value = new decimal(new int[] {
             1,
@@ -162,7 +162,7 @@
             this.CbxStock.FormattingEnabled = true;
             this.CbxStock.Location = new System.Drawing.Point(39, 119);
             this.CbxStock.Name = "CbxStock";
-            this.CbxStock.Size = new System.Drawing.Size(121, 28);
+            this.CbxStock.Size = new System.Drawing.Size(200, 28);
             this.CbxStock.TabIndex = 3;
             this.CbxStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbxStock_KeyPress);
             // 
@@ -178,7 +178,7 @@
             this.CbxStaffID.FormattingEnabled = true;
             this.CbxStaffID.Location = new System.Drawing.Point(39, 50);
             this.CbxStaffID.Name = "CbxStaffID";
-            this.CbxStaffID.Size = new System.Drawing.Size(121, 28);
+            this.CbxStaffID.Size = new System.Drawing.Size(200, 28);
             this.CbxStaffID.TabIndex = 1;
             this.CbxStaffID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbxStaffID_KeyPress);
             // 
@@ -193,9 +193,9 @@
             // 
             // BtnOverview
             // 
-            this.BtnOverview.Location = new System.Drawing.Point(558, 464);
+            this.BtnOverview.Location = new System.Drawing.Point(558, 444);
             this.BtnOverview.Name = "BtnOverview";
-            this.BtnOverview.Size = new System.Drawing.Size(176, 38);
+            this.BtnOverview.Size = new System.Drawing.Size(200, 38);
             this.BtnOverview.TabIndex = 7;
             this.BtnOverview.Text = "Overview";
             this.BtnOverview.UseVisualStyleBackColor = true;

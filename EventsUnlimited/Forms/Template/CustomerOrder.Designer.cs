@@ -195,14 +195,14 @@
             this.TbxOrderAddress.Name = "TbxOrderAddress";
             this.TbxOrderAddress.NumbersOnly = false;
             this.TbxOrderAddress.Required = true;
-            this.TbxOrderAddress.Size = new System.Drawing.Size(121, 26);
+            this.TbxOrderAddress.Size = new System.Drawing.Size(201, 26);
             this.TbxOrderAddress.TabIndex = 13;
             // 
             // NudStockQuantity
             // 
             this.NudStockQuantity.Location = new System.Drawing.Point(31, 307);
             this.NudStockQuantity.Name = "NudStockQuantity";
-            this.NudStockQuantity.Size = new System.Drawing.Size(120, 26);
+            this.NudStockQuantity.Size = new System.Drawing.Size(200, 26);
             this.NudStockQuantity.TabIndex = 12;
             // 
             // TbxOrderNotes
@@ -210,14 +210,14 @@
             this.TbxOrderNotes.Location = new System.Drawing.Point(30, 386);
             this.TbxOrderNotes.Multiline = true;
             this.TbxOrderNotes.Name = "TbxOrderNotes";
-            this.TbxOrderNotes.Size = new System.Drawing.Size(189, 88);
+            this.TbxOrderNotes.Size = new System.Drawing.Size(201, 88);
             this.TbxOrderNotes.TabIndex = 10;
             // 
             // BtnRemoveStock
             // 
-            this.BtnRemoveStock.Location = new System.Drawing.Point(114, 339);
+            this.BtnRemoveStock.Location = new System.Drawing.Point(144, 339);
             this.BtnRemoveStock.Name = "BtnRemoveStock";
-            this.BtnRemoveStock.Size = new System.Drawing.Size(77, 38);
+            this.BtnRemoveStock.Size = new System.Drawing.Size(87, 38);
             this.BtnRemoveStock.TabIndex = 9;
             this.BtnRemoveStock.Text = "Remove";
             this.BtnRemoveStock.UseVisualStyleBackColor = true;
@@ -227,7 +227,7 @@
             // 
             this.BtnAddStock.Location = new System.Drawing.Point(31, 339);
             this.BtnAddStock.Name = "BtnAddStock";
-            this.BtnAddStock.Size = new System.Drawing.Size(77, 38);
+            this.BtnAddStock.Size = new System.Drawing.Size(86, 38);
             this.BtnAddStock.TabIndex = 8;
             this.BtnAddStock.Text = "Add";
             this.BtnAddStock.UseVisualStyleBackColor = true;
@@ -238,13 +238,13 @@
             this.CbxStock.FormattingEnabled = true;
             this.CbxStock.Location = new System.Drawing.Point(30, 270);
             this.CbxStock.Name = "CbxStock";
-            this.CbxStock.Size = new System.Drawing.Size(161, 28);
+            this.CbxStock.Size = new System.Drawing.Size(201, 28);
             this.CbxStock.TabIndex = 7;
             this.CbxStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbxStock_KeyPress);
             // 
             // DtpOrderDate
             // 
-            this.DtpOrderDate.Location = new System.Drawing.Point(19, 234);
+            this.DtpOrderDate.Location = new System.Drawing.Point(31, 235);
             this.DtpOrderDate.Name = "DtpOrderDate";
             this.DtpOrderDate.Size = new System.Drawing.Size(200, 26);
             this.DtpOrderDate.TabIndex = 6;
@@ -263,7 +263,7 @@
             this.CbxCardID.FormattingEnabled = true;
             this.CbxCardID.Location = new System.Drawing.Point(30, 108);
             this.CbxCardID.Name = "CbxCardID";
-            this.CbxCardID.Size = new System.Drawing.Size(121, 28);
+            this.CbxCardID.Size = new System.Drawing.Size(201, 28);
             this.CbxCardID.TabIndex = 3;
             this.CbxCardID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbxCardID_KeyPress);
             // 
@@ -272,7 +272,7 @@
             this.CbxCustomerID.FormattingEnabled = true;
             this.CbxCustomerID.Location = new System.Drawing.Point(30, 78);
             this.CbxCustomerID.Name = "CbxCustomerID";
-            this.CbxCustomerID.Size = new System.Drawing.Size(121, 28);
+            this.CbxCustomerID.Size = new System.Drawing.Size(201, 28);
             this.CbxCustomerID.TabIndex = 2;
             this.CbxCustomerID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbxCustomerID_KeyPress);
             // 
@@ -281,7 +281,7 @@
             this.CbxStaffID.FormattingEnabled = true;
             this.CbxStaffID.Location = new System.Drawing.Point(30, 47);
             this.CbxStaffID.Name = "CbxStaffID";
-            this.CbxStaffID.Size = new System.Drawing.Size(121, 28);
+            this.CbxStaffID.Size = new System.Drawing.Size(201, 28);
             this.CbxStaffID.TabIndex = 1;
             this.CbxStaffID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbxStaffID_KeyPress);
             // 
@@ -296,9 +296,9 @@
             // 
             // BtnOverview
             // 
-            this.BtnOverview.Location = new System.Drawing.Point(549, 666);
+            this.BtnOverview.Location = new System.Drawing.Point(561, 666);
             this.BtnOverview.Name = "BtnOverview";
-            this.BtnOverview.Size = new System.Drawing.Size(189, 34);
+            this.BtnOverview.Size = new System.Drawing.Size(200, 34);
             this.BtnOverview.TabIndex = 11;
             this.BtnOverview.Text = "Overview";
             this.BtnOverview.UseVisualStyleBackColor = true;
@@ -313,7 +313,7 @@
             this.Controls.Add(this.PnlOrderLabels);
             this.Controls.Add(this.BtnOverview);
             this.Name = "FrmCustomerOrder";
-            this.Text = "";
+            this.Text = "CustomerOrder";
             this.Load += new System.EventHandler(this.FrmOrder_Load);
             this.Controls.SetChildIndex(this.BtnOverview, 0);
             this.Controls.SetChildIndex(this.PnlOrderLabels, 0);

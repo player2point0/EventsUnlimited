@@ -83,7 +83,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 14);
+            this.label1.Location = new System.Drawing.Point(15, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 20);
             this.label1.TabIndex = 0;
@@ -143,7 +143,7 @@
             // LblCustomerID
             // 
             this.LblCustomerID.AutoSize = true;
-            this.LblCustomerID.Location = new System.Drawing.Point(31, 14);
+            this.LblCustomerID.Location = new System.Drawing.Point(17, 23);
             this.LblCustomerID.Name = "LblCustomerID";
             this.LblCustomerID.Size = new System.Drawing.Size(99, 20);
             this.LblCustomerID.TabIndex = 1;

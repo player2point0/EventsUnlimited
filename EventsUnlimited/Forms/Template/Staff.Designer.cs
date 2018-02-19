@@ -111,7 +111,7 @@
             this.TbxStaffPhoneNumber.Name = "TbxStaffPhoneNumber";
             this.TbxStaffPhoneNumber.NumbersOnly = true;
             this.TbxStaffPhoneNumber.Required = true;
-            this.TbxStaffPhoneNumber.Size = new System.Drawing.Size(100, 26);
+            this.TbxStaffPhoneNumber.Size = new System.Drawing.Size(200, 26);
             this.TbxStaffPhoneNumber.TabIndex = 6;
             // 
             // TbxStaffAddress
@@ -124,7 +124,7 @@
             this.TbxStaffAddress.Name = "TbxStaffAddress";
             this.TbxStaffAddress.NumbersOnly = false;
             this.TbxStaffAddress.Required = true;
-            this.TbxStaffAddress.Size = new System.Drawing.Size(100, 26);
+            this.TbxStaffAddress.Size = new System.Drawing.Size(200, 26);
             this.TbxStaffAddress.TabIndex = 5;
             // 
             // TbxStaffName
@@ -137,7 +137,7 @@
             this.TbxStaffName.Name = "TbxStaffName";
             this.TbxStaffName.NumbersOnly = false;
             this.TbxStaffName.Required = true;
-            this.TbxStaffName.Size = new System.Drawing.Size(100, 26);
+            this.TbxStaffName.Size = new System.Drawing.Size(200, 26);
             this.TbxStaffName.TabIndex = 4;
             // 
             // LblStaffID

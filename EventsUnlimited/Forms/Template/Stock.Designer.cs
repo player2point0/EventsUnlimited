@@ -150,7 +150,7 @@
             this.TbxSupplierID.Name = "TbxSupplierID";
             this.TbxSupplierID.NumbersOnly = true;
             this.TbxSupplierID.Required = true;
-            this.TbxSupplierID.Size = new System.Drawing.Size(100, 26);
+            this.TbxSupplierID.Size = new System.Drawing.Size(188, 26);
             this.TbxSupplierID.TabIndex = 12;
             // 
             // TbxStockDeliveryTime
@@ -163,7 +163,7 @@
             this.TbxStockDeliveryTime.Name = "TbxStockDeliveryTime";
             this.TbxStockDeliveryTime.NumbersOnly = false;
             this.TbxStockDeliveryTime.Required = true;
-            this.TbxStockDeliveryTime.Size = new System.Drawing.Size(100, 26);
+            this.TbxStockDeliveryTime.Size = new System.Drawing.Size(188, 26);
             this.TbxStockDeliveryTime.TabIndex = 11;
             // 
             // TbxStockShelfLife
@@ -176,7 +176,7 @@
             this.TbxStockShelfLife.Name = "TbxStockShelfLife";
             this.TbxStockShelfLife.NumbersOnly = false;
             this.TbxStockShelfLife.Required = true;
-            this.TbxStockShelfLife.Size = new System.Drawing.Size(100, 26);
+            this.TbxStockShelfLife.Size = new System.Drawing.Size(188, 26);
             this.TbxStockShelfLife.TabIndex = 10;
             // 
             // TbxStockCost
@@ -189,7 +189,7 @@
             this.TbxStockCost.Name = "TbxStockCost";
             this.TbxStockCost.NumbersOnly = true;
             this.TbxStockCost.Required = true;
-            this.TbxStockCost.Size = new System.Drawing.Size(100, 26);
+            this.TbxStockCost.Size = new System.Drawing.Size(188, 26);
             this.TbxStockCost.TabIndex = 9;
             // 
             // TbxStockAmount
@@ -202,7 +202,7 @@
             this.TbxStockAmount.Name = "TbxStockAmount";
             this.TbxStockAmount.NumbersOnly = false;
             this.TbxStockAmount.Required = true;
-            this.TbxStockAmount.Size = new System.Drawing.Size(100, 26);
+            this.TbxStockAmount.Size = new System.Drawing.Size(188, 26);
             this.TbxStockAmount.TabIndex = 8;
             // 
             // TbxStockName
@@ -215,7 +215,7 @@
             this.TbxStockName.Name = "TbxStockName";
             this.TbxStockName.NumbersOnly = false;
             this.TbxStockName.Required = true;
-            this.TbxStockName.Size = new System.Drawing.Size(100, 26);
+            this.TbxStockName.Size = new System.Drawing.Size(188, 26);
             this.TbxStockName.TabIndex = 7;
             // 
             // LblStockID

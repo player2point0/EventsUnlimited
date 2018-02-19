@@ -111,7 +111,7 @@
             this.TbxSupplierPhoneNumber.Name = "TbxSupplierPhoneNumber";
             this.TbxSupplierPhoneNumber.NumbersOnly = true;
             this.TbxSupplierPhoneNumber.Required = true;
-            this.TbxSupplierPhoneNumber.Size = new System.Drawing.Size(100, 26);
+            this.TbxSupplierPhoneNumber.Size = new System.Drawing.Size(190, 26);
             this.TbxSupplierPhoneNumber.TabIndex = 7;
             // 
             // TbxSupplierAddress
@@ -124,7 +124,7 @@
             this.TbxSupplierAddress.Name = "TbxSupplierAddress";
             this.TbxSupplierAddress.NumbersOnly = false;
             this.TbxSupplierAddress.Required = true;
-            this.TbxSupplierAddress.Size = new System.Drawing.Size(100, 26);
+            this.TbxSupplierAddress.Size = new System.Drawing.Size(190, 26);
             this.TbxSupplierAddress.TabIndex = 6;
             // 
             // TbxSupplierName
@@ -137,7 +137,7 @@
             this.TbxSupplierName.Name = "TbxSupplierName";
             this.TbxSupplierName.NumbersOnly = false;
             this.TbxSupplierName.Required = true;
-            this.TbxSupplierName.Size = new System.Drawing.Size(100, 26);
+            this.TbxSupplierName.Size = new System.Drawing.Size(190, 26);
             this.TbxSupplierName.TabIndex = 5;
             // 
             // LblSupplierID
