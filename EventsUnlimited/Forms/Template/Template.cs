@@ -40,10 +40,13 @@ namespace EventsUnlimited
             newPrimaryKey = -1;
 
             sqlManager.ShowTable(ref index, ref controls);
-
-            helpFileName = _helpFileName;
+            SetHelpFileName(_helpFileName);
         }
 
+        public void SetHelpFileName(string _helpFileName)
+        {
+            helpFileName = _helpFileName;
+        }
         public void Print(string message)
         {
             if (message == "" || message == null) return;

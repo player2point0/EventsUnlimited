@@ -43,6 +43,7 @@ namespace EventsUnlimited
             QuantityToAdd = new List<string>();
             index = 0;
             newOrder = false;
+            base.SetHelpFileName("OrderHelp.txt");
         }
 
         private void FrmOrder_Load(object sender, EventArgs e)

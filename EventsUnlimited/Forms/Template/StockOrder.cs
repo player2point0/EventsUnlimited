@@ -45,8 +45,9 @@ namespace EventsUnlimited
             Staff.PopulateComboBox(ref CbxStaffID);
 
             Print(StockOrder.ShowTable(ref index, ref StockOrderControls));
+            base.SetHelpFileName("StockOrderHelp.txt");
         }
-        
+
         protected override void ClearControls()
         {
             LblStockOrderID.Text = StockOrder.GenerateNewPrimaryKey().ToString();
