@@ -21,7 +21,7 @@ namespace EventsUnlimited
         public FrmTemplate()
         {
             InitializeComponent();
-
+            
             Control.ControlCollection _controls = this.Controls;
             Program.SetColors(ref _controls);
         }

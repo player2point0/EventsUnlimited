@@ -34,9 +34,9 @@
             // 
             // LsvDisplay
             // 
-            this.LsvDisplay.Location = new System.Drawing.Point(33, 26);
+            this.LsvDisplay.Location = new System.Drawing.Point(12, 12);
             this.LsvDisplay.Name = "LsvDisplay";
-            this.LsvDisplay.Size = new System.Drawing.Size(1119, 598);
+            this.LsvDisplay.Size = new System.Drawing.Size(1154, 635);
             this.LsvDisplay.TabIndex = 0;
             this.LsvDisplay.UseCompatibleStateImageBehavior = false;
             this.LsvDisplay.View = System.Windows.Forms.View.Details;
@@ -55,6 +55,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1178, 744);
             this.ControlBox = false;
             this.Controls.Add(this.BtnClose);

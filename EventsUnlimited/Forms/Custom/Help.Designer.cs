@@ -34,7 +34,7 @@
             // 
             // BtnClose
             // 
-            this.BtnClose.Location = new System.Drawing.Point(479, 648);
+            this.BtnClose.Location = new System.Drawing.Point(494, 648);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(190, 75);
             this.BtnClose.TabIndex = 0;
@@ -44,16 +44,17 @@
             // 
             // TbxHelpText
             // 
-            this.TbxHelpText.Location = new System.Drawing.Point(129, 73);
+            this.TbxHelpText.Location = new System.Drawing.Point(12, 12);
             this.TbxHelpText.Multiline = true;
             this.TbxHelpText.Name = "TbxHelpText";
-            this.TbxHelpText.Size = new System.Drawing.Size(919, 508);
+            this.TbxHelpText.Size = new System.Drawing.Size(1154, 618);
             this.TbxHelpText.TabIndex = 1;
             // 
             // FrmHelp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1178, 744);
             this.ControlBox = false;
             this.Controls.Add(this.TbxHelpText);

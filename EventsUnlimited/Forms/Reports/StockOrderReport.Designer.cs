@@ -51,7 +51,7 @@
             // 
             // BtnClose
             // 
-            this.BtnClose.Location = new System.Drawing.Point(441, 429);
+            this.BtnClose.Location = new System.Drawing.Point(525, 681);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(128, 51);
             this.BtnClose.TabIndex = 0;
@@ -68,7 +68,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(13, 13);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(996, 410);
+            this.reportViewer1.Size = new System.Drawing.Size(1153, 662);
             this.reportViewer1.TabIndex = 1;
             // 
             // StockOrderTableAdapter
@@ -79,7 +79,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 530);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1178, 744);
             this.ControlBox = false;
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.BtnClose);
