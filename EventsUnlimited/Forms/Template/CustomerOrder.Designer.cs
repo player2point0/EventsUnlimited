@@ -201,9 +201,19 @@
             // NudStockQuantity
             // 
             this.NudStockQuantity.Location = new System.Drawing.Point(31, 307);
+            this.NudStockQuantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.NudStockQuantity.Name = "NudStockQuantity";
             this.NudStockQuantity.Size = new System.Drawing.Size(200, 26);
             this.NudStockQuantity.TabIndex = 12;
+            this.NudStockQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // TbxOrderNotes
             // 
