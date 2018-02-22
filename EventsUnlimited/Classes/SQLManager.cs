@@ -220,11 +220,12 @@ namespace EventsUnlimited
                 if (dataRow[field].ToString() == condition)
                 {
                     dataRow.Delete();
-                    sqlAdapter.Update(dataTable);
-
+                    
                     num++;
                 }
             }
+
+            sqlAdapter.Update(dataTable);
 
             return num + " rows deleted";
         }

@@ -100,7 +100,6 @@ namespace EventsUnlimited
         {
             base.BtnEdit_Click(sender, e);
             PnlOrderInput.Enabled = !PnlOrderInput.Enabled;
-            //MISSING THE EDIT CODE
         }
 
         protected override void BtnSave_Click(object sender, EventArgs e)
@@ -122,7 +121,7 @@ namespace EventsUnlimited
         {
             string CustomerOrderId = LblOrderID.Text;
 
-            CustomerOrderStock.DeleteAllWith("OrderId", CustomerOrderId);
+            Print(CustomerOrderStock.DeleteAllWith("OrderId", CustomerOrderId));
             Print(CustomerOrder.DeleteRow(new string[] { CustomerOrderId }));
 
             index--;
