@@ -12,6 +12,8 @@ namespace EventsUnlimited
 {
     public partial class FrmStockOrder : FrmTemplate
     {
+        //MISSING THE EDIT CODE
+
         private SQLManager Stock;
         private SQLManager Staff;
         private SQLManager StockOrder;
@@ -77,6 +79,7 @@ namespace EventsUnlimited
         {
             base.BtnEdit_Click(sender, e);
             PnlStockOrderInput.Enabled = !PnlStockOrderInput.Enabled;
+            //MISSING THE EDIT CODE
         }
 
         protected override void BtnSave_Click(object sender, EventArgs e)

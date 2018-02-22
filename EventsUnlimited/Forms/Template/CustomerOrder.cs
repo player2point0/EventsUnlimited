@@ -12,6 +12,8 @@ namespace EventsUnlimited
 {
     public partial class FrmCustomerOrder : FrmTemplate
     {
+        //MISSING THE EDIT CODE
+
         private SQLManager CustomerOrder;
         private Control[] CustomerOrderControls;
         private SQLManager Staff;
@@ -98,6 +100,7 @@ namespace EventsUnlimited
         {
             base.BtnEdit_Click(sender, e);
             PnlOrderInput.Enabled = !PnlOrderInput.Enabled;
+            //MISSING THE EDIT CODE
         }
 
         protected override void BtnSave_Click(object sender, EventArgs e)
@@ -119,7 +122,7 @@ namespace EventsUnlimited
         {
             string CustomerOrderId = LblOrderID.Text;
 
-            CustomerOrderStock.DeleteAllWith("CustomerOrderId", CustomerOrderId);
+            CustomerOrderStock.DeleteAllWith("OrderId", CustomerOrderId);
             Print(CustomerOrder.DeleteRow(new string[] { CustomerOrderId }));
 
             index--;

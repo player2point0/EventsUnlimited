@@ -99,47 +99,9 @@ namespace EventsUnlimited
 
         public string AddRow(ref Control[] controls)
         {
-            dataRow = dataTable.NewRow();
+            DataRow dr = GetRow(ref controls);
 
-            try
-            {
-                for (int i = 0; i < table.Fields.Length; i++)
-                {
-                    if(controls[i] is ValidationTextBox)
-                    {
-                        dataRow[table.Fields[i]] = controls[i].ToString();
-                    }
-
-                    else if(controls[i] is CheckBox)
-                    {
-                        bool val = (controls[i] as CheckBox).Checked;
-
-                        if(val) dataRow[table.Fields[i]] = 1;
-
-                        else dataRow[table.Fields[i]] = 0;
-                    }
-
-
-                    else if(controls[i] is ComboBox)
-                    {
-                        Container c = (controls[i] as ComboBox).SelectedItem as Container;
-
-                        dataRow[table.Fields[i]] = c.Id;
-                    }
-
-                    else
-                    {
-                        dataRow[table.Fields[i]] = controls[i].Text.ToString();
-                    }
-                }
-            }
-                
-            catch (Exception e)
-            {
-                return e.ToString();
-            }
-
-            dataTable.Rows.Add(dataRow);
+            dataTable.Rows.Add(dr);
             sqlAdapter.Update(dataTable);
 
             return "Record added";
@@ -159,6 +121,43 @@ namespace EventsUnlimited
 
             return "Record added";
         }
+        
+        public DataRow GetRow(ref Control[] controls)
+        {
+            DataRow dr = dataTable.NewRow();
+            
+            for (int i = 0; i < table.Fields.Length; i++)
+            {
+                if (controls[i] is ValidationTextBox)
+                {
+                    dr[table.Fields[i]] = controls[i].ToString();
+                }
+
+                else if (controls[i] is CheckBox)
+                {
+                    bool val = (controls[i] as CheckBox).Checked;
+
+                    if (val) dr[table.Fields[i]] = 1;
+
+                    else dr[table.Fields[i]] = 0;
+                }
+
+
+                else if (controls[i] is ComboBox)
+                {
+                    Container c = (controls[i] as ComboBox).SelectedItem as Container;
+
+                    dr[table.Fields[i]] = c.Id;
+                }
+
+                else
+                {
+                    dr[table.Fields[i]] = controls[i].Text.ToString();
+                }
+            }
+
+            return dr;
+        }
 
         public string EditRow(string[] rowKeys, ref Control[] controls)
         {
@@ -166,8 +165,17 @@ namespace EventsUnlimited
 
             if (edit == DialogResult.Yes)
             {
-                DeleteRow(rowKeys);
-                AddRow(ref controls);
+                //ONLY METHOD THAT WORKS
+                DataRow dr = dataTable.Rows.Find(rowKeys);
+                DataRow dr1 = GetRow(ref controls);
+
+                for(int i=0;i<table.Fields.Length;i++)
+                {
+                    dr[table.Fields[i]] = dr1[table.Fields[i]];
+                }
+
+                sqlAdapter.Update(dataTable);
+
                 return "Record Updated";
             }
             return "";
