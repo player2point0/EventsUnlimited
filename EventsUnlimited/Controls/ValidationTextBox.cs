@@ -94,8 +94,8 @@ namespace EventsUnlimited
             {
                 foreach(char c in text)
                 {
-                    if (c == ' ') continue;
-
+                    if ((c == ' ') || (c == '.')) continue;
+                    
                     if(!char.IsNumber(c))
                     {
                         throw new ValidationException("Numbers only", text);

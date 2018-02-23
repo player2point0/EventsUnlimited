@@ -80,6 +80,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Container.cs" />
+    <Compile Include="EventsUnlimitedDataSet.cs">
+      <DependentUpon>EventsUnlimitedDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Reports\CustomerOrderReport.cs">
       <SubType>Form</SubType>
     </Compile>

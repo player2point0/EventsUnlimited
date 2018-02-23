@@ -12,8 +12,6 @@ namespace EventsUnlimited
 {
     public partial class FrmCustomerOrder : FrmTemplate
     {
-        //MISSING THE EDIT CODE
-
         private SQLManager CustomerOrder;
         private Control[] CustomerOrderControls;
         private SQLManager Staff;
@@ -77,18 +75,18 @@ namespace EventsUnlimited
         }
         public bool EmptyFields()
         {
+
             bool staff = CbxStaffID.SelectedItem == null;
             bool customer = CbxCustomerID.SelectedItem == null;
             bool card = CbxCardID.SelectedItem == null;
             bool stock = StockIdToAdd.Count <= 0;
 
+            if (stock) Print("Please add stock");
             if (staff) Print("Please select a member of staff");
             if (customer) Print("Please select a customer");
             if (card) Print("Please select a card");
-            if (stock) Print("Please add stock");
 
-
-            return staff || customer || card || stock;
+            return stock || staff || customer || card;
         }
 
         protected override void BtnNew_Click(object sender, EventArgs e)
@@ -107,6 +105,24 @@ namespace EventsUnlimited
             if (EmptyFields()) return;
 
             string CustomerOrderId = LblOrderID.Text;
+
+            if (!newOrder)
+            {
+                string edit = CustomerOrder.EditRow(new string[] { CustomerOrderId }, ref CustomerOrderControls);
+
+                if (edit == "") return;
+
+                CustomerOrderStock.DeleteAllWith("OrderId", CustomerOrderId);
+
+                for (int i = 0; i < StockIdToAdd.Count; i++)
+                {
+                    CustomerOrderStock.AddRow(new string[] { CustomerOrderId, StockIdToAdd[i], QuantityToAdd[i] });
+                }
+
+                Print(edit);
+
+                return;
+            }
 
             Print(CustomerOrder.AddRow(ref CustomerOrderControls));
 

@@ -1274,6 +1274,12 @@ namespace EventsUnlimited {
             
             private global::System.Data.DataColumn columnStockName;
             
+            private global::System.Data.DataColumn columnStockId;
+            
+            private global::System.Data.DataColumn columnExpr1;
+            
+            private global::System.Data.DataColumn columnExpr2;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public CustomerOrderDataTable() {
@@ -1413,6 +1419,30 @@ namespace EventsUnlimited {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn StockIdColumn {
+                get {
+                    return this.columnStockId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Expr1Column {
+                get {
+                    return this.columnExpr1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Expr2Column {
+                get {
+                    return this.columnExpr2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1448,7 +1478,23 @@ namespace EventsUnlimited {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CustomerOrderRow AddCustomerOrderRow(int OrderId, bool OrderPaid, string OrderNotes, string OrderAddress, System.DateTime OrderDate, CustomerRow parentCustomerRowByFK__CustomerO__Custo__4959E263, CustomerCardRow parentCustomerCardRowByFK__CustomerO__CardI__4A4E069C, StaffRow parentStaffRowByFK__CustomerO__Staff__4B422AD5, int StockQuantity, string StaffName, string CardNumber, string CustomerName, string StockName) {
+            public CustomerOrderRow AddCustomerOrderRow(
+                        int OrderId, 
+                        bool OrderPaid, 
+                        string OrderNotes, 
+                        string OrderAddress, 
+                        System.DateTime OrderDate, 
+                        CustomerRow parentCustomerRowByFK__CustomerO__Custo__4959E263, 
+                        CustomerCardRow parentCustomerCardRowByFK__CustomerO__CardI__4A4E069C, 
+                        StaffRow parentStaffRowByFK__CustomerO__Staff__4B422AD5, 
+                        int StockQuantity, 
+                        string StaffName, 
+                        string CardNumber, 
+                        string CustomerName, 
+                        string StockName, 
+                        int StockId, 
+                        int Expr1, 
+                        int Expr2) {
                 CustomerOrderRow rowCustomerOrderRow = ((CustomerOrderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         OrderId,
@@ -1463,7 +1509,10 @@ namespace EventsUnlimited {
                         StaffName,
                         CardNumber,
                         CustomerName,
-                        StockName};
+                        StockName,
+                        StockId,
+                        Expr1,
+                        Expr2};
                 if ((parentCustomerRowByFK__CustomerO__Custo__4959E263 != null)) {
                     columnValuesArray[5] = parentCustomerRowByFK__CustomerO__Custo__4959E263[0];
                 }
@@ -1515,6 +1564,9 @@ namespace EventsUnlimited {
                 this.columnCardNumber = base.Columns["CardNumber"];
                 this.columnCustomerName = base.Columns["CustomerName"];
                 this.columnStockName = base.Columns["StockName"];
+                this.columnStockId = base.Columns["StockId"];
+                this.columnExpr1 = base.Columns["Expr1"];
+                this.columnExpr2 = base.Columns["Expr2"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1546,6 +1598,12 @@ namespace EventsUnlimited {
                 base.Columns.Add(this.columnCustomerName);
                 this.columnStockName = new global::System.Data.DataColumn("StockName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStockName);
+                this.columnStockId = new global::System.Data.DataColumn("StockId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStockId);
+                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr1);
+                this.columnExpr2 = new global::System.Data.DataColumn("Expr2", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr2);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnOrderId}, true));
                 this.columnOrderId.AllowDBNull = false;
@@ -1556,6 +1614,9 @@ namespace EventsUnlimited {
                 this.columnCardNumber.MaxLength = 20;
                 this.columnCustomerName.MaxLength = 64;
                 this.columnStockName.MaxLength = 64;
+                this.columnStockId.AllowDBNull = false;
+                this.columnExpr1.AllowDBNull = false;
+                this.columnExpr2.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4105,6 +4166,39 @@ namespace EventsUnlimited {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int StockId {
+                get {
+                    return ((int)(this[this.tableCustomerOrder.StockIdColumn]));
+                }
+                set {
+                    this[this.tableCustomerOrder.StockIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Expr1 {
+                get {
+                    return ((int)(this[this.tableCustomerOrder.Expr1Column]));
+                }
+                set {
+                    this[this.tableCustomerOrder.Expr1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Expr2 {
+                get {
+                    return ((int)(this[this.tableCustomerOrder.Expr2Column]));
+                }
+                set {
+                    this[this.tableCustomerOrder.Expr2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public CustomerCardRow CustomerCardRow {
                 get {
                     return ((CustomerCardRow)(this.GetParentRow(this.Table.ParentRelations["FK__CustomerO__CardI__4A4E069C"])));
@@ -6469,6 +6563,9 @@ SELECT CardId, CardNumber, cardExpiryDate, CardHolderName, CardSecurityCode FROM
             tableMapping.ColumnMappings.Add("CardNumber", "CardNumber");
             tableMapping.ColumnMappings.Add("CustomerName", "CustomerName");
             tableMapping.ColumnMappings.Add("StockName", "StockName");
+            tableMapping.ColumnMappings.Add("StockId", "StockId");
+            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
+            tableMapping.ColumnMappings.Add("Expr2", "Expr2");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -6485,15 +6582,15 @@ SELECT CardId, CardNumber, cardExpiryDate, CardHolderName, CardSecurityCode FROM
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT CustomerOrder.OrderId, CustomerOrder.OrderPaid, CustomerOrder.OrderNotes, CustomerOrder.OrderAddress, CustomerOrder.OrderDate, CustomerOrder.CustomerId, CustomerOrder.CardId, CustomerOrder.StaffId, StockOrderStock.StockQuantity, Staff.StaffName, 
-             CustomerCard.CardNumber, Customer.CustomerName, Stock.StockName
+            this._commandCollection[0].CommandText = @"SELECT CustomerOrder.OrderId, CustomerOrder.OrderPaid, CustomerOrder.OrderNotes, CustomerOrder.OrderAddress, CustomerOrder.OrderDate, CustomerOrder.CustomerId, CustomerOrder.CardId, CustomerOrder.StaffId, Staff.StaffName, CustomerCard.CardNumber, 
+             Customer.CustomerName, Stock.StockName, Stock.StockId, CustomerOrderStock.OrderId AS Expr1, CustomerOrderStock.StockId AS Expr2, CustomerOrderStock.StockQuantity
 FROM   Stock INNER JOIN
-             StockOrderStock ON Stock.StockId = StockOrderStock.StockId CROSS JOIN
+             CustomerOrderStock ON Stock.StockId = CustomerOrderStock.StockId INNER JOIN
              CustomerOrder INNER JOIN
              Staff ON CustomerOrder.StaffId = Staff.StaffId INNER JOIN
              Customer ON CustomerOrder.CustomerId = Customer.CustomerId INNER JOIN
-             CustomerCard ON CustomerOrder.CardId = CustomerCard.CardId
-WHERE CustomerOrder.OrderId = @ID ";
+             CustomerCard ON CustomerOrder.CardId = CustomerCard.CardId ON CustomerOrderStock.OrderId = CustomerOrder.OrderId
+WHERE (CustomerOrder.OrderId = @ID)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OrderId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

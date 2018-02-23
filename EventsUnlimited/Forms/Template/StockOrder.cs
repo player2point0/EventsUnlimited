@@ -12,8 +12,6 @@ namespace EventsUnlimited
 {
     public partial class FrmStockOrder : FrmTemplate
     {
-        //MISSING THE EDIT CODE
-
         private SQLManager Stock;
         private SQLManager Staff;
         private SQLManager StockOrder;
@@ -79,7 +77,6 @@ namespace EventsUnlimited
         {
             base.BtnEdit_Click(sender, e);
             PnlStockOrderInput.Enabled = !PnlStockOrderInput.Enabled;
-            //MISSING THE EDIT CODE
         }
 
         protected override void BtnSave_Click(object sender, EventArgs e)
@@ -87,10 +84,27 @@ namespace EventsUnlimited
             if (EmptyFields()) return;
 
             string StockOrderId = LblStockOrderID.Text;
-            string StaffId = (CbxStaffID.SelectedItem as Container).Id;
+
+            if (!newOrder)
+            {
+                string edit = StockOrder.EditRow(new string[] { StockOrderId }, ref StockOrderControls);
+
+                if (edit == "") return;
+
+                StockOrderStock.DeleteAllWith("StockOrderId", StockOrderId);
+
+                for (int i = 0; i < StockIdToAdd.Count; i++)
+                {
+                    StockOrderStock.AddRow(new string[] { StockOrderId, StockIdToAdd[i], QuantityToAdd[i] });
+                }
+
+                Print(edit);
+
+                return;
+            }
             
             //save a new StockOrder
-            Print(StockOrder.AddRow(new string[] { StockOrderId, DtpStockOrderDate.Value.ToString(), StaffId }));
+            Print(StockOrder.AddRow(ref StockOrderControls));
             //save each item of stock in the StockOrderStock table
             for (int i = 0;i< StockIdToAdd.Count;i++)
             {

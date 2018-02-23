@@ -161,7 +161,7 @@
             this.TbxStockDeliveryTime.MaxSize = 100;
             this.TbxStockDeliveryTime.MinSize = 1;
             this.TbxStockDeliveryTime.Name = "TbxStockDeliveryTime";
-            this.TbxStockDeliveryTime.NumbersOnly = false;
+            this.TbxStockDeliveryTime.NumbersOnly = true;
             this.TbxStockDeliveryTime.Required = true;
             this.TbxStockDeliveryTime.Size = new System.Drawing.Size(188, 26);
             this.TbxStockDeliveryTime.TabIndex = 11;
@@ -174,7 +174,7 @@
             this.TbxStockShelfLife.MaxSize = 100;
             this.TbxStockShelfLife.MinSize = 1;
             this.TbxStockShelfLife.Name = "TbxStockShelfLife";
-            this.TbxStockShelfLife.NumbersOnly = false;
+            this.TbxStockShelfLife.NumbersOnly = true;
             this.TbxStockShelfLife.Required = true;
             this.TbxStockShelfLife.Size = new System.Drawing.Size(188, 26);
             this.TbxStockShelfLife.TabIndex = 10;

@@ -12,6 +12,8 @@ namespace EventsUnlimited
 {
     public partial class FrmSupplier : FrmTemplate
     {
+        //NEED CODE TO CHECK IF SUPPLIER ID IS VALID
+
         public FrmSupplier()
         {
             InitializeComponent();

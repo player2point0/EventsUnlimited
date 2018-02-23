@@ -99,10 +99,18 @@ namespace EventsUnlimited
 
         public string AddRow(ref Control[] controls)
         {
-            DataRow dr = GetRow(ref controls);
+            try
+            {
+                DataRow dr = GetRow(ref controls);
 
-            dataTable.Rows.Add(dr);
-            sqlAdapter.Update(dataTable);
+                dataTable.Rows.Add(dr);
+                sqlAdapter.Update(dataTable);
+            }
+
+            catch(Exception e)
+            {
+                return e.ToString();
+            }
 
             return "Record added";
         }
@@ -145,7 +153,7 @@ namespace EventsUnlimited
 
                 else if (controls[i] is ComboBox)
                 {
-                    Container c = (controls[i] as ComboBox).SelectedItem as Container;
+                    Container c = (controls[i] as ComboBox).SelectedItem as Container;   
 
                     dr[table.Fields[i]] = c.Id;
                 }
@@ -165,7 +173,7 @@ namespace EventsUnlimited
 
             if (edit == DialogResult.Yes)
             {
-                //ONLY METHOD THAT WORKS
+                //LONG WINDED BUT ONLY WAY THAT WORKS
                 DataRow dr = dataTable.Rows.Find(rowKeys);
                 DataRow dr1 = GetRow(ref controls);
 
