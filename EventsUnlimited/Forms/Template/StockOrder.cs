@@ -35,8 +35,11 @@ namespace EventsUnlimited
             StockOrder = new SQLManager("StockOrder", new string[] { "StockOrderId" }, new string[] { "StockOrderId", "StockOrderDate", "StaffId" });
             StockOrderControls = new Control[] { LblStockOrderID, DtpStockOrderDate , CbxStaffID};
 
+            StockIdToAdd = new List<string>();
+            QuantityToAdd = new List<string>();
             index = 0;
             newOrder = false;
+            base.SetHelpFileName("StockOrderHelp.txt");
         }
 
         private void FrmStockOrder_Load(object sender, EventArgs e)
@@ -118,7 +121,7 @@ namespace EventsUnlimited
             string stockOrderId = LblStockOrderID.Text;
 
             //delete all in StockOrderStock with the stock id
-            StockOrderStock.DeleteAllWith("StockOrderId", stockOrderId);
+            Print(StockOrderStock.DeleteAllWith("StockOrderId", stockOrderId));
             //delete record in StockOrder with the stock id
             Print(StockOrder.DeleteRow(new string[] { stockOrderId }));
             index--;
