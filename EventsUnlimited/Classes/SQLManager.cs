@@ -278,5 +278,10 @@ namespace EventsUnlimited
 
             return output;
         }
+
+        public bool Contains(string[] keys)
+        {
+            return !(dataTable.Rows.Find(keys) == null);
+        }
     }
 }

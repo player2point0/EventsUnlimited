@@ -12,9 +12,13 @@ namespace EventsUnlimited
 {
     public partial class FrmStock : FrmTemplate
     {
+        SQLManager Supplier;
+
         public FrmStock()
         {
             InitializeComponent();
+
+            Supplier = new SQLManager("Supplier", new string[] { "SupplierId" }, new string[] { "SupplierId", "SupplierName", "SupplierAddress", "SupplierPhoneNumber" });
 
             string name = "Stock";
             string[] primaryKeys = new string[] { "StockId" };
@@ -29,5 +33,28 @@ namespace EventsUnlimited
             base.BtnEdit_Click(sender, e);
             PnlStockInput.Enabled = !PnlStockInput.Enabled;
         }
+        
+        protected override void BtnSave_Click(object sender, EventArgs e)
+        {
+            //check that the supplier exists before saving
+            try
+            {
+                string supplierId = TbxSupplierID.ToString();
+
+                if (!Supplier.Contains(new string[] { supplierId }))
+                {
+                    Print("Please enter an existing supplier id");
+                    return;
+                }
+
+                base.BtnSave_Click(sender, e);
+            }
+
+            catch (Exception ex)
+            {
+                Print(ex.ToString());
+            }
+        }
+
     }
 }
