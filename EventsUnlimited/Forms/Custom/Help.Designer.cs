@@ -44,6 +44,7 @@
             // 
             // TbxHelpText
             // 
+            this.TbxHelpText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbxHelpText.Location = new System.Drawing.Point(12, 12);
             this.TbxHelpText.Multiline = true;
             this.TbxHelpText.Name = "TbxHelpText";

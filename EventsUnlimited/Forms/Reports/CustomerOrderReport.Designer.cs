@@ -86,6 +86,7 @@
             this.Controls.Add(this.BtnClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmCustomerOrderReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CustomerOrderReport";
             this.Load += new System.EventHandler(this.FrmCustomerOrderReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CustomerOrderBindingSource)).EndInit();

@@ -157,10 +157,11 @@
             // DtpCardExpiryDate
             // 
             this.DtpCardExpiryDate.Location = new System.Drawing.Point(20, 94);
-            this.DtpCardExpiryDate.MinDate = new System.DateTime(2017, 5, 2, 0, 0, 0, 0);
+            this.DtpCardExpiryDate.MinDate = new System.DateTime(2018, 2, 26, 9, 31, 6, 0);
             this.DtpCardExpiryDate.Name = "DtpCardExpiryDate";
             this.DtpCardExpiryDate.Size = new System.Drawing.Size(174, 26);
             this.DtpCardExpiryDate.TabIndex = 2;
+            this.DtpCardExpiryDate.Value = new System.DateTime(2018, 2, 26, 9, 31, 6, 0);
             // 
             // LblCardID
             // 

@@ -86,6 +86,7 @@
             this.Controls.Add(this.BtnClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmStockOrderReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StockOrderReport";
             this.Load += new System.EventHandler(this.FrmStockOrderReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.StockOrderBindingSource)).EndInit();
