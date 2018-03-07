@@ -27,7 +27,6 @@ namespace EventsUnlimited
 
             ReadTable();
         }
-
         private void ReadTable()
         {
             string sql = @"select * from " + table.Name;
@@ -54,8 +53,6 @@ namespace EventsUnlimited
 
             dataRow = dataTable.Rows[index];
 
-            Program.Log(dataRow.ToString());
-
             for (int i = 0; i < controls.Length; i++)
             {
 
@@ -70,7 +67,6 @@ namespace EventsUnlimited
 
             return "";
         }
-        
         public void SetLastIndex(ref int index)
         {
             index = dataTable.Rows.Count - 1;
@@ -96,6 +92,27 @@ namespace EventsUnlimited
                 return "Not deleted";
             }
         }
+        public string DeleteAllWith(string field, string condition)
+        {
+            //delete any row which has the conditions
+            int num = 0;
+
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                dataRow = dataTable.Rows[i];
+
+                if (dataRow[field].ToString() == condition)
+                {
+                    dataRow.Delete();
+
+                    num++;
+                }
+            }
+
+            sqlAdapter.Update(dataTable);
+
+            return num + " rows deleted";
+        }
 
         public string AddRow(ref Control[] controls)
         {
@@ -114,7 +131,6 @@ namespace EventsUnlimited
 
             return "Record added";
         }
-
         public string AddRow(string[] values)
         {
             dataRow = dataTable.NewRow();
@@ -166,6 +182,45 @@ namespace EventsUnlimited
 
             return dr;
         }
+        public string[] GetData(string[] keys, string[] fields)
+        {
+            string[] output = new string[fields.Length];
+
+            try
+            {
+                dataRow = dataTable.Rows.Find(keys);
+
+                if (dataRow == null) throw new Exception();
+
+                for (int i = 0; i < fields.Length; i++)
+                {
+                    output[i] = dataRow[fields[i]].ToString();
+                }
+
+                return output;
+            }
+
+            catch (Exception)
+            {
+                return output;
+            }
+        }
+        public List<string> GetAllValues(string key, string keyCondition, string field)
+        {
+            List<string> output = new List<string>();
+
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                dataRow = dataTable.Rows[i];
+
+                if (dataRow[key].ToString() == keyCondition)
+                {
+                    output.Add(dataRow[field].ToString());
+                }
+            }
+
+            return output;
+        }
 
         public string EditRow(string[] rowKeys, ref Control[] controls)
         {
@@ -191,8 +246,6 @@ namespace EventsUnlimited
         
         public int GenerateNewPrimaryKey()
         {
-            //NEED A SOLUTION FOR COMPOSITE KEYS
-            
             List<int> primaryKeys = new List<int>();
 
             //GENERATE A LIST OF ALL PRIMARY KEYS IN USE
@@ -215,70 +268,7 @@ namespace EventsUnlimited
                 display.Items.Add(item);
             }
         }
-
-        public string DeleteAllWith(string field, string condition)
-        {
-            //delete any row which has the conditions
-            int num = 0;
-
-            for (int i = 0; i < dataTable.Rows.Count; i++)
-            {
-                dataRow = dataTable.Rows[i];
-
-                if (dataRow[field].ToString() == condition)
-                {
-                    dataRow.Delete();
-                    
-                    num++;
-                }
-            }
-
-            sqlAdapter.Update(dataTable);
-
-            return num + " rows deleted";
-        }
-
-        public string[] GetData(string[] keys, string[] fields)
-        {
-            string[] output = new string[fields.Length];
-
-            try
-            {
-                dataRow = dataTable.Rows.Find(keys);
-
-                if (dataRow == null) throw new Exception();
-
-                for (int i = 0; i < fields.Length; i++)
-                {
-                    output[i] = dataRow[fields[i]].ToString();
-                }
-
-                return output;
-            }
-
-            catch (Exception)
-            {
-                return output;
-            }
-        }
-
-        public List<string> GetAllValues(string key, string keyCondition, string field)
-        {
-            List<string> output = new List<string>();
-
-            for (int i = 0; i < dataTable.Rows.Count; i++)
-            {
-                dataRow = dataTable.Rows[i];
-
-                if (dataRow[key].ToString() == keyCondition)
-                {
-                    output.Add(dataRow[field].ToString());
-                }
-            }
-
-            return output;
-        }
-
+  
         public bool Contains(string[] keys)
         {
             return !(dataTable.Rows.Find(keys) == null);

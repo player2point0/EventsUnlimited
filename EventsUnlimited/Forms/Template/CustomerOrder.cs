@@ -75,7 +75,6 @@ namespace EventsUnlimited
         }
         public bool EmptyFields()
         {
-
             bool staff = CbxStaffID.SelectedItem == null;
             bool customer = CbxCustomerID.SelectedItem == null;
             bool card = CbxCardID.SelectedItem == null;
