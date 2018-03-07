@@ -27,50 +27,36 @@ namespace EventsUnlimited
 
         private void btnCard_Click(object sender, EventArgs e)
         {
-            FrmCard Card = new FrmCard();
-            Card.Show();
-            this.Hide();
+            Open(new FrmCard());
         }
-
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            FrmCustomer Customer = new FrmCustomer();
-            Customer.Show();
-            this.Hide();
+            Open(new FrmCustomer());
         }
-
         private void btnCustomerOrder_Click(object sender, EventArgs e)
         {
-            FrmCustomerOrder Order = new FrmCustomerOrder();
-            Order.Show();
-            this.Hide();
+            Open(new FrmCustomerOrder());
         }
-
         private void btnStockOrder_Click(object sender, EventArgs e)
         {
-            FrmStockOrder StockOrder = new FrmStockOrder();
-            StockOrder.Show();
-            this.Hide();
+            Open(new FrmStockOrder());
         }
-
         private void btnStaff_Click(object sender, EventArgs e)
         {
-            FrmStaff Staff = new FrmStaff();
-            Staff.Show();
-            this.Hide();
+            Open(new FrmStaff());
         }
-
         private void btnSupplier_Click(object sender, EventArgs e)
         {
-            FrmSupplier Supplier = new FrmSupplier();
-            Supplier.Show();
-            this.Hide();
+            Open(new FrmSupplier());
         }
-
         private void btnStock_Click(object sender, EventArgs e)
         {
-            FrmStock Stock = new FrmStock();
-            Stock.Show();
+            Open(new FrmStock());
+        }
+
+        private void Open(Form form)
+        {
+            form.Show();
             this.Hide();
         }
     }

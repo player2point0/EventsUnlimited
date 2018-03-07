@@ -41,6 +41,5 @@ namespace EventsUnlimited
             get { return fields; }
             set { fields = value; }
         }
-
     }
 }
