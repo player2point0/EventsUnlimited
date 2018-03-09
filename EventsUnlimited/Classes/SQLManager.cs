@@ -11,6 +11,8 @@ namespace EventsUnlimited
 {
     class SQLManager
     {
+        //COULD REPLACE ALL COMPOSITE KEY METHODS WITH PRIMARY KEY METHODS
+
         private Table table;
         private string connection;
 
