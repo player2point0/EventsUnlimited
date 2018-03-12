@@ -27,6 +27,5 @@ namespace EventsUnlimited
         {
             return message+" : "+value;
         }
-
     }
 }
