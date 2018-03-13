@@ -30,6 +30,8 @@ namespace EventsUnlimited
         {
             InitializeComponent();
 
+            DtpOrderDate.MinDate = DateTime.Now;
+
             CustomerOrder = new SQLManager("CustomerOrder", new string[] { "OrderId" }, new string[] { "OrderId", "OrderPaid", "OrderNotes", "OrderAddress", "OrderDate", "CustomerId", "CardId", "StaffId" });
             CustomerOrderControls = new Control[] { LblOrderID, CbxOrderPaid, TbxOrderNotes, TbxOrderAddress, DtpOrderDate, CbxCustomerID, CbxCardID, CbxStaffID};
 

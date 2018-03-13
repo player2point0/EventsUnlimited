@@ -28,6 +28,8 @@ namespace EventsUnlimited
         {
             InitializeComponent();
 
+            DtpStockOrderDate.MinDate = DateTime.Now;
+
             Stock = new SQLManager("Stock", new string[] { "StockId" }, new string[] { "StockId", "StockName" });
             StockOrderStock = new SQLManager("StockOrderStock", new string[] { "StockOrderId", "StockId" }, new string[] { "StockOrderId", "StockId", "StockQuantity" });
             Staff = new SQLManager("Staff", new string[] { "StaffId" }, new string[] { "StaffId", "StaffName" });

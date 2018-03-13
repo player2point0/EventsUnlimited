@@ -16,6 +16,8 @@ namespace EventsUnlimited
         {
             InitializeComponent();
 
+            DtpCardExpiryDate.MinDate = DateTime.Now;
+
             string name = "CustomerCard";
             string[] primaryKeys = new string[] { "CardId" };
             string[] fields = new string[] { "CardId", "CardNumber", "cardExpiryDate", "CardHolderName", "CardSecurityCode" };
