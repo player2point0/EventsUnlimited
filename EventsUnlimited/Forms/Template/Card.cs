@@ -16,7 +16,8 @@ namespace EventsUnlimited
         {
             InitializeComponent();
 
-            DtpCardExpiryDate.MinDate = DateTime.Now;
+            //DtpCardExpiryDate.MinDate = DateTime.Now;
+            //causes errors when displaying dates before today
 
             string name = "CustomerCard";
             string[] primaryKeys = new string[] { "CardId" };

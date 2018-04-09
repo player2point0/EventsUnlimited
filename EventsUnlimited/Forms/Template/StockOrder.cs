@@ -28,7 +28,8 @@ namespace EventsUnlimited
         {
             InitializeComponent();
 
-            DtpStockOrderDate.MinDate = DateTime.Now;
+            //DtpStockOrderDate.MinDate = DateTime.Now;
+            //causes errors when displaying dates before today
 
             Stock = new SQLManager("Stock", new string[] { "StockId" }, new string[] { "StockId", "StockName" });
             StockOrderStock = new SQLManager("StockOrderStock", new string[] { "StockOrderId", "StockId" }, new string[] { "StockOrderId", "StockId", "StockQuantity" });

@@ -156,6 +156,7 @@
             // 
             // DtpCardExpiryDate
             // 
+            this.DtpCardExpiryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DtpCardExpiryDate.Location = new System.Drawing.Point(20, 94);
             this.DtpCardExpiryDate.MinDate = new System.DateTime(2018, 3, 13, 0, 0, 0, 0);
             this.DtpCardExpiryDate.Name = "DtpCardExpiryDate";

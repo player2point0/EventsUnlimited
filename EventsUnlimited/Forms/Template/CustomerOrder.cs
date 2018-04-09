@@ -30,7 +30,8 @@ namespace EventsUnlimited
         {
             InitializeComponent();
 
-            DtpOrderDate.MinDate = DateTime.Now;
+            //DtpOrderDate.MinDate = DateTime.Now;
+            //causes errors when displaying dates before today
 
             CustomerOrder = new SQLManager("CustomerOrder", new string[] { "OrderId" }, new string[] { "OrderId", "OrderPaid", "OrderNotes", "OrderAddress", "OrderDate", "CustomerId", "CardId", "StaffId" });
             CustomerOrderControls = new Control[] { LblOrderID, CbxOrderPaid, TbxOrderNotes, TbxOrderAddress, DtpOrderDate, CbxCustomerID, CbxCardID, CbxStaffID};
